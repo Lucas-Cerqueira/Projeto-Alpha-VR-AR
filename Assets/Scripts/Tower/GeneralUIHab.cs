@@ -9,7 +9,12 @@ public class GeneralUIHab : NetworkBehaviour {
 	private RaycastHit hit;
 	GameObject generalUI;
 
-	// Use this for initialization
+    // Variables to Android builds
+    private Touch touch;
+
+
+
+    // Use this for initialization
 	void Start () {
 		generalUI = GameObject.Find ("GeneralUICommands");
 	}
@@ -18,7 +23,10 @@ public class GeneralUIHab : NetworkBehaviour {
 	void Update () {
         if (isLocalPlayer)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.touches != null && Application.platform == RuntimePlatform.Android)
+                touch = Input.GetTouch(0);
+                
+            if (Input.GetMouseButtonDown(0) || (touch.phase == TouchPhase.Began && Application.platform == RuntimePlatform.Android))
             {
                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, 500))

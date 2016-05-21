@@ -15,7 +15,6 @@ public class MyNetworkManager : NetworkManager {
 
     void OnDestroy()
     {
-        print("Entrou no DESTROY");
         updatedDropdownListener = false;
     }
 

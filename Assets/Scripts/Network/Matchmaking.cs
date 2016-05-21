@@ -97,7 +97,6 @@ public class Matchmaking : MonoBehaviour {
 
     public void CreateMatch()
     {
-        print("Entrou CreateMatch");
         manager.matchMaker.CreateMatch(inputCreateMatchName.text, manager.matchSize, true, inputCreateMatchPwd.text, manager.OnMatchCreate);
         //roleSelected = roleSelectionDropdown.options[roleSelectionDropdown.value].text;
     }

@@ -46,7 +46,7 @@ GameObject:
   - 135: {fileID: 13556710}
   - 114: {fileID: 11417200}
   - 114: {fileID: 11484044}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Laser
   m_TagString: Tower
   m_Icon: {fileID: 0}

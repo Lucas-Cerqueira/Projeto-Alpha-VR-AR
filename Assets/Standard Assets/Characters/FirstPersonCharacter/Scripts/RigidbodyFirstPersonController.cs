@@ -5,21 +5,22 @@ using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [RequireComponent(typeof (Rigidbody))]
-    [RequireComponent(typeof (CapsuleCollider))]
-	public class RigidbodyFirstPersonController :  NetworkBehaviour
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(CapsuleCollider))]
+    public class RigidbodyFirstPersonController : NetworkBehaviour
     {
         [Serializable]
-        public class MovementSettings 
+        public class MovementSettings
         {
             public float ForwardSpeed = 8.0f;   // Speed when walking forward
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
-	        public KeyCode RunKey = KeyCode.LeftShift;
+            public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
-            [HideInInspector] public float CurrentTargetSpeed = 8f;
+            [HideInInspector]
+            public float CurrentTargetSpeed = 8f;
 
 #if !MOBILE_INPUT
             private bool m_Running;
@@ -27,23 +28,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
-	            if (input == Vector2.zero) return;
-				if (input.x > 0 || input.x < 0)
-				{
-					//strafe
-					CurrentTargetSpeed = StrafeSpeed;
-				}
-				if (input.y < 0)
-				{
-					//backwards
-					CurrentTargetSpeed = BackwardSpeed;
-				}
-				if (input.y > 0)
-				{
-					//forwards
-					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
-					CurrentTargetSpeed = ForwardSpeed;
-				}
+                if (input == Vector2.zero) return;
+                if (input.x > 0 || input.x < 0)
+                {
+                    //strafe
+                    CurrentTargetSpeed = StrafeSpeed;
+                }
+                if (input.y < 0)
+                {
+                    //backwards
+                    CurrentTargetSpeed = BackwardSpeed;
+                }
+                if (input.y > 0)
+                {
+                    //forwards
+                    //handled last as if strafing and moving forward at the same time forwards speed should take precedence
+                    CurrentTargetSpeed = ForwardSpeed;
+                }
 #if !MOBILE_INPUT
 	            if (Input.GetKey(RunKey))
 	            {
@@ -110,10 +111,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             get
             {
- #if !MOBILE_INPUT
+#if !MOBILE_INPUT
 				return movementSettings.Running;
 #else
-	            return false;
+                return false;
 #endif
             }
         }
@@ -123,7 +124,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
-            mouseLook.Init (transform, cam.transform);
+            mouseLook.Init(transform, cam.transform);
         }
 
 
@@ -146,16 +147,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
                 // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
+                Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
-                desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
+                desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
+                desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
+                desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
                 if (m_RigidBody.velocity.sqrMagnitude <
-                    (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
+                    (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
                 {
-                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
                 }
             }
 
@@ -199,7 +200,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RaycastHit hitInfo;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) +
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius) +
                                    advancedSettings.stickToGroundHelperDistance, ~0, QueryTriggerInteraction.Ignore))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
@@ -212,13 +213,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Vector2 GetInput()
         {
-            
+
             Vector2 input = new Vector2
-                {
-                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
-                    y = CrossPlatformInputManager.GetAxis("Vertical")
-                };
-			movementSettings.UpdateDesiredTargetSpeed(input);
+            {
+                x = CrossPlatformInputManager.GetAxis("Horizontal"),
+                y = CrossPlatformInputManager.GetAxis("Vertical")
+            };
+            movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
         }
 
@@ -231,13 +232,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
 
-			if(isLocalPlayer) mouseLook.LookRotation (transform, cam.transform);
+           // if (isLocalPlayer) 
+                mouseLook.LookRotation(transform, cam.transform);
 
             if (m_IsGrounded || advancedSettings.airControl)
             {
                 // Rotate the rigidbody velocity to match the new direction that the character is looking
                 Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
-                m_RigidBody.velocity = velRotation*m_RigidBody.velocity;
+                m_RigidBody.velocity = velRotation * m_RigidBody.velocity;
             }
         }
 
@@ -247,7 +249,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;

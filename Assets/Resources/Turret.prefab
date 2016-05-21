@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11426818}
   - 114: {fileID: 11432886}
   - 114: {fileID: 11475238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Laser
   m_TagString: Laser
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: -2.97, z: 1.678}
+  m_LocalPosition: {x: 255.1859, y: 392.8757, z: -372.32397}
   m_LocalScale: {x: 1.0966537, y: 1.7428032, z: 2.075901}
   m_Children:
   - {fileID: 457910}
