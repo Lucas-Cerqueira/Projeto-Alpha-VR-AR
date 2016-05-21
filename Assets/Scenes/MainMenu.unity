@@ -2574,6 +2574,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  =======
+>>>>>>> origin/master
 --- !u!1 &1475875338
 GameObject:
   m_ObjectHideFlags: 0
