@@ -87,9 +87,6 @@ public class ControlLocalPlayer : NetworkBehaviour {
             transform.rotation = spawnPoint.rotation;
 
 			//Camera.main.enabled = false;
-			transform.GetChild(0).tag = "MainCamera";
-            transform.GetChild(0).gameObject.SetActive(true);
-            
         }
         else
         {

@@ -11,6 +11,7 @@ public class Matchmaking : MonoBehaviour {
     [SerializeField] uint maxPlayersPerRoom = 4;
 
     private GameObject matchmakingUIPanel;
+    private Toggle toggleUseVuforia;
     private InputField inputCreateMatchName;
     private InputField inputCreateMatchPwd;
 	private InputField inputJoinMatchPwd;
@@ -32,13 +33,7 @@ public class Matchmaking : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-    {
-        SetupMatchmakingUI();
-
-        //matchSize = maxPlayersPerRoom;
-        //StartMatchMaker();
-
-        //roleSelected = roleSelectionDropdown.options[roleSelectionDropdown.value].text;    
+    {   
 	}
 	
     public void SetupMatchmakingUI()
@@ -52,16 +47,19 @@ public class Matchmaking : MonoBehaviour {
         manager.StartMatchMaker();
 
         matchmakingUIPanel = GameObject.Find("Matchmaking UI");
+        toggleUseVuforia = GameObject.Find("Toggle-UseVuforia").GetComponent<Toggle>();
         inputCreateMatchName = GameObject.Find("InputField-MatchName").GetComponent<InputField>();
         inputCreateMatchPwd = GameObject.Find("InputField-Password").GetComponent<InputField>();
         inputJoinMatchPwd = GameObject.Find("InputField-JoinMatchPassword").GetComponent<InputField>();
         matchListRef = GameObject.Find("RoomListRef").transform;
 
+        toggleUseVuforia.onValueChanged.RemoveAllListeners();
         GameObject.Find("Button-CreateMatch").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("Button-ListMatches").GetComponent<Button>().onClick.RemoveAllListeners();
 
         //print("Resetando Listeners dos botoes");
 
+        toggleUseVuforia.onValueChanged.AddListener((value) => { GetComponent<MyNetworkManager>().ToggleUseVuforiaChanged(value); });
         GameObject.Find("Button-CreateMatch").GetComponent<Button>().onClick.AddListener(() => { this.CreateMatch(); });
         GameObject.Find("Button-ListMatches").GetComponent<Button>().onClick.AddListener(() => { this.ListMatches(); });
     }
@@ -71,6 +69,7 @@ public class Matchmaking : MonoBehaviour {
     {
         if (reloadedMenu == false)
         {
+            print("ATUALIZANDO MENU");
             SetupMatchmakingUI();
             reloadedMenu = true;
         }
@@ -151,5 +150,10 @@ public class Matchmaking : MonoBehaviour {
         }
 
         print("Deu merda");
+    }
+
+    public void SetActiveToggleUseVuforia (bool active)
+    {
+        toggleUseVuforia.gameObject.SetActive(active);
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MyNetworkManager : NetworkManager {
 
     [HideInInspector] public string playerRoleSelected = "Shooter";
+    [HideInInspector] public bool   useVuforia = false;
     
     private Dropdown roleSelectionDropdown;
     private static bool updatedDropdownListener = false;
@@ -45,6 +46,19 @@ public class MyNetworkManager : NetworkManager {
     {
         print("Mudou o ROLE");
         playerRoleSelected = roleSelectionDropdown.options[value].text;
+        if (playerRoleSelected.Equals("Shooter"))
+        {
+            GetComponent<Matchmaking>().SetActiveToggleUseVuforia(false);
+            useVuforia = false;
+        }
+        else
+            GetComponent<Matchmaking>().SetActiveToggleUseVuforia(true);
+    }
+
+    public void ToggleUseVuforiaChanged (bool newValue)
+    {
+        print("Novo valor de UseVuforia = " + newValue.ToString());
+        useVuforia = newValue;
     }
 
     public override void OnMatchCreate(UnityEngine.Networking.Match.CreateMatchResponse matchInfo)
@@ -120,7 +134,11 @@ public class MyNetworkManager : NetworkManager {
         }
     }
     
-    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* Handling the player joining according to the options selected on the main menu:
+     * playerRoleSelected
+     * useVuforia
+    */
     public class MsgTypes
     {
         public const short PlayerPrefab = MsgType.Highest + 1;
@@ -129,6 +147,7 @@ public class MyNetworkManager : NetworkManager {
         {
             public short controllerID;
             public string roleSelected;
+            public bool useVuforia;
         }
     }
 
@@ -149,6 +168,7 @@ public class MyNetworkManager : NetworkManager {
         MsgTypes.PlayerPrefabMsg msg = new MsgTypes.PlayerPrefabMsg();
         msg.controllerID = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>().controllerID;
         msg.roleSelected = playerRoleSelected;
+        msg.useVuforia   = useVuforia;     
         client.Send(MsgTypes.PlayerPrefab, msg);
     }
 
@@ -156,6 +176,27 @@ public class MyNetworkManager : NetworkManager {
     {
         MsgTypes.PlayerPrefabMsg msg = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>();
         playerPrefab = (GameObject)Resources.Load(msg.roleSelected);
+        if (msg.roleSelected.Equals("General"))
+        {
+            if (msg.useVuforia == false)
+            {
+                playerPrefab.transform.GetChild(0).tag = "MainCamera";
+                playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
+                playerPrefab.transform.GetChild(1).gameObject.SetActive(false);
+            }
+            else
+            {
+                playerPrefab.transform.GetChild(1).tag = "MainCamera";
+                playerPrefab.transform.GetChild(0).gameObject.SetActive(false);
+                playerPrefab.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            playerPrefab.transform.GetChild(0).tag = "MainCamera";
+            playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
+        }
+
         base.OnServerAddPlayer(netMsg.conn, msg.controllerID);
     }
 
