@@ -36,7 +36,7 @@ public class CameraRTS : MonoBehaviour {
 
     private void TouchInput ()
     {
-        if (Input.touches != null)
+        if (Input.touchCount != 0)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.position.y > Screen.height - pixelEdge && Input.GetMouseButton(0))

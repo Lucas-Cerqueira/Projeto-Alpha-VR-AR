@@ -21,6 +21,8 @@ public class MyNetworkManager : NetworkManager {
 
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         roleSelectionDropdown = GameObject.Find("RoleSelectionDropdown").GetComponent<Dropdown>();
         roleSelectionDropdown.onValueChanged.RemoveAllListeners();
         UpdatePlayerRole(roleSelectionDropdown.value);

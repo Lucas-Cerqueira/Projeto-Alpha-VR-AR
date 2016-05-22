@@ -3,12 +3,12 @@ using UnityEngine.Networking;
 
 public class Combat : NetworkBehaviour
 {
-    public int maxHealth;
+    public int maxHealth = 100;
 	private static int uniqueId=0;
-	[SyncVar] public int id;
+	[HideInInspector][SyncVar] public int id;
     public bool destroyOnDeath;
 
-    [SyncVar (hook="OnHealthChanged")]
+    [HideInInspector][SyncVar (hook="OnHealthChanged")]
     public int health;
     
 
@@ -17,12 +17,14 @@ public class Combat : NetworkBehaviour
         health = newHealth;
     }
 
-	void Start ()
+	void OnEnable ()
 	{
+        GetComponent<HealthBar>().enabled = true;
+
 		id = uniqueId;
 		uniqueId++;
 
-        maxHealth = health;
+        health = maxHealth;
 	}
 
     [Command]

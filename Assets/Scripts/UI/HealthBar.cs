@@ -13,6 +13,11 @@ public class HealthBar : MonoBehaviour
         greenBar = transform.GetChild(0).GetChild(2).GetComponent<RectTransform>();
     }
 
+    void OnEnable()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+
     void Update()
     {
         greenBar.localScale = new Vector3(combat.health/(float)combat.maxHealth, 1, 1);

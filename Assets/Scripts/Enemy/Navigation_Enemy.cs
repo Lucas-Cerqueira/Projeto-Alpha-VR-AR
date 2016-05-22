@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 public class Navigation_Enemy : MonoBehaviour {
@@ -13,7 +14,7 @@ public class Navigation_Enemy : MonoBehaviour {
     private Animator myAnimator;
 
 	// Use this for initialization
-	void Start () 
+	void OnEnable () 
     {
 		agent = gameObject.GetComponent<NavMeshAgent>();
         destination = GameObject.Find("Tower").transform;
@@ -33,11 +34,15 @@ public class Navigation_Enemy : MonoBehaviour {
     {
 		if (collision.gameObject.tag == "Tower" && Time.realtimeSinceStartup - actualTime > damageDelay) 
 		{
+            agent.Stop();
 			actualTime = Time.realtimeSinceStartup;
-
+            myAnimator.SetBool("isWalking", false);
+            myAnimator.SetBool("isAttacking", true);
             //collision.gameObject.GetComponent <Life_Bar> ().doDamage (damage);
             collision.gameObject.GetComponent<Combat>().CmdTakeDamage(damage);
-			agent.Stop ();
+			
 		}
+        //else
+        //    myAnimator.SetBool("isAttacking", false);
 	}
 }
