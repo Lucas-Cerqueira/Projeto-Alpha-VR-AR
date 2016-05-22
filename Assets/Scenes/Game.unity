@@ -817,7 +817,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11417200, guid: bfedca3b18d58fe47ac2421582f39d6b, type: 2}
+      propertyPath: initialDamage
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11410378, guid: bfedca3b18d58fe47ac2421582f39d6b, type: 2}
+    - {fileID: 11436066, guid: bfedca3b18d58fe47ac2421582f39d6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bfedca3b18d58fe47ac2421582f39d6b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &836953058
@@ -1208,6 +1214,7 @@ MonoBehaviour:
   matchName: default
   matchSize: 4
   playerRoleSelected: 
+  useVuforia: 0
   networkId: 0
   nodeId: 0
 --- !u!1001 &1266864793

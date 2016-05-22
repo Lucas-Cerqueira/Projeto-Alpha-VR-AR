@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f760bcce839e243b503e4f20c2e68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDamage: 100
+  initialDamage: 20
   shootDelay: 0.5
 --- !u!114 &11417200
 MonoBehaviour:

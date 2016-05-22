@@ -20,7 +20,7 @@ public class Shoot_Laser : NetworkBehaviour {
 	//[Command]
 	void CmdSendDamage(int id, int damage)
 	{
-		Combat[] combatComponentList =  GameObject.Find ("EnemySpawner").transform.GetComponentsInChildren<Combat> ();
+		Combat[] combatComponentList =  enemySpawner.transform.GetComponentsInChildren<Combat> ();
 		foreach (Combat component in combatComponentList) 
 		{
 			if (id == component.id) 
@@ -43,7 +43,8 @@ public class Shoot_Laser : NetworkBehaviour {
 				if (hit.collider.gameObject.tag == "Enemy") 
 				{
 					Debug.DrawLine (transform.position, hit.point, Color.cyan);
-                    int id = other.gameObject.GetComponent<Combat>().id;
+                    int id = hit.transform.GetComponent<Combat>().id;
+                    //int id = other.gameObject.GetComponent<Combat>().id;
 					CmdSendDamage (id, initialDamage);
 				}
 			}

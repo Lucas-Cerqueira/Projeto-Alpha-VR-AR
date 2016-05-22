@@ -22,7 +22,7 @@ public class EnemySpawner : NetworkBehaviour
     [Command]
     void CmdSpawnEnemy()
     {
-        GameObject enemy = (GameObject) Instantiate(Resources.Load("Enemy", typeof(GameObject)), transform.position, transform.rotation);
+        GameObject enemy = (GameObject) Instantiate(Resources.Load("Enemy1", typeof(GameObject)), transform.position, transform.rotation);
 		enemy.transform.SetParent (transform);
         enemy.GetComponent<Rigidbody>().velocity = transform.forward * enemySpeed;
         NetworkServer.Spawn(enemy);
