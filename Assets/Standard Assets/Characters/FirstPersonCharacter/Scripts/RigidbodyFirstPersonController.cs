@@ -9,6 +9,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof(CapsuleCollider))]
     public class RigidbodyFirstPersonController : NetworkBehaviour
     {
+		private Animator myAnimator;
+		private NetworkAnimator myAnimator2;
+
+		void OnEnable ()
+		{
+			myAnimator = GetComponent<Animator>();
+			myAnimator2 = GetComponent<NetworkAnimator>();
+		}
+
         [Serializable]
         public class MovementSettings
         {
@@ -141,6 +150,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+			if (m_RigidBody.velocity.magnitude != 0 && m_IsGrounded) {
+				myAnimator.SetBool ("isWalking", true);
+				myAnimator2.animator.SetBool("isWalking", true);
+			} else {
+				myAnimator.SetBool ("isWalking", false);
+				myAnimator2.animator.SetBool("isWalking", false);
+			}
+				
             GroundCheck();
             Vector2 input = GetInput();
 
@@ -199,6 +216,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
+			float testeRadius = 0.5f;
+			float testeHeight = 1.6f;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
                                    ((m_Capsule.height / 2f) - m_Capsule.radius) +
                                    advancedSettings.stickToGroundHelperDistance, ~0, QueryTriggerInteraction.Ignore))
@@ -248,9 +267,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
-            {
+			Vector3 position = transform.position;
+			position.y += 0.8f;
+			float testeRadius = 0.5f;
+			float testeHeight = 1.6f;
+			Debug.DrawRay (position, Vector3.down);
+			Vector3 position2 = position;
+			position2.y += testeRadius;
+//			if (Physics.SphereCast(position, testeRadius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+//				((testeHeight / 2f) - testeRadius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
+			if (Physics.SphereCast(position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+			   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore)) //Motivo da modificação: Guilherme + Modelo.Acredito que a escala do modelo tenha zoado TUDO...
+			{
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;
             }

@@ -372,7 +372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 486508, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_CustomConfig
@@ -405,7 +405,7 @@ Prefab:
     - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_PlayerPrefab
       value: 
-      objectReference: {fileID: 143360, guid: b87e23dbf3b76dc4da1a6bc35856ae0d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_Channels.Array.data[0]
       value: 5
@@ -414,6 +414,10 @@ Prefab:
       propertyPath: m_Channels.Array.data[1]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 101698, guid: a6587f4bc6d4ff748820d3c26c7a3e0f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
   m_IsPrefabParent: 0
