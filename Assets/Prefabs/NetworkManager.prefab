@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 486508}
   - 114: {fileID: 11491538}
   - 114: {fileID: 11493026}
+  - 114: {fileID: 11411028}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -29,6 +30,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11411028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184614}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
 --- !u!114 &11491538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49,13 +65,13 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 0}
+  m_PlayerPrefab: {fileID: 143360, guid: b87e23dbf3b76dc4da1a6bc35856ae0d, type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
   m_OfflineScene: MainMenu
   m_OnlineScene: Game
   m_SpawnPrefabs:
-  - {fileID: 105246, guid: b8b95b753872b7a43ada876f2b9c2d7e, type: 2}
+  - {fileID: 174672, guid: 43136d3ebcd0c7140ad56c2c218d1cd2, type: 2}
   - {fileID: 132136, guid: 590f9b4c016cb7b4fb4e4478e0e02af1, type: 2}
   - {fileID: 143360, guid: b87e23dbf3b76dc4da1a6bc35856ae0d, type: 2}
   - {fileID: 144084, guid: 53784e8f5daec384f8d89867f1c2b271, type: 2}
@@ -88,7 +104,7 @@ MonoBehaviour:
     m_ReactorMaximumReceivedMessages: 1024
     m_ReactorMaximumSentMessages: 1024
     m_MaxPacketSize: 2000
-  m_Channels: 0000000005000000
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -100,6 +116,7 @@ MonoBehaviour:
   matchName: default
   matchSize: 4
   playerRoleSelected: 
+  useVuforia: 0
   networkId: 0
   nodeId: 0
 --- !u!114 &11493026

@@ -55,9 +55,26 @@ public class EnemySpawner : NetworkBehaviour
                 enemyPool[i].transform.position = transform.position;
                 enemyPool[i].transform.rotation = transform.rotation;
                 enemyPool[i].SetActive(true);
+                RpcActivateEnemy();
                 return;
             }
         }
+    }
+
+    [ClientRpc]
+    void RpcActivateEnemy()
+    {
+        if (!isServer)
+            for (int i = 0; i < pooledEnemiesAmount; i++)
+            {
+                if (!enemyPool[i].activeInHierarchy)
+                {
+                    enemyPool[i].transform.position = transform.position;
+                    enemyPool[i].transform.rotation = transform.rotation;
+                    enemyPool[i].SetActive(true);
+                    return;
+                }
+            }
     }
 
     void FixedUpdate ()

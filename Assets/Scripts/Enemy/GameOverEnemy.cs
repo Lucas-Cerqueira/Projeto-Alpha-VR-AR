@@ -8,36 +8,43 @@ public class GameOverEnemy : GameOver{
 	private GameObject money;
 
 	// Use this for initialization
-	void Start () {
-		money = GameObject.Find ("Money");
+		
+    void Start()
+    {
+        money = GameObject.Find("Money");
         myAnimator = GetComponent<Animator>();
-	}
+    }
 	
+    void OnEnable()
+    {
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+    }
+
 	// Update is called once per frame
 	void Update () {
 	
 	}
 
-	public override void endGame ()
+	public override void EndGame ()
 	{
-		//print ("MORRI");
-        myAnimator.SetBool("isAttacking", false);
+        RpcDeactivateStuff();
 
-        GetComponent<HealthBar>().enabled = false;
-        transform.GetChild(0).gameObject.SetActive(false);
+        myAnimator.SetBool("isAttacking", false);
 		if (money) money.GetComponent<MoneyHandler>().sumMoney(100);
         //NetworkServer.Destroy(this.gameObject);
         int i = Random.Range(1, 3);
         myAnimator.SetBool("isDead" + i.ToString(), true);
-        //print("Current animation: " + myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
-        GetComponent<NavMeshAgent>().Stop();
 
-        Invoke("Destroy", myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        if (isServer)
+            GameObject.Find("EnemySpawner").GetComponent<PoolingObjectHandler>().ServerReturnToPool(this.gameObject, myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
 	}
 
-    void Destroy()
+    [ClientRpc]
+    void RpcDeactivateStuff()
     {
-        gameObject.SetActive(false);
-        CancelInvoke();
+        GetComponent<HealthBar>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        GetComponent<NavMeshAgent>().Stop();
     }
 }

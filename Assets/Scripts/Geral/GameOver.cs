@@ -15,7 +15,7 @@ public class GameOver : NetworkBehaviour {
 	
 	}
 
-	public virtual void endGame ()
+	public virtual void EndGame ()
 	{
         print("Script ERRADO");
 	}

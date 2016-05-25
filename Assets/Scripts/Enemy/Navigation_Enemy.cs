@@ -2,7 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 
-public class Navigation_Enemy : MonoBehaviour {
+public class Navigation_Enemy : NetworkBehaviour {
 
 	public float damageDelay = 0.5f;
 	private float actualTime = 0.0f;
@@ -39,7 +39,8 @@ public class Navigation_Enemy : MonoBehaviour {
             myAnimator.SetBool("isWalking", false);
             myAnimator.SetBool("isAttacking", true);
             //collision.gameObject.GetComponent <Life_Bar> ().doDamage (damage);
-            collision.gameObject.GetComponent<Combat>().CmdTakeDamage(damage);
+            if (isServer)
+                collision.gameObject.GetComponent<Combat>().CmdTakeDamage(damage);
 			
 		}
         //else

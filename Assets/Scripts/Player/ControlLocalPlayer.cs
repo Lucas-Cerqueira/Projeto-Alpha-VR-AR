@@ -58,7 +58,6 @@ public class ControlLocalPlayer : NetworkBehaviour {
                         GetComponent<MeshRenderer>().material.color = Color.red;
                         // Subtracted 1 from numberOfPlayer because indexing of children starts at 0
                         spawnPoint = GameObject.Find("ShooterSpawnPoints").transform.GetChild(numberOfPlayers%transform.childCount);
-                        
 						
 
                         // Quando desconectar da partida, lembra de desativar!!!
@@ -72,8 +71,6 @@ public class ControlLocalPlayer : NetworkBehaviour {
                         role = "General";
 
                         spawnPoint = GameObject.Find("GeneralSpawnPoint").transform;
-                        transform.position = spawnPoint.position;
-                        transform.rotation = spawnPoint.rotation;
 
                         // Quando desconectar da partida, lembra de desativar!!!
                         GameObject.Find("GeneralUI").transform.GetChild(0).gameObject.SetActive(true);

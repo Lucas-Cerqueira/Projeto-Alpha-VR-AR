@@ -16,7 +16,7 @@ public class GameOverTower : GameOver {
 	}
 
     
-    public override void endGame()
+    public virtual void endGame()
 	{
 		print ("GAMEOVER");
 	}

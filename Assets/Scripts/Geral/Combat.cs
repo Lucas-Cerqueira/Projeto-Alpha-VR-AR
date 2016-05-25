@@ -42,7 +42,7 @@ public class Combat : NetworkBehaviour
             {
                 if (destroyOnDeath)
                 {
-                    this.gameObject.GetComponent<GameOver>().BroadcastMessage("endGame");
+                    this.gameObject.GetComponent<GameOver>().EndGame();
                     //Destroy(gameObject);
                     //CmdDestroyObject(this.gameObject);
                 }

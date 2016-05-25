@@ -15,6 +15,7 @@ public class HealthBar : MonoBehaviour
 
     void OnEnable()
     {
+        //Activate Canvas object
         transform.GetChild(0).gameObject.SetActive(true);
     }
 

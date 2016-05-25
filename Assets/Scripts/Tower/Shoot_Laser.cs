@@ -42,15 +42,12 @@ public class Shoot_Laser : NetworkBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
-            print("Inimigo adicionado à lista de alvos!");
             enemiesInRange.Add(other.transform.GetComponentInParent<Combat>());
         }
     }
 
     void OnTriggerExit (Collider other)
     {
-        print("Saiu da colisão");
-
         if (other.gameObject.tag == "Enemy")
             enemiesInRange.Remove(other.transform.GetComponentInParent<Combat>());
     }
