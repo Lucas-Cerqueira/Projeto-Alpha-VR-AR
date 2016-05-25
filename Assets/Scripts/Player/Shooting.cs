@@ -14,10 +14,20 @@ public class Shooting : NetworkBehaviour {
     private float elapsedTime;
 	private GameObject enemySpawner;
 
+    private Animator myAnimator;
+
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         elapsedTime = shootDelay;
 		enemySpawner = GameObject.Find ("EnemySpawner");
+    }
+
+
+    void OnEnable ()
+    {
+        myAnimator.Rebind();
+        myAnimator.SetBool("isDead", false);
     }
 
 	[Command]
@@ -56,10 +66,18 @@ public class Shooting : NetworkBehaviour {
     {
         elapsedTime += Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && elapsedTime >= shootDelay && isLocalPlayer)
+        if (Input.GetMouseButton(0) && isLocalPlayer)
         {
-            Shoot();
-            elapsedTime = 0f;
+            myAnimator.SetBool("isShooting", true);
+
+            if (elapsedTime >= shootDelay && isLocalPlayer)
+            {
+                Shoot();
+                elapsedTime = 0f;
+            }
         }
+        else if (isLocalPlayer)
+            myAnimator.SetBool("isShooting", false);
+
     }
 }

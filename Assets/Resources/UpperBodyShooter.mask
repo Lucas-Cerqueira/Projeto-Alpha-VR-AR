@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpperBodyShooter
+  m_Mask: 00000000010000000000000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Abdomen
+    m_Weight: 1
+  - m_Path: Arm_L
+    m_Weight: 1
+  - m_Path: Arm_R
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Hips
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Head_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger1_Top_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger1_Top_L/Finger1_Mid_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger1_Top_L/Finger1_Mid_L/Finger1_Bot_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger2_Top_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger2_Top_L/Finger_Mid_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger2_Top_L/Finger_Mid_L/Finger2_Bot_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger3_Top_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger3_Top_L/Finger3_Mid_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger3_Top_L/Finger3_Mid_L/Finger3_Bot_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger4_Top_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger4_Top_L/Finger4_Mid_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Finger4_Top_L/Finger4_Mid_L/Finger4_Bot_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Thumb_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_L_0/UpperArm_L_0/Arm_L_0/Hand_L_0/Thumb_L/Thumb2_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger1_Top_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger1_Top_R/Finger1_Mid_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger1_Top_R/Finger1_Mid_R/Finger1_Bot_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger2_Top_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger2_Top_R/Finger_Mid_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger2_Top_R/Finger_Mid_R/Finger2_Bot_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger3_Top_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger3_Top_R/Finger3_Mid_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger3_Top_R/Finger3_Mid_R/Finger3_Bot_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger4_Top_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger4_Top_R/Finger4_Mid_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Finger4_Top_R/Finger4_Mid_R/Finger4_Bot_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Thumb_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Abdomen_0/Cheast/Shoulder_R_0/UpperArm_R_0/Arm_R_0/Hand_R_0/Thumb_R/Thumb2_R
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_L_0/Leg_L_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_L_0/Leg_L_0/Foot_L
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_R_0/Leg_R_0
+    m_Weight: 1
+  - m_Path: Armature/Hips/UpperLeg_R_0/Leg_R_0/Foot_R
+    m_Weight: 1
+  - m_Path: Backpack
+    m_Weight: 1
+  - m_Path: Chest
+    m_Weight: 1
+  - m_Path: Cube_005
+    m_Weight: 1
+  - m_Path: Cube_006
+    m_Weight: 1
+  - m_Path: Cube_010
+    m_Weight: 1
+  - m_Path: Cube_011
+    m_Weight: 1
+  - m_Path: Cube_012
+    m_Weight: 1
+  - m_Path: Cube_014
+    m_Weight: 1
+  - m_Path: Cube_015
+    m_Weight: 1
+  - m_Path: Cube_016
+    m_Weight: 1
+  - m_Path: Cube_017
+    m_Weight: 1
+  - m_Path: Cube_018
+    m_Weight: 1
+  - m_Path: Cube_019
+    m_Weight: 1
+  - m_Path: Cube_020
+    m_Weight: 1
+  - m_Path: Cube_021
+    m_Weight: 1
+  - m_Path: Cube_022
+    m_Weight: 1
+  - m_Path: Cube_023
+    m_Weight: 1
+  - m_Path: Cube_024
+    m_Weight: 1
+  - m_Path: Cube_025
+    m_Weight: 1
+  - m_Path: Cube_026
+    m_Weight: 1
+  - m_Path: Cube_027
+    m_Weight: 1
+  - m_Path: Cube_028
+    m_Weight: 1
+  - m_Path: Cube_029
+    m_Weight: 1
+  - m_Path: Cube_030
+    m_Weight: 1
+  - m_Path: Cube_031
+    m_Weight: 1
+  - m_Path: Cube_032
+    m_Weight: 1
+  - m_Path: Cube_033
+    m_Weight: 1
+  - m_Path: Cube_034
+    m_Weight: 1
+  - m_Path: Cube_035
+    m_Weight: 1
+  - m_Path: Cube_036
+    m_Weight: 1
+  - m_Path: Cube_037
+    m_Weight: 1
+  - m_Path: Cube_039
+    m_Weight: 1
+  - m_Path: Cube_042
+    m_Weight: 1
+  - m_Path: Cylinder_006
+    m_Weight: 1
+  - m_Path: Cylinder_009
+    m_Weight: 1
+  - m_Path: Cylinder_021
+    m_Weight: 1
+  - m_Path: Cylinder_023
+    m_Weight: 1
+  - m_Path: Feet_L
+    m_Weight: 1
+  - m_Path: Feet_R
+    m_Weight: 1
+  - m_Path: Hand_L
+    m_Weight: 1
+  - m_Path: Hand_R
+    m_Weight: 1
+  - m_Path: Head
+    m_Weight: 1
+  - m_Path: Hip
+    m_Weight: 1
+  - m_Path: Leg_L
+    m_Weight: 1
+  - m_Path: Leg_R
+    m_Weight: 1
+  - m_Path: Shoulder_L
+    m_Weight: 1
+  - m_Path: Shoulder_R
+    m_Weight: 1
+  - m_Path: UpperArm_L
+    m_Weight: 1
+  - m_Path: UpperArm_R
+    m_Weight: 1
+  - m_Path: UpperLeg_L
+    m_Weight: 1
+  - m_Path: UpperLeg_R
+    m_Weight: 1

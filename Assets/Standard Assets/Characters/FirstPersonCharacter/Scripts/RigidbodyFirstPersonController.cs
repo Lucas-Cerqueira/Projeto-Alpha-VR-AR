@@ -10,12 +10,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class RigidbodyFirstPersonController : NetworkBehaviour
     {
 		private Animator myAnimator;
-		private NetworkAnimator myAnimator2;
+		//private NetworkAnimator myAnimator2;
 
 		void OnEnable ()
 		{
 			myAnimator = GetComponent<Animator>();
-			myAnimator2 = GetComponent<NetworkAnimator>();
+			//myAnimator2 = GetComponent<NetworkAnimator>();
 		}
 
         [Serializable]
@@ -150,13 +150,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-			if (m_RigidBody.velocity.magnitude != 0 && m_IsGrounded) {
-				myAnimator.SetBool ("isWalking", true);
-				myAnimator2.animator.SetBool("isWalking", true);
-			} else {
-				myAnimator.SetBool ("isWalking", false);
-				myAnimator2.animator.SetBool("isWalking", false);
-			}
+            //if (m_RigidBody.velocity.magnitude != 0 && m_IsGrounded)
+            //{
+            //    myAnimator.SetBool ("isWalking", true);
+            //    //myAnimator2.animator.SetBool("isWalking", true);
+            //} else 
+            //{
+            //    myAnimator.SetBool ("isWalking", false);
+            //    //myAnimator2.animator.SetBool("isWalking", false);
+            //}
+            if (isLocalPlayer)
+                myAnimator.SetFloat("Speed", m_RigidBody.velocity.magnitude);
 				
             GroundCheck();
             Vector2 input = GetInput();

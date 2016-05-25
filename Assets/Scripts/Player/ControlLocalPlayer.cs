@@ -55,7 +55,6 @@ public class ControlLocalPlayer : NetworkBehaviour {
                     {
                         role = "Shooter";
 
-                        GetComponent<MeshRenderer>().material.color = Color.red;
                         // Subtracted 1 from numberOfPlayer because indexing of children starts at 0
                         spawnPoint = GameObject.Find("ShooterSpawnPoints").transform.GetChild(numberOfPlayers%transform.childCount);
 						

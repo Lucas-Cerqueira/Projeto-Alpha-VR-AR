@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &166594
 GameObject:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &430476
 Transform:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132136}
   m_LocalRotation: {x: 0, y: 0.7071069, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -18.88252, y: 9.131775, z: -2.1000924}
+  m_LocalPosition: {x: 71.41185, y: 121.02943, z: 209.88942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482922}
@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 60.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456076}
@@ -448,9 +448,9 @@ MonoBehaviour:
   CameraDeviceModeSetting: -1
   MaxSimultaneousImageTargets: 1
   MaxSimultaneousObjectTargets: 1
-  UseDelayedLoadingObjectTargets: 0
+  UseDelayedLoadingObjectTargets: 1
   CameraDirection: 0
-  MirrorVideoBackground: 0
+  MirrorVideoBackground: 1
   mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
 --- !u!114 &11482806
