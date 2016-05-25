@@ -87,8 +87,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
         }
         else
         {
-            if (gameObject.tag == "Shooter")
-                GetComponent<MeshRenderer>().material.color = Color.red;
+//            if (gameObject.tag == "Shooter")
+//                GetComponent<MeshRenderer>().material.color = Color.red;
             transform.GetChild(0).gameObject.SetActive(false);
         }
     }
