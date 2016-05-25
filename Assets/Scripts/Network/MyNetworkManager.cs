@@ -8,7 +8,8 @@ public class MyNetworkManager : NetworkManager {
 
     [HideInInspector] public string playerRoleSelected = "Shooter";
     [HideInInspector] public bool   useVuforia = false;
-    
+	[HideInInspector] public bool   useCardBoard = false;
+
     private Dropdown roleSelectionDropdown;
     private static bool updatedDropdownListener = false;
     [HideInInspector] public long networkId;
@@ -47,19 +48,27 @@ public class MyNetworkManager : NetworkManager {
     public void UpdatePlayerRole(int value)
     {
         playerRoleSelected = roleSelectionDropdown.options[value].text;
-        if (playerRoleSelected.Equals("Shooter"))
-        {
-            GetComponent<Matchmaking>().SetActiveToggleUseVuforia(false);
-            useVuforia = false;
-        }
-        else
-            GetComponent<Matchmaking>().SetActiveToggleUseVuforia(true);
+		if (playerRoleSelected.Equals ("Shooter")) {
+			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (false);
+			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (true);
+			useVuforia = false;
+		}
+		else {
+			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (true);
+			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (false);
+			useCardBoard = false;
+		}
     }
 
     public void ToggleUseVuforiaChanged (bool newValue)
     {
         useVuforia = newValue;
     }
+
+	public void ToggleUseCardBoardChanged (bool newValue)
+	{
+		useCardBoard = newValue;
+	}
 
     public override void OnMatchCreate(UnityEngine.Networking.Match.CreateMatchResponse matchInfo)
     {
@@ -144,6 +153,7 @@ public class MyNetworkManager : NetworkManager {
             public short controllerID;
             public string roleSelected;
             public bool useVuforia;
+			public bool useCardBoard;
         }
     }
 
@@ -165,6 +175,7 @@ public class MyNetworkManager : NetworkManager {
         msg.controllerID = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>().controllerID;
         msg.roleSelected = playerRoleSelected;
         msg.useVuforia   = useVuforia;     
+		msg.useCardBoard   = useCardBoard;  
         client.Send(MsgTypes.PlayerPrefab, msg);
     }
 
@@ -173,6 +184,7 @@ public class MyNetworkManager : NetworkManager {
         MsgTypes.PlayerPrefabMsg msg = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>();
         playerPrefab = (GameObject)Resources.Load(msg.roleSelected);
         playerPrefab.GetComponent<ControlLocalPlayer>().useVuforia = msg.useVuforia;
+		playerPrefab.GetComponent<ControlLocalPlayer>().useCardBoard = msg.useCardBoard;
         //if (msg.roleSelected.Equals("General"))
         //{
         //    if (msg.useVuforia == false)

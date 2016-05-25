@@ -272,10 +272,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
 			Vector3 position = transform.position;
-			position.y += 0.8f;
+			position.y += 8.0f;
 			float testeRadius = 0.5f;
 			float testeHeight = 1.6f;
-			Debug.DrawRay (position, Vector3.down);
+			Debug.DrawLine (position, position + Vector3.down * 8);
 			Vector3 position2 = position;
 			position2.y += testeRadius;
 //			if (Physics.SphereCast(position, testeRadius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,

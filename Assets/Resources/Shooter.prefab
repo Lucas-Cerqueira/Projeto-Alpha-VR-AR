@@ -2939,7 +2939,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143222}
-  m_LocalRotation: {x: -0.44604596, y: -0.5486739, z: 0.44604588, w: 0.548674}
+  m_LocalRotation: {x: -0.4460459, y: -0.54867387, z: 0.44604582, w: 0.5486739}
   m_LocalPosition: {x: -1.225742, y: 0.015256079, z: -0.009096905}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
@@ -3101,7 +3101,7 @@ MonoBehaviour:
     StrafeSpeed: 4
     RunMultiplier: 2
     RunKey: 304
-    JumpForce: 50
+    JumpForce: 100
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -3134,7 +3134,7 @@ MonoBehaviour:
     smoothTime: 18
     lockCursor: 1
   advancedSettings:
-    groundCheckDistance: 0.9
+    groundCheckDistance: 5.2
     stickToGroundHelperDistance: 0.6
     slowDownRate: 20
     airControl: 0

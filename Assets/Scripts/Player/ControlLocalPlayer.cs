@@ -7,6 +7,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
     public string role;
     [HideInInspector] public bool useVuforia = false;
+	[HideInInspector] public bool useCardBoard = false;
 
     private MyNetworkManager manager;
     private Transform spawnPoint;

@@ -12,6 +12,7 @@ public class Matchmaking : MonoBehaviour {
 
     private GameObject matchmakingUIPanel;
     private Toggle toggleUseVuforia;
+	private Toggle toggleUseCardBoard;
     private InputField inputCreateMatchName;
     private InputField inputCreateMatchPwd;
 	private InputField inputJoinMatchPwd;
@@ -48,18 +49,21 @@ public class Matchmaking : MonoBehaviour {
 
         matchmakingUIPanel = GameObject.Find("Matchmaking UI");
         toggleUseVuforia = GameObject.Find("Toggle-UseVuforia").GetComponent<Toggle>();
+		toggleUseCardBoard = GameObject.Find("Toggle-UseCardBoard").GetComponent<Toggle>();
         inputCreateMatchName = GameObject.Find("InputField-MatchName").GetComponent<InputField>();
         inputCreateMatchPwd = GameObject.Find("InputField-Password").GetComponent<InputField>();
         inputJoinMatchPwd = GameObject.Find("InputField-JoinMatchPassword").GetComponent<InputField>();
         matchListRef = GameObject.Find("RoomListRef").transform;
 
         toggleUseVuforia.onValueChanged.RemoveAllListeners();
+		toggleUseCardBoard.onValueChanged.RemoveAllListeners();
         GameObject.Find("Button-CreateMatch").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("Button-ListMatches").GetComponent<Button>().onClick.RemoveAllListeners();
 
         //print("Resetando Listeners dos botoes");
 
         toggleUseVuforia.onValueChanged.AddListener((value) => { GetComponent<MyNetworkManager>().ToggleUseVuforiaChanged(value); });
+		toggleUseCardBoard.onValueChanged.AddListener((value) => { GetComponent<MyNetworkManager>().ToggleUseCardBoardChanged(value); });
         GameObject.Find("Button-CreateMatch").GetComponent<Button>().onClick.AddListener(() => { this.CreateMatch(); });
         GameObject.Find("Button-ListMatches").GetComponent<Button>().onClick.AddListener(() => { this.ListMatches(); });
     }
@@ -155,4 +159,9 @@ public class Matchmaking : MonoBehaviour {
     {
         toggleUseVuforia.gameObject.SetActive(active);
     }
+
+	public void SetActiveToggleUseCardBoard (bool active)
+	{
+		toggleUseCardBoard.gameObject.SetActive(active);
+	}
 }
