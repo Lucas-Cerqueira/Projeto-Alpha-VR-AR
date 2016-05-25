@@ -148,6 +148,9 @@ public class PoolingObjectHandler : NetworkBehaviour
         //    }
         //}
 
+        if (availableObjectsPool.Count == 0)
+            return null;
+
         GameObject go = availableObjectsPool.Pop();
 
         go.transform.position = pos;

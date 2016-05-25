@@ -69,7 +69,6 @@ public class Matchmaking : MonoBehaviour {
     {
         if (reloadedMenu == false)
         {
-            print("ATUALIZANDO MENU");
             SetupMatchmakingUI();
             reloadedMenu = true;
         }

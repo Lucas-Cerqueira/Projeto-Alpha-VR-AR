@@ -3151,12 +3151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434457941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c010e7b6be98a4fad49760c26b33c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 682f513066442a04996b906a2d67065f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledEnemiesAmount: 20
-  enemySpawnDelay: 1.5
-  enemySpeed: 5
+  pooledPrefab: {fileID: 174672, guid: 43136d3ebcd0c7140ad56c2c218d1cd2, type: 2}
+  pooledObjectsAmount: 20
+  objectSpawnDelay: 1
 --- !u!114 &1434457943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3187,7 +3187,7 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!4 &1434457944
 Transform:

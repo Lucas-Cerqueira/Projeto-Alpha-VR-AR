@@ -46,7 +46,6 @@ public class MyNetworkManager : NetworkManager {
 
     public void UpdatePlayerRole(int value)
     {
-        print("Mudou o ROLE");
         playerRoleSelected = roleSelectionDropdown.options[value].text;
         if (playerRoleSelected.Equals("Shooter"))
         {
@@ -59,7 +58,6 @@ public class MyNetworkManager : NetworkManager {
 
     public void ToggleUseVuforiaChanged (bool newValue)
     {
-        print("Novo valor de UseVuforia = " + newValue.ToString());
         useVuforia = newValue;
     }
 
@@ -77,10 +75,6 @@ public class MyNetworkManager : NetworkManager {
 
     public void OnMatchJoin(UnityEngine.Networking.Match.JoinMatchResponse matchInfo)
     {
-        if (LogFilter.logDebug)
-        {
-            Debug.Log("NetworkManager OnMatchJoined ");
-        }
         if (matchInfo.success)
         {
             try
