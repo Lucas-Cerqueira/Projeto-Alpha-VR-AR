@@ -172,26 +172,27 @@ public class MyNetworkManager : NetworkManager {
     {
         MsgTypes.PlayerPrefabMsg msg = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>();
         playerPrefab = (GameObject)Resources.Load(msg.roleSelected);
-        if (msg.roleSelected.Equals("General"))
-        {
-            if (msg.useVuforia == false)
-            {
-                playerPrefab.transform.GetChild(0).tag = "MainCamera";
-                playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
-                playerPrefab.transform.GetChild(1).gameObject.SetActive(false);
-            }
-            else
-            {
-                playerPrefab.transform.GetChild(1).tag = "MainCamera";
-                playerPrefab.transform.GetChild(0).gameObject.SetActive(false);
-                playerPrefab.transform.GetChild(1).gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            playerPrefab.transform.GetChild(0).tag = "MainCamera";
-            playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
-        }
+        playerPrefab.GetComponent<ControlLocalPlayer>().useVuforia = msg.useVuforia;
+        //if (msg.roleSelected.Equals("General"))
+        //{
+        //    if (msg.useVuforia == false)
+        //    {
+        //        playerPrefab.transform.GetChild(0).tag = "MainCamera";
+        //        playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
+        //        playerPrefab.transform.GetChild(1).gameObject.SetActive(false);
+        //    }
+        //    else
+        //    {
+        //        playerPrefab.transform.GetChild(1).tag = "MainCamera";
+        //        playerPrefab.transform.GetChild(0).gameObject.SetActive(false);
+        //        playerPrefab.transform.GetChild(1).gameObject.SetActive(true);
+        //    }
+        //}
+        //else
+        //{
+        //    playerPrefab.transform.GetChild(0).tag = "MainCamera";
+        //    playerPrefab.transform.GetChild(0).gameObject.SetActive(true);
+        //}
 
         base.OnServerAddPlayer(netMsg.conn, msg.controllerID);
     }

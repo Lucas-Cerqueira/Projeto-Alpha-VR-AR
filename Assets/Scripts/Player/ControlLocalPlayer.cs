@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ControlLocalPlayer : NetworkBehaviour {
 
     public string role;
+    [HideInInspector] public bool useVuforia = false;
 
     private MyNetworkManager manager;
     private Transform spawnPoint;
@@ -33,6 +34,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
         if (isLocalPlayer)
         {
+            print(useVuforia);
+
             int numberOfPlayers = 10;
 
 
@@ -63,6 +66,9 @@ public class ControlLocalPlayer : NetworkBehaviour {
                         GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
                         GameObject.Find("GeneralUI").transform.GetChild(0).gameObject.SetActive(false);
 
+                        transform.GetChild(0).tag = "MainCamera";
+                        transform.GetChild(0).gameObject.SetActive(true);
+
                         break;
                     }
                 case "General":
@@ -75,6 +81,19 @@ public class ControlLocalPlayer : NetworkBehaviour {
                         GameObject.Find("GeneralUI").transform.GetChild(0).gameObject.SetActive(true);
                         GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive(false);
 
+                        if (useVuforia == false)
+                        {
+                            transform.GetChild(0).tag = "MainCamera";
+                            transform.GetChild(0).gameObject.SetActive(true);
+                            transform.GetChild(1).gameObject.SetActive(false);
+                        }
+                        else
+                        {
+                            transform.GetChild(1).tag = "MainCamera";
+                            transform.GetChild(0).gameObject.SetActive(false);
+                            transform.GetChild(1).gameObject.SetActive(true);
+                        }
+
                         break;
                     }
             }
@@ -86,9 +105,9 @@ public class ControlLocalPlayer : NetworkBehaviour {
         }
         else
         {
-//            if (gameObject.tag == "Shooter")
-//                GetComponent<MeshRenderer>().material.color = Color.red;
             transform.GetChild(0).gameObject.SetActive(false);
+            if (gameObject.CompareTag("General"))
+                transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 

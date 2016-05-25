@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   role: 
+  useVuforia: 1
 --- !u!114 &11413944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,7 +451,7 @@ MonoBehaviour:
   MaxSimultaneousObjectTargets: 1
   UseDelayedLoadingObjectTargets: 1
   CameraDirection: 0
-  MirrorVideoBackground: 1
+  MirrorVideoBackground: 0
   mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
 --- !u!114 &11482806

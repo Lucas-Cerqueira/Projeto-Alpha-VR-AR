@@ -24,11 +24,12 @@ public class Shooting : NetworkBehaviour {
     }
 
 
-    void OnEnable ()
-    {
-        myAnimator.Rebind();
-        myAnimator.SetBool("isDead", false);
-    }
+    //void OnEnable ()
+    //{
+    //    myAnimator = GetComponent<Animator>();
+    //    myAnimator.Rebind();
+    //    myAnimator.SetBool("isDead", false);
+    //}
 
 	[Command]
 	void CmdSendDamage(int id, int damage)
