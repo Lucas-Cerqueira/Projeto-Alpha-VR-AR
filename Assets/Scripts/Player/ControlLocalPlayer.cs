@@ -64,11 +64,19 @@ public class ControlLocalPlayer : NetworkBehaviour {
 						
 
                         // Quando desconectar da partida, lembra de desativar!!!
-                        GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
                         GameObject.Find("GeneralUI").transform.GetChild(0).gameObject.SetActive(false);
-
-                        transform.GetChild(0).tag = "MainCamera";
-                        transform.GetChild(0).gameObject.SetActive(true);
+					if (useCardBoard == false) {
+						GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
+						transform.GetChild (0).tag = "MainCamera";
+						transform.GetChild (0).gameObject.SetActive (true);
+						transform.GetChild (1).gameObject.SetActive (false);
+					} 
+					else {
+						GameObject.Find("ShooterUI").transform.GetChild(1).gameObject.SetActive (true);
+						//transform.GetChild(1).tag = "MainCamera";
+						transform.GetChild(0).gameObject.SetActive(false);
+						transform.GetChild(1).gameObject.SetActive(true);
+					}
 
                         break;
                     }
