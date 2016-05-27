@@ -21,8 +21,14 @@ public class DropHealth : NetworkBehaviour {
 	{
 		if (collision.gameObject.tag == "Shooter") 
 		{
-			if (isServer)
-				collision.gameObject.GetComponent<Combat>().CmdTakeDamage(-pHealth);
+			if (isServer) {
+				int upHealth;
+				if (collision.gameObject.GetComponent<Combat> ().health + pHealth > collision.gameObject.GetComponent<Combat> ().maxHealth)
+					upHealth = -(collision.gameObject.GetComponent<Combat> ().maxHealth - collision.gameObject.GetComponent<Combat> ().health);
+				else
+					upHealth = -pHealth;
+				collision.gameObject.GetComponent<Combat> ().CmdTakeDamage (upHealth);
+			}
 			GameObject.Destroy (this.gameObject);
 		}
 		//else
