@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 
 public class Shooting : NetworkBehaviour {
 
-    [SerializeField] int damage = 20;
+	[SerializeField] static int damage = 20;
+	[SerializeField] static int upgradeAmount = 10;
+	[SyncVar] private int realDamage = damage;
     [SerializeField] float shootDelay = 0.2f;
 
     private Ray ray; // the ray that will be shot
@@ -57,7 +59,7 @@ public class Shooting : NetworkBehaviour {
                 Debug.DrawLine(transform.position, hit.point, Color.green);
 				int id = hit.transform.GetComponent<Combat> ().id;
                 //hit.transform.GetComponent<Combat>().CmdTakeDamage(damage);
-				CmdSendDamage(id, damage);
+				CmdSendDamage(id, realDamage);
                 //Debug.Log("TOMOU HIT, FPS PLAYER!");
             }
         }
@@ -80,5 +82,13 @@ public class Shooting : NetworkBehaviour {
         else if (isLocalPlayer)
             myAnimator.SetBool("isShooting", false);
 
+		realDamage = damage;
+		print (realDamage);
     }
+		
+	public static void ShootingUpgradeDamage ()
+	{
+		damage += upgradeAmount;
+	}
+				
 }
