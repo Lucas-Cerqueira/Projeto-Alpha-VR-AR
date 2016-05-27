@@ -35,7 +35,6 @@ public class Combat : NetworkBehaviour
 
         health -= amount;
 
-
         if (isServer)
         {
             if (health <= 0)

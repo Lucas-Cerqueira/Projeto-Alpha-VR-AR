@@ -50,6 +50,7 @@ GameObject:
   - 114: {fileID: 11499504}
   - 33: {fileID: 3334108}
   - 136: {fileID: 13654564}
+  - 114: {fileID: 11434998}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Shooter
@@ -2571,7 +2572,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.353888, y: 17.752083, z: -1.0256879}
+  m_LocalPosition: {x: 1.2422385, y: -2.8351998, z: 1.5096788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443910}
@@ -3665,7 +3666,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
   m_Name: 
@@ -3715,7 +3716,17 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0.85
-  useCardboard: 0
+--- !u!114 &11434998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b828b111dac334c92bbe1095eb844c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11435696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3799,7 +3810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: 
   useVuforia: 0
-  useCardBoard: 1
+  useCardBoard: 0
 --- !u!114 &11457408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3894,7 +3905,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3312f636bfcb8044a47a9d24352bb2e, type: 3}
   m_Name: 

@@ -67,7 +67,7 @@ public class Shooting : NetworkBehaviour {
     {
         elapsedTime += Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && isLocalPlayer)
+		if (Input.GetButton("Fire1") && isLocalPlayer)
         {
             myAnimator.SetBool("isShooting", true);
 

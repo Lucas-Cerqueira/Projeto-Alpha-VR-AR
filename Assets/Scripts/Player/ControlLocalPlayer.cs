@@ -83,7 +83,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
                             GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
 					    }
 
-                        GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
+   //                     GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
 
                         break;
                     }
