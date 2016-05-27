@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GeneralUIHab : NetworkBehaviour {
 
-	private bool isUsing= false;
+	public bool isUsingUI= false;
 	private Ray ray;
 	private RaycastHit hit;
 	GameObject generalUI;
@@ -32,15 +32,11 @@ public class GeneralUIHab : NetworkBehaviour {
                 if (Physics.Raycast(ray, out hit, 500))
                 {
                     if (hit.collider.gameObject.tag == "Tower")
-                        isUsing = true;
-                    else
-                        isUsing = false;
+                        isUsingUI = !isUsingUI;
                 }
             }
-            if (isUsing)
-                generalUI.SetActive(true);
-            else
-                generalUI.SetActive(false);
+
+            generalUI.SetActive(isUsingUI);
         }
 	}
 }

@@ -5,23 +5,26 @@ using UnityEngine.UI;
 
 public class CreateTurret : NetworkBehaviour {
 
-	public GameObject turret;
+    [SerializeField] int turretPrice = 100;
+
 	private GameObject plotTurret;
-	private bool isPloting= false;
+	private bool isDeploying= false;
 	private Ray ray;
 	private RaycastHit hit;
+
 	int layermask = 1 << 8;
-	public GameObject money;
-	int muney = 0;
+
+    private MoneyHandler moneyHandler;
 	// Use this for initialization
 
 	void Start ()
 	{
-		if (isLocalPlayer) {
+		if (isLocalPlayer)
+        {
+            moneyHandler = GameObject.Find("Money").GetComponent<MoneyHandler>();
 			Button button = (Button)GameObject.Find ("Create Turret").GetComponent<Button> ();
-			button.onClick.AddListener (() => makeTurret ());
-			money = GameObject.Find ("Money");
-			muney = money.GetComponent<MoneyHandler> ().getMoney ();
+            button.onClick.RemoveAllListeners();
+			button.onClick.AddListener (() => MakeTurret ());
 		}
 	}
 
@@ -29,34 +32,43 @@ public class CreateTurret : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isLocalPlayer) {
-			muney = money.GetComponent<MoneyHandler> ().getMoney ();
-			if (isPloting) {
+		if (isLocalPlayer) 
+        {
+			if (isDeploying) 
+            {
 				ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-				if (Physics.Raycast (ray, out hit, 500, layermask)) {
-					if (hit.collider.gameObject.tag == "Scenario") {
-						if (plotTurret) {
+				if (Physics.Raycast (ray, out hit, 500, layermask))
+                {
+					if (hit.collider.gameObject.tag == "Scenario") 
+                    {
+						if (plotTurret) 
+                        {
 							Debug.DrawLine (ray.origin, hit.point, Color.cyan);
 							plotTurret.GetComponent<Renderer> ().enabled = true;
 							plotTurret.transform.position = new Vector3 (hit.point.x, hit.point.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, hit.point.z);
 							plotTurret.transform.rotation = hit.collider.transform.rotation;
-						} else {
-							plotTurret = (GameObject)Instantiate (turret, hit.point, hit.collider.transform.rotation);
+						}
+                        else 
+                        {
+							plotTurret = (GameObject)Instantiate (Resources.Load("Turret"), hit.point, hit.collider.transform.rotation);
 							plotTurret.transform.GetChild (0).gameObject.SetActive (false);
 							plotTurret.GetComponent<NavMeshObstacle> ().enabled = false;
 							plotTurret.transform.position = new Vector3 (plotTurret.transform.position.x, plotTurret.transform.position.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, plotTurret.transform.position.z);
 							plotTurret.GetComponent<Collider> ().enabled = false;
 						}
 					}
-					if (Input.GetMouseButtonDown (0) && plotTurret) {
+					if (Input.GetMouseButtonDown (0) && plotTurret) 
+                    {
 						//plotTurret.GetComponent<Collider> ().enabled = true;
 						//plotTurret = null;
 
-						GenerateTurret (plotTurret.transform.position, plotTurret.transform.rotation, turret);
+                        GenerateTurret(plotTurret.transform.position, plotTurret.transform.rotation, (GameObject)Resources.Load("Turret"));
 						Destroy (plotTurret);
-						isPloting = false;
+						isDeploying = false;
 					}
-				} else {
+				} 
+                else 
+                {
 					if (plotTurret)
 						plotTurret.GetComponent<Renderer> ().enabled = false;
 				}
@@ -64,13 +76,14 @@ public class CreateTurret : NetworkBehaviour {
 		}
 	}
 
-	public void makeTurret ()
+	public void MakeTurret ()
 	{
-//		if (muney>=100)
-//		{
-//			getmoney().GetComponent<MoneyHandler>().sumMoney (-100);
-			isPloting = true;
-//		}
+        GetComponent<GeneralUIHab>().isUsingUI = false;
+        if (moneyHandler.GetMoney() >= turretPrice)
+        {
+            moneyHandler.SpendMoney(turretPrice);
+            isDeploying = true;
+        }
 	}
 
 	[Client]
@@ -87,10 +100,5 @@ public class CreateTurret : NetworkBehaviour {
 		GameObject spawner = (GameObject)Instantiate (prefabToSpawn, pos, rotation);
 		//NetworkServer.SpawnWithClientAuthority (spawner, connectionToClient);
 		NetworkServer.Spawn (spawner);
-	}
-
-	public GameObject getmoney()
-	{
-		return money;
 	}
 }

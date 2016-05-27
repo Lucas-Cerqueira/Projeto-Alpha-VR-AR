@@ -19,9 +19,9 @@ public class UpgradeLaser : MonoBehaviour {
 
 	public void upgrade ()
 	{
-		if (money.GetComponent<MoneyHandler>().getMoney() >= 200) 
+		if (money.GetComponent<MoneyHandler>().GetMoney() >= 200) 
 		{
-			money.GetComponent<MoneyHandler>().sumMoney (-200);
+			money.GetComponent<MoneyHandler>().SpendMoney (200);
 			Tower.BroadcastMessage ("LaserPromotion");
 		}
 	}

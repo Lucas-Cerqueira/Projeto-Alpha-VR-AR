@@ -3,14 +3,18 @@ using UnityEngine.Networking;
 
 public class Combat : NetworkBehaviour
 {
+    [SerializeField] private bool destroyOnDeath;
     public int maxHealth = 100;
-	private static int uniqueId=0;
+	
 	[HideInInspector][SyncVar] public int id;
-    public bool destroyOnDeath;
+    private static int uniqueId = 0;
 
     [HideInInspector][SyncVar (hook="OnHealthChanged")]
     public int health;
-    
+
+    [HideInInspector][SyncVar]public bool isDead;
+
+    private Transform shooterSpawnPoints;
 
     void OnHealthChanged (int newHealth)
     {
@@ -19,12 +23,16 @@ public class Combat : NetworkBehaviour
 
 	void OnEnable ()
 	{
-        GetComponent<HealthBar>().enabled = true;
+        shooterSpawnPoints = GameObject.Find("ShooterSpawnPoints").transform;
+        if (GetComponent<HealthBar>())
+            GetComponent<HealthBar>().enabled = true;
 
 		id = uniqueId;
 		uniqueId++;
 
         health = maxHealth;
+
+        isDead = false;
 	}
 
     [Command]
@@ -39,6 +47,8 @@ public class Combat : NetworkBehaviour
         {
             if (health <= 0)
             {
+                isDead = true;
+
                 if (destroyOnDeath)
                 {
                     this.gameObject.GetComponent<GameOver>().EndGame();
@@ -48,9 +58,7 @@ public class Combat : NetworkBehaviour
                 else
                 {
                     health = maxHealth;
-
-                    // called on the server, will be invoked on the clients
-                    //RpcRespawn();
+                    RpcRespawn();
                 }
             }
         }
@@ -69,8 +77,10 @@ public class Combat : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            // move back to zero location
-            transform.position = Vector3.zero;
+            int point = Random.Range(0, shooterSpawnPoints.childCount);
+            transform.position = shooterSpawnPoints.GetChild(point).position;
+            transform.rotation = shooterSpawnPoints.GetChild(point).rotation;
+            isDead = false;
         }
     }
 }

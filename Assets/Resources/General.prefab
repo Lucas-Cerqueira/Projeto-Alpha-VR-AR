@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 475654}
   - 114: {fileID: 11490172}
   - 114: {fileID: 11412550}
-  - 114: {fileID: 11444724}
   - 114: {fileID: 11471542}
   - 114: {fileID: 11416690}
   - 114: {fileID: 11412012}
+  - 114: {fileID: 11444724}
   m_Layer: 0
   m_Name: General
   m_TagString: General
@@ -299,9 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1f980102ca8b44382c55c6957bcf83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: {fileID: 168764, guid: 132527850670f604d8cfbd4f829b14f3, type: 2}
-  money: {fileID: 0}
-  distance: 10
+  dropPrice: 100
+  heightDrop: 100
 --- !u!114 &11412550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,8 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72ab489d89ff29489baaddc5c163d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 144084, guid: 53784e8f5daec384f8d89867f1c2b271, type: 2}
-  money: {fileID: 0}
+  turretPrice: 0
 --- !u!114 &11453670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a4b8a7059df7d46ab4bba584b16a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUsingUI: 0
 --- !u!114 &11475464
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,23 +9,30 @@ public class MoneyHandler : NetworkBehaviour {
 	private Text text;
 
 	// Use this for initialization
-	void Start () {
-		text = GetComponent<Text> ();
-
+	void Start () 
+    {
+		text = GameObject.Find("Money").GetComponent<Text> ();
 		money = 0;
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		text.text = "Money: " + money;
 	}
 		
-	public void sumMoney (int sum)
+	public void AddMoney (int amount)
 	{
-		money += sum;
+		money += amount;
 	}
 
-	public int getMoney ()
+    public void SpendMoney(int amount)
+    {
+        money -= amount;
+    }
+
+	public int GetMoney ()
 	{
 		return money;
 	}
