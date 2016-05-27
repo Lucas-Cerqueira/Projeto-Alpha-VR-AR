@@ -110,6 +110,7 @@ public class MyNetworkManager : NetworkManager {
 
     public void DisconnectHost()
     {
+        Camera.main.gameObject.SetActive(true);
         matchMaker.DestroyMatch((UnityEngine.Networking.Types.NetworkID)networkId, OnMatchDestroyed);
     }
 

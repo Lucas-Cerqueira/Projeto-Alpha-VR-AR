@@ -78,7 +78,8 @@ public class Matchmaking : MonoBehaviour {
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            matchmakingUIPanel.SetActive(!NetworkClient.active);
+            if (matchmakingUIPanel)
+                matchmakingUIPanel.SetActive(!NetworkClient.active);
 
             elapsedTime += Time.deltaTime;
 

@@ -2,10 +2,11 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class ControlLocalPlayer : NetworkBehaviour {
 
-    public string role;
+    [HideInInspector] public string role;
     [HideInInspector] public bool useVuforia = false;
 	[HideInInspector] public bool useCardBoard = false;
 
@@ -35,10 +36,9 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
         if (isLocalPlayer)
         {
-            print(useVuforia);
-
             int numberOfPlayers = 10;
 
+            Camera.main.gameObject.SetActive(false);
 
             manager.matchMaker.ListMatches(0, 20, manager.matchName, manager.OnMatchList);
 
@@ -65,18 +65,25 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
                         // Quando desconectar da partida, lembra de desativar!!!
                         GameObject.Find("GeneralUI").transform.GetChild(0).gameObject.SetActive(false);
-					if (useCardBoard == false) {
-						GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
-						transform.GetChild (0).tag = "MainCamera";
-						transform.GetChild (0).gameObject.SetActive (true);
-						transform.GetChild (1).gameObject.SetActive (false);
-					} 
-					else {
-						GameObject.Find("ShooterUI").transform.GetChild(1).gameObject.SetActive (true);
-						//transform.GetChild(1).tag = "MainCamera";
-						transform.GetChild(0).gameObject.SetActive(false);
-						transform.GetChild(1).gameObject.SetActive(true);
-					}
+					    if (useCardBoard == false) 
+                        {
+						    GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
+						    transform.GetChild (0).tag = "MainCamera";
+						    transform.GetChild (0).gameObject.SetActive (true);
+						    transform.GetChild (1).gameObject.SetActive (false);
+
+                            GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(0).GetComponent<Camera>();
+					    } 
+					    else 
+                        {
+						    GameObject.Find("ShooterUI").transform.GetChild(1).gameObject.SetActive (true);
+						    //transform.GetChild(1).tag = "MainCamera";
+						    transform.GetChild(0).gameObject.SetActive(false);
+						    transform.GetChild(1).gameObject.SetActive(true);
+                            GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
+					    }
+
+                        GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
 
                         break;
                     }

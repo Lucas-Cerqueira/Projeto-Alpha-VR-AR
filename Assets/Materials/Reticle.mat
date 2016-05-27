@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CardboardReticleMaterial
-  m_Shader: {fileID: 4800000, guid: a3b352fc2ba734605a3df75466e600f0, type: 3}
+  m_Name: Reticle
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -81,10 +81,6 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Radius
-        second: 0
-      data:
-        first:
           name: _SrcBlend
         second: 1
       data:
@@ -106,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0
       data:
         first:
           name: _BumpScale
@@ -133,20 +129,32 @@ Material:
         second: 0
       data:
         first:
-          name: _InnerDiameter
-        second: 1.5
+          name: _Stencil
+        second: 0
       data:
         first:
-          name: _OuterDiameter
-        second: 2
+          name: _StencilComp
+        second: 8
       data:
         first:
-          name: _DistanceInMeters
-        second: 2
+          name: _StencilOp
+        second: 0
       data:
         first:
-          name: _Border
-        second: 0.015
+          name: _StencilReadMask
+        second: 255
+      data:
+        first:
+          name: _StencilWriteMask
+        second: 255
+      data:
+        first:
+          name: _ColorMask
+        second: 15
+      data:
+        first:
+          name: _UseUIAlphaClip
+        second: 0
     m_Colors:
       data:
         first:
