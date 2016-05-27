@@ -1446,10 +1446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3312f636bfcb8044a47a9d24352bb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnDeath: 1
   maxHealth: 100
   id: 0
-  destroyOnDeath: 1
   health: 100
+  isDead: 0
 --- !u!114 &11412630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1461,6 +1462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14e2718acf64454ba7e6dc5f6f1dd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
 --- !u!114 &11415176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1472,8 +1474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05394f6fb1e5fb84e91632c98defd18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDelay: 1.25
-  damage: 20
+  attackDamage: 25
+  timeBetweenAttacks: 1
+  maxDistanceToTargetPlayer: 20
+  meleeAttackRange: 10
 --- !u!114 &11416766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2266,11 +2270,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 174672}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 4
-  m_Acceleration: 4
+  m_Speed: 21
+  m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_AngularSpeed: 1080
+  m_StoppingDistance: 0.001
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

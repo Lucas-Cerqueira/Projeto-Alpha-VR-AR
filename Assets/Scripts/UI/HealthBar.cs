@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     void Awake()
     {
         combat = GetComponent<Combat>();
-        greenBar = transform.GetChild(0).GetChild(2).GetComponent<RectTransform>();
+        greenBar = transform.Find("Canvas").GetChild(2).GetComponent<RectTransform>();
     }
 
     void OnEnable()

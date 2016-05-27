@@ -1570,10 +1570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3312f636bfcb8044a47a9d24352bb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnDeath: 0
   maxHealth: 100
   id: 0
-  destroyOnDeath: 0
   health: 0
+  isDead: 0
 --- !u!114 &651961009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2731,6 +2732,7 @@ GameObject:
   - 224: {fileID: 1286083201}
   - 222: {fileID: 1286083204}
   - 114: {fileID: 1286083203}
+  - 114: {fileID: 1286083205}
   - 114: {fileID: 1286083202}
   m_Layer: 5
   m_Name: Money
@@ -2806,6 +2808,38 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286083200}
+--- !u!114 &1286083205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1286083200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1331469448 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 184370, guid: 4b6d93bd528988d48abf3622610dd5c7, type: 2}
@@ -2977,7 +3011,7 @@ GameObject:
   - 114: {fileID: 1400487477}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

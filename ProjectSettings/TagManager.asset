@@ -10,6 +10,7 @@ TagManager:
   - Tower
   - Scenario
   - Laser
+  - Turret
   layers:
   - Default
   - TransparentFX

@@ -50,7 +50,6 @@ GameObject:
   - 114: {fileID: 11499504}
   - 33: {fileID: 3334108}
   - 136: {fileID: 13654564}
-  - 114: {fileID: 11434998}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Shooter
@@ -3673,9 +3672,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2014514}
   movementSettings:
-    ForwardSpeed: 15
-    BackwardSpeed: 6
-    StrafeSpeed: 4
+    ForwardSpeed: 20
+    BackwardSpeed: 18
+    StrafeSpeed: 16
     RunMultiplier: 2
     RunKey: 304
     JumpForce: 100
@@ -3716,17 +3715,6 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0.85
---- !u!114 &11434998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b828b111dac334c92bbe1095eb844c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11435696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3910,10 +3898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3312f636bfcb8044a47a9d24352bb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnDeath: 0
   maxHealth: 100
   id: 0
-  destroyOnDeath: 0
   health: 0
+  isDead: 0
 --- !u!124 &12445520
 Behaviour:
   m_ObjectHideFlags: 1

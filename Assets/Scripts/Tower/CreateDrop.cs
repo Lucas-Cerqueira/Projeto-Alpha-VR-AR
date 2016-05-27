@@ -5,24 +5,27 @@ using UnityEngine.UI;
 
 public class CreateDrop : NetworkBehaviour {
 
-	public GameObject drop;
+    [SerializeField] int dropPrice = 100;
+    [SerializeField] float heightDrop = 100f;
+
 	private GameObject plotDrop;
-	private bool isPloting= false;
+	private bool isDeploying= false;
 	private Ray ray;
 	private RaycastHit hit;
+
 	int layermask = 1 << 8;
-	public GameObject money;
-	public float distance = 100.0f;
-	int muney = 0;
+
+    private MoneyHandler moneyHandler;
 	// Use this for initialization
 
 	void Start ()
 	{
-		if(isLocalPlayer){
+		if(isLocalPlayer)
+        {
 			Button button = (Button)GameObject.Find ("Create Drop").GetComponent<Button> ();
-			button.onClick.AddListener (() => makedrop ());
-			money = GameObject.Find ("Money");
-			muney = money.GetComponent<MoneyHandler> ().getMoney ();
+            button.onClick.RemoveAllListeners();
+			button.onClick.AddListener (() => MakeDrop ());
+            moneyHandler = GameObject.Find("Money").GetComponent<MoneyHandler>();
 		}
 	}
 
@@ -30,29 +33,38 @@ public class CreateDrop : NetworkBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (isLocalPlayer) {
-			muney = money.GetComponent<MoneyHandler> ().getMoney ();
-			if (isPloting) {
+		if (isLocalPlayer)
+        {
+			if (isDeploying) 
+            {
 				ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-				if (Physics.Raycast (ray, out hit, 500, layermask)) {
-					if (hit.collider.gameObject.tag == "Scenario") {
-						if (plotDrop) {
+				if (Physics.Raycast (ray, out hit, 500, layermask))
+                {
+					if (hit.collider.gameObject.tag == "Scenario")
+                    {
+						if (plotDrop) 
+                        {
 							Debug.DrawLine (ray.origin, hit.point, Color.cyan);
 							plotDrop.GetComponent<Renderer> ().enabled = true;
-							plotDrop.transform.position = new Vector3 (hit.point.x, hit.point.y + distance, hit.point.z);
+                            plotDrop.transform.position = new Vector3(hit.point.x, hit.point.y + heightDrop, hit.point.z);
 							plotDrop.transform.rotation = hit.collider.transform.rotation;
-						} else {
-							plotDrop = (GameObject)Instantiate (drop, hit.point, Quaternion.identity);
-							plotDrop.transform.position = new Vector3 (plotDrop.transform.position.x, plotDrop.transform.position.y + distance, plotDrop.transform.position.z);
+						} 
+                        else 
+                        {
+							plotDrop = (GameObject)Instantiate (Resources.Load ("Drop"), hit.point, Quaternion.identity);
+                            plotDrop.transform.position = new Vector3(plotDrop.transform.position.x, plotDrop.transform.position.y + heightDrop, plotDrop.transform.position.z);
 							plotDrop.GetComponent<Collider> ().enabled = false;
 						}
 					}
-					if (Input.GetMouseButtonDown (0) && plotDrop) {
-						Generatedrop (plotDrop.transform.position, plotDrop.transform.rotation, drop);
+					if (Input.GetMouseButtonDown (0) && plotDrop) 
+                    {
+                        Generatedrop(plotDrop.transform.position, plotDrop.transform.rotation, (GameObject)Resources.Load("Drop"));
 						Destroy (plotDrop);
-						isPloting = false;
+						isDeploying = false;
 					}
-				} else {
+				} 
+                else 
+                {
 					if (plotDrop)
 						plotDrop.GetComponent<Renderer> ().enabled = false;
 				}
@@ -60,13 +72,14 @@ public class CreateDrop : NetworkBehaviour {
 		}
 	}
 
-	public void makedrop ()
+	public void MakeDrop ()
 	{
-		//		if (muney>=100)
-		//		{
-		//			getmoney().GetComponent<MoneyHandler>().sumMoney (-100);
-					isPloting = true;
-		//		}
+        GetComponent<GeneralUIHab>().isUsingUI = false;
+        if (moneyHandler.GetMoney() >= dropPrice)
+        {
+            moneyHandler.SpendMoney(dropPrice);
+            isDeploying = true;
+        }
 	}
 
 	[Client]
@@ -83,10 +96,5 @@ public class CreateDrop : NetworkBehaviour {
 		GameObject spawner = (GameObject)Instantiate (prefabToSpawn, pos, rotation);
 		//NetworkServer.SpawnWithClientAuthority (spawner, connectionToClient);
 		NetworkServer.Spawn (spawner);
-	}
-
-	public GameObject getmoney()
-	{
-		return money;
 	}
 }

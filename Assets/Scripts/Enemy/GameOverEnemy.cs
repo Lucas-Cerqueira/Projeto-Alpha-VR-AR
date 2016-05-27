@@ -7,6 +7,8 @@ public class GameOverEnemy : GameOver{
     private Animator myAnimator;
 	private GameObject money;
 
+    public bool isDead = false;
+
 	// Use this for initialization
 		
     void Start()
@@ -28,9 +30,13 @@ public class GameOverEnemy : GameOver{
 	public override void EndGame ()
 	{
         RpcDeactivateStuff();
+        GetComponent<HealthBar>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        GetComponent<NavMeshAgent>().Stop();
 
         myAnimator.SetBool("isAttacking", false);
-		if (money) money.GetComponent<MoneyHandler>().sumMoney(100);
+		if (money) money.GetComponent<MoneyHandler>().AddMoney(100);
         //NetworkServer.Destroy(this.gameObject);
         int i = Random.Range(1, 3);
         myAnimator.SetBool("isDead" + i.ToString(), true);

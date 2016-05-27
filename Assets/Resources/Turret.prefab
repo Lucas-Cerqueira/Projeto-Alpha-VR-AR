@@ -34,9 +34,11 @@ GameObject:
   - 114: {fileID: 11489088}
   - 114: {fileID: 11414316}
   - 208: {fileID: 20838644}
+  - 114: {fileID: 11484856}
+  - 114: {fileID: 11493186}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +214,22 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &11484856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3312f636bfcb8044a47a9d24352bb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnDeath: 1
+  maxHealth: 50
+  id: 0
+  health: 0
+  isDead: 0
 --- !u!114 &11489088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +262,17 @@ MonoBehaviour:
     i15: 113
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &11493186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec795244a4ba0743811bef5d7838ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13502954
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -262,7 +291,7 @@ NavMeshObstacle:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144084}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
