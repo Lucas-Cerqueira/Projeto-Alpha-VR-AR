@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: 08994a53989812941a21fa6ad1d68b7f
-timeCreated: 1463952860
+guid: ddb30f5087bb931449b3ef520751bb67
+timeCreated: 1464462804
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cylinder
-    100004: Cylinder_001
-    100006: //RootNode
-    400000: Cube
-    400002: Cylinder
-    400004: Cylinder_001
-    400006: //RootNode
-    2300000: Cube
-    2300002: Cylinder
-    2300004: Cylinder_001
-    3300000: Cube
-    3300002: Cylinder
-    3300004: Cylinder_001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Cube
-    4300002: Cylinder_001
-    4300004: Cylinder
     7400000: Default Take
     9500000: //RootNode
   materials:
