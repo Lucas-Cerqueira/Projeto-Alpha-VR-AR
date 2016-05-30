@@ -23,23 +23,6 @@ public class PoolingObjectHandler : NetworkBehaviour
 
     Dictionary<GameObject, IEnumerator> killRequests = new Dictionary<GameObject, IEnumerator>();
 
-    //public override void OnStartClient() 
-    //{
-    //    objectStateList.Callback = OnStateListChanged;
-    //    if (!isServer)
-    //        for (int i = 0; i < objectStateList.Count; i++)
-    //        {
-    //            print("Pedindo update");
-    //            CmdRequestStateUpdate(i);
-    //        }
-    //} 
-
-    //private void OnStateListChanged(SyncListBool.Operation op, int index)
-    //{
-    //    print("Mudou o estado de algum inimigo");
-    //    CmdRequestStateUpdate(index);
-    //}
-
     public override void OnStartServer()
     {
         gameStarted = true;

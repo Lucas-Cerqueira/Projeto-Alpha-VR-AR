@@ -42,7 +42,7 @@ public class GameOverEnemy : GameOver{
         myAnimator.SetBool("isDead" + i.ToString(), true);
 
         if (isServer)
-            GameObject.Find("EnemySpawner").GetComponent<PoolingObjectHandler>().ServerReturnToPool(this.gameObject, myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+            transform.parent.GetComponent<PoolingObjectHandler>().ServerReturnToPool(this.gameObject, myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
 	}
 
     [ClientRpc]

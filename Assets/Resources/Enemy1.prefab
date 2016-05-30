@@ -786,8 +786,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7746217, y: 11.637393, z: -95.09538}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12.3820915, y: 2.7102213, z: -28.18}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 22417180}
   - {fileID: 431516}
@@ -1474,6 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05394f6fb1e5fb84e91632c98defd18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookForTarget: 1
   attackDamage: 25
   timeBetweenAttacks: 1
   maxDistanceToTargetPlayer: 20
@@ -2270,7 +2271,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 174672}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 21
+  m_Speed: 20
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 1080

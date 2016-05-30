@@ -25,6 +25,11 @@ public class CreateTurret : NetworkBehaviour {
 			Button button = (Button)GameObject.Find ("Create Turret").GetComponent<Button> ();
             button.onClick.RemoveAllListeners();
 			button.onClick.AddListener (() => MakeTurret ());
+
+            plotTurret = (GameObject)Instantiate(Resources.Load("Turret"), Vector3.zero, Quaternion.identity);
+            plotTurret.tag = "Untagged";
+            plotTurret.transform.GetChild(0).gameObject.SetActive(false);
+            plotTurret.SetActive(false);
 		}
 	}
 
@@ -44,18 +49,20 @@ public class CreateTurret : NetworkBehaviour {
 						if (plotTurret) 
                         {
 							Debug.DrawLine (ray.origin, hit.point, Color.cyan);
-							plotTurret.GetComponent<Renderer> ().enabled = true;
-							plotTurret.transform.position = new Vector3 (hit.point.x, hit.point.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, hit.point.z);
-							plotTurret.transform.rotation = hit.collider.transform.rotation;
+							//plotTurret.GetComponent<Renderer> ().enabled = true;
+                            plotTurret.SetActive(true);
+                            plotTurret.transform.position = hit.point;
+							//plotTurret.transform.position = new Vector3 (hit.point.x, hit.point.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, hit.point.z);
+							//plotTurret.transform.rotation = hit.collider.transform.rotation;
 						}
-                        else 
-                        {
-							plotTurret = (GameObject)Instantiate (Resources.Load("Turret"), hit.point, hit.collider.transform.rotation);
-							plotTurret.transform.GetChild (0).gameObject.SetActive (false);
-							plotTurret.GetComponent<NavMeshObstacle> ().enabled = false;
-							plotTurret.transform.position = new Vector3 (plotTurret.transform.position.x, plotTurret.transform.position.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, plotTurret.transform.position.z);
-							plotTurret.GetComponent<Collider> ().enabled = false;
-						}
+                        //else 
+                        //{
+                        //    //plotTurret = (GameObject)Instantiate (Resources.Load("Turret"), hit.point, hit.collider.transform.rotation);
+                        //    //plotTurret.transform.GetChild (0).gameObject.SetActive (false);
+                        //    //plotTurret.GetComponent<NavMeshObstacle> ().enabled = false;
+                        //    plotTurret.transform.position = new Vector3 (plotTurret.transform.position.x, plotTurret.transform.position.y + plotTurret.GetComponent<Renderer> ().bounds.extents.y, plotTurret.transform.position.z);
+                        //    plotTurret.GetComponent<Collider> ().enabled = false;
+                        //}
 					}
 					if (Input.GetMouseButtonDown (0) && plotTurret) 
                     {
@@ -63,14 +70,16 @@ public class CreateTurret : NetworkBehaviour {
 						//plotTurret = null;
 
                         GenerateTurret(plotTurret.transform.position, plotTurret.transform.rotation, (GameObject)Resources.Load("Turret"));
-						Destroy (plotTurret);
+						//Destroy (plotTurret);
+                        plotTurret.SetActive(false);
 						isDeploying = false;
 					}
 				} 
                 else 
                 {
-					if (plotTurret)
-						plotTurret.GetComponent<Renderer> ().enabled = false;
+                    if (plotTurret)
+                        //plotTurret.GetComponent<Renderer> ().enabled = false;
+                        plotTurret.SetActive(false);
 				}
 			}
 		}

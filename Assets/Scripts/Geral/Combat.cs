@@ -35,6 +35,29 @@ public class Combat : NetworkBehaviour
         isDead = false;
 	}
 
+    //void Update()
+    //{
+    //    if (isServer)
+    //    {
+    //        if (health <= 0)
+    //        {
+    //            isDead = true;
+
+    //            if (destroyOnDeath)
+    //            {
+    //                this.gameObject.GetComponent<GameOver>().EndGame();
+    //                //Destroy(gameObject);
+    //                //CmdDestroyObject(this.gameObject);
+    //            }
+    //            else
+    //            {
+    //                health = maxHealth;
+    //                RpcRespawn();
+    //            }
+    //        }
+    //    }
+    //}
+
     [Command]
     public void CmdTakeDamage(int amount)
     {
@@ -43,26 +66,22 @@ public class Combat : NetworkBehaviour
 
         health -= amount;
 
-        if (isServer)
+        if (health <= 0)
         {
-            if (health <= 0)
-            {
-                isDead = true;
+            isDead = true;
 
-                if (destroyOnDeath)
-                {
-                    this.gameObject.GetComponent<GameOver>().EndGame();
-                    //Destroy(gameObject);
-                    //CmdDestroyObject(this.gameObject);
-                }
-                else
-                {
-                    health = maxHealth;
-                    RpcRespawn();
-                }
+            if (destroyOnDeath)
+            {
+                this.gameObject.GetComponent<GameOver>().EndGame();
+                //Destroy(gameObject);
+                //CmdDestroyObject(this.gameObject);
             }
-        }
-        
+            else
+            {
+                health = maxHealth;
+                RpcRespawn();
+            }
+        }      
     }
 
     [Command]

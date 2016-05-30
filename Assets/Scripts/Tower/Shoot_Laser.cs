@@ -12,46 +12,29 @@ public class Shoot_Laser : NetworkBehaviour {
 	private int up = 10;
 //	Combat[] combatComponentList;
 
-	private GameObject enemySpawner;
 
-    private List<Combat> enemiesInRange;
+    public List<Combat> enemiesInRange;
     private int correctHits = 0;
 
 	void Start()
 	{
         enemiesInRange = new List<Combat>();
-
-		enemySpawner = GameObject.Find ("EnemySpawner");
 	}
 
-	//[Command]
-	void CmdSendDamage(int id, int damage)
-	{
-		Combat[] combatComponentList =  enemySpawner.transform.GetComponentsInChildren<Combat> ();
-		foreach (Combat component in combatComponentList) 
-		{
-			if (id == component.id) 
-			{
-				component.CmdTakeDamage(damage);
-				break;
-			}
-		}
-	}
-
-    void OnTriggerEnter (Collider other)
+    [Command]
+    void CmdSendDamage(int damage, GameObject target)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            enemiesInRange.Add(other.transform.GetComponentInParent<Combat>());
-        }
+        target.GetComponent<Combat>().CmdTakeDamage(damage);
+        //Combat[] combatComponentList = enemySpawner.transform.GetComponentsInChildren<Combat>();
+        //foreach (Combat component in combatComponentList)
+        //{
+        //    if (id == component.id)
+        //    {
+        //        component.CmdTakeDamage(damage);
+        //        break;
+        //    }
+        //}
     }
-
-    void OnTriggerExit (Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-            enemiesInRange.Remove(other.transform.GetComponentInParent<Combat>());
-    }
-
 
 
     void ShootNextEnemy()
@@ -59,7 +42,8 @@ public class Shoot_Laser : NetworkBehaviour {
         //If the tower hit an enemy...
         if (Random.Range(1, 101) <= hitChance)
         {
-            CmdSendDamage(enemiesInRange[0].id, initialDamage);
+            CmdSendDamage(initialDamage, enemiesInRange[0].gameObject);
+            //enemiesInRange[0].GetComponent<Combat>().CmdSendDamage(initialDamage);
             correctHits++;
         }
         if (correctHits == Mathf.Ceil(enemiesInRange[0].maxHealth / (float)initialDamage))

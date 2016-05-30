@@ -1,22 +1,20 @@
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(CapsuleCollider))]
+    [RequireComponent(typeof (Rigidbody))]
+    [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : NetworkBehaviour
     {
-		private Animator myAnimator;
-		//private NetworkAnimator myAnimator2;
+        private Animator myAnimator;
 
-		void OnEnable ()
-		{
-			myAnimator = GetComponent<Animator>();
-			//myAnimator2 = GetComponent<NetworkAnimator>();
-		}
+        void OnEnable()
+        {
+            myAnimator = GetComponent<Animator>();
+        }
 
         [Serializable]
         public class MovementSettings
@@ -25,11 +23,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
-            public KeyCode RunKey = KeyCode.LeftShift;
+	        public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
-            [HideInInspector]
-            public float CurrentTargetSpeed = 8f;
+            [HideInInspector] public float CurrentTargetSpeed = 8f;
 
 #if !MOBILE_INPUT
             private bool m_Running;
@@ -37,23 +34,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
-                if (input == Vector2.zero) return;
-                if (input.x > 0 || input.x < 0)
-                {
-                    //strafe
-                    CurrentTargetSpeed = StrafeSpeed;
-                }
-                if (input.y < 0)
-                {
-                    //backwards
-                    CurrentTargetSpeed = BackwardSpeed;
-                }
-                if (input.y > 0)
-                {
-                    //forwards
-                    //handled last as if strafing and moving forward at the same time forwards speed should take precedence
-                    CurrentTargetSpeed = ForwardSpeed;
-                }
+	            if (input == Vector2.zero) return;
+				if (input.x > 0 || input.x < 0)
+				{
+					//strafe
+					CurrentTargetSpeed = StrafeSpeed;
+				}
+				if (input.y < 0)
+				{
+					//backwards
+					CurrentTargetSpeed = BackwardSpeed;
+				}
+				if (input.y > 0)
+				{
+					//forwards
+					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
+					CurrentTargetSpeed = ForwardSpeed;
+				}
 #if !MOBILE_INPUT
 	            if (Input.GetKey(RunKey))
 	            {
@@ -120,10 +117,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             get
             {
-#if !MOBILE_INPUT
+ #if !MOBILE_INPUT
 				return movementSettings.Running;
 #else
-                return false;
+	            return false;
 #endif
             }
         }
@@ -133,80 +130,76 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
-            mouseLook.Init(transform, cam.transform);
+            mouseLook.Init (transform, cam.transform);
         }
 
 
         private void Update()
         {
-            RotateView();
-
-            if (Input.GetButtonDown("Jump") && !m_Jump)
+            if (isLocalPlayer)
             {
-                m_Jump = true;
+                RotateView();
+
+                if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+                {
+                    m_Jump = true;
+                }
             }
         }
 
 
         private void FixedUpdate()
         {
-            //if (m_RigidBody.velocity.magnitude != 0 && m_IsGrounded)
-            //{
-            //    myAnimator.SetBool ("isWalking", true);
-            //    //myAnimator2.animator.SetBool("isWalking", true);
-            //} else 
-            //{
-            //    myAnimator.SetBool ("isWalking", false);
-            //    //myAnimator2.animator.SetBool("isWalking", false);
-            //}
             if (isLocalPlayer)
+            {
                 myAnimator.SetFloat("Speed", m_RigidBody.velocity.magnitude);
-				
-            GroundCheck();
-            Vector2 input = GetInput();
 
-            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
-            {
-                // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
-                desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+                GroundCheck();
+                Vector2 input = GetInput();
 
-                desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
-                if (m_RigidBody.velocity.sqrMagnitude <
-                    (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
+                if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
                 {
-                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
+                    // always move along the camera forward as it is the direction that it being aimed at
+                    Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
+                    desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+
+                    desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
+                    desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
+                    desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
+                    if (m_RigidBody.velocity.sqrMagnitude <
+                        (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
+                    {
+                        m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
+                    }
                 }
-            }
 
-            if (m_IsGrounded)
-            {
-                m_RigidBody.drag = 5f;
+                if (m_IsGrounded)
+                {
+                    m_RigidBody.drag = 5f;
 
-                if (m_Jump)
+                    if (m_Jump)
+                    {
+                        m_RigidBody.drag = 0f;
+                        m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
+                        m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
+                        m_Jumping = true;
+                    }
+
+                    if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
+                    {
+                        m_RigidBody.Sleep();
+                    }
+                }
+                else
                 {
                     m_RigidBody.drag = 0f;
-                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
-                    m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
-                    m_Jumping = true;
+                    if (m_PreviouslyGrounded && !m_Jumping)
+                    {
+                        StickToGroundHelper();
+                    }
                 }
-
-                if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
-                {
-                    m_RigidBody.Sleep();
-                }
+                m_Jump = false;
             }
-            else
-            {
-                m_RigidBody.drag = 0f;
-                if (m_PreviouslyGrounded && !m_Jumping)
-                {
-                    StickToGroundHelper();
-                }
-            }
-            m_Jump = false;
         }
 
 
@@ -220,10 +213,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
-			float testeRadius = 0.5f;
-			float testeHeight = 1.6f;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) +
+                                   ((m_Capsule.height/2f) - m_Capsule.radius) +
                                    advancedSettings.stickToGroundHelperDistance, ~0, QueryTriggerInteraction.Ignore))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
@@ -236,13 +227,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Vector2 GetInput()
         {
-
+            
             Vector2 input = new Vector2
-            {
-                x = Input.GetAxis("Horizontal"),
-                y = Input.GetAxis("Vertical")
-            };
-            movementSettings.UpdateDesiredTargetSpeed(input);
+                {
+                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
+                    y = CrossPlatformInputManager.GetAxis("Vertical")
+                };
+			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
         }
 
@@ -255,14 +246,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
 
-            if (isLocalPlayer) 
-                mouseLook.LookRotation(transform, cam.transform);
+            mouseLook.LookRotation (transform, cam.transform);
 
             if (m_IsGrounded || advancedSettings.airControl)
             {
                 // Rotate the rigidbody velocity to match the new direction that the character is looking
                 Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
-                m_RigidBody.velocity = velRotation * m_RigidBody.velocity;
+                m_RigidBody.velocity = velRotation*m_RigidBody.velocity;
             }
         }
 
@@ -271,18 +261,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-			Vector3 position = transform.position;
-			position.y += 8.0f;
-			float testeRadius = 0.5f;
-			float testeHeight = 1.6f;
-			Debug.DrawLine (position, position + Vector3.down * 8);
-			Vector3 position2 = position;
-			position2.y += testeRadius;
-//			if (Physics.SphereCast(position, testeRadius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-//				((testeHeight / 2f) - testeRadius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
-			if (Physics.SphereCast(position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-			   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore)) //Motivo da modificação: Guilherme + Modelo.Acredito que a escala do modelo tenha zoado TUDO...
-			{
+            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, ~0, QueryTriggerInteraction.Ignore))
+            {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;
             }

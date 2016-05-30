@@ -59,8 +59,10 @@ public class ControlLocalPlayer : NetworkBehaviour {
                     {
                         role = "Shooter";
 
+                        Transform shooterSpawnPoints = GameObject.Find("ShooterSpawnPoints").transform;
+
                         // Subtracted 1 from numberOfPlayer because indexing of children starts at 0
-                        spawnPoint = GameObject.Find("ShooterSpawnPoints").transform.GetChild(numberOfPlayers%transform.childCount);
+                        spawnPoint = shooterSpawnPoints.GetChild(numberOfPlayers % shooterSpawnPoints.childCount);
 						
 
                         // Quando desconectar da partida, lembra de desativar!!!

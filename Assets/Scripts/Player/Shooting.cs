@@ -5,10 +5,13 @@ using UnityEngine.Networking;
 
 public class Shooting : NetworkBehaviour {
 
-	[SerializeField] static int damage = 20;
-	[SerializeField] static int upgradeAmount = 10;
-	[SyncVar] private int realDamage = damage;
-    [SerializeField] float shootDelay = 0.2f;
+	[SerializeField] float shootDelay = 0.2f;
+
+	[SerializeField] int upgradeAmount = 10;
+	[SerializeField] [SyncVar] int damage = 10;
+    public static int damageStatic;
+    private static int upgradeAmountStatic;
+    
 
     private Ray ray; // the ray that will be shot
     private RaycastHit hit; // variable to hold the object that is hit
@@ -20,6 +23,9 @@ public class Shooting : NetworkBehaviour {
 
     void Start()
     {
+        damageStatic = damage;
+        upgradeAmountStatic = upgradeAmount;
+
         myAnimator = GetComponent<Animator>();
         elapsedTime = shootDelay;
 		enemySpawner = GameObject.Find ("EnemySpawner");
@@ -32,20 +38,22 @@ public class Shooting : NetworkBehaviour {
     //    myAnimator.Rebind();
     //    myAnimator.SetBool("isDead", false);
     //}
+     
+    [Command]
+    void CmdSendDamage(int damage, GameObject go)
+    {
+        go.GetComponent<Combat>().CmdTakeDamage(damage);
 
-	[Command]
-	void CmdSendDamage(int id, int damage)
-	{
-		Combat[] combatComponentList = enemySpawner.transform.GetComponentsInChildren<Combat> ();
-		foreach (Combat component in combatComponentList) 
-		{
-			if (id == component.id) 
-			{
-				component.CmdTakeDamage(damage);
-				break;
-			}
-		}
-	}
+        //Combat[] combatComponentList = enemySpawner.transform.GetComponentsInChildren<Combat>();
+        //foreach (Combat component in combatComponentList)
+        //{
+        //    if (id == component.id)
+        //    {
+        //        component.CmdTakeDamage(damage);
+        //        break;
+        //    }
+        //}
+    }
 
     void Shoot()
     {
@@ -57,10 +65,8 @@ public class Shooting : NetworkBehaviour {
             if (hit.transform.CompareTag("Enemy"))
             {
                 Debug.DrawLine(transform.position, hit.point, Color.green);
-				int id = hit.transform.GetComponent<Combat> ().id;
-                //hit.transform.GetComponent<Combat>().CmdTakeDamage(damage);
-				CmdSendDamage(id, realDamage);
-                //Debug.Log("TOMOU HIT, FPS PLAYER!");
+				//int id = hit.transform.GetComponent<Combat> ().id;
+				CmdSendDamage(damage, hit.transform.gameObject);
             }
         }
     }
@@ -82,13 +88,12 @@ public class Shooting : NetworkBehaviour {
         else if (isLocalPlayer)
             myAnimator.SetBool("isShooting", false);
 
-		realDamage = damage;
-		print (realDamage);
+		damage = damageStatic;
     }
 		
 	public static void ShootingUpgradeDamage ()
 	{
-		damage += upgradeAmount;
+		damageStatic += upgradeAmountStatic;
 	}
 				
 }

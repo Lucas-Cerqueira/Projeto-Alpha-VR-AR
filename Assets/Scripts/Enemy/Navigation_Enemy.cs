@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Navigation_Enemy : NetworkBehaviour {
 
+    [SerializeField] private bool lookForTarget;
     [SerializeField] private int attackDamage = 50;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
     [SerializeField] private float maxDistanceToTargetPlayer = 15f;
@@ -37,7 +38,6 @@ public class Navigation_Enemy : NetworkBehaviour {
     {
         if (target.CompareTag("Shooter"))
         {
-            print(Vector3.Distance(transform.position, target.position));
             if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange)
             {
                 elapsedTimeAttacking += Time.deltaTime;
@@ -104,24 +104,27 @@ public class Navigation_Enemy : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        if (!combatEnemy.isDead && !targetFound)
-            LookForTarget();
-
-        if (targetFound)
+        if (lookForTarget)
         {
-            if (combatTarget.isDead)
+            if (!combatEnemy.isDead && !targetFound)
+                LookForTarget();
+
+            if (targetFound)
             {
-                agent.ResetPath();
-                agent.SetDestination(GameObject.Find("Tower").transform.position);
-                myAnimator.SetBool("isAttacking", false);
-                myAnimator.SetBool("isWalking", true);
-                targetFound = false;
-                elapsedTimeAttacking = 0f;
-            }
-            else
-            {
-                agent.SetDestination(target.position);
-                AttackTarget();
+                if (combatTarget.isDead)
+                {
+                    agent.ResetPath();
+                    agent.SetDestination(GameObject.Find("Tower").transform.position);
+                    myAnimator.SetBool("isAttacking", false);
+                    myAnimator.SetBool("isWalking", true);
+                    targetFound = false;
+                    elapsedTimeAttacking = 0f;
+                }
+                else
+                {
+                    agent.SetDestination(target.position);
+                    AttackTarget();
+                }
             }
         }
 	}
