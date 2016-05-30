@@ -40,6 +40,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
             Camera.main.gameObject.SetActive(false);
 
+            SetLayerOnAll(this.gameObject, 9);
+
             manager.matchMaker.ListMatches(0, 20, manager.matchName, manager.OnMatchList);
 
             if (manager.matches.Count != 0)
@@ -123,6 +125,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
         }
         else
         {
+            SetLayerOnAll(this.gameObject, 10);
+
             transform.GetChild(0).gameObject.SetActive(false);
             if (gameObject.CompareTag("General"))
                 transform.GetChild(1).gameObject.SetActive(false);
@@ -137,6 +141,15 @@ public class ControlLocalPlayer : NetworkBehaviour {
             //    manager.DisconnectHost();
             //else
                 manager.DisconnectClient();
+        }
+    }
+
+    static void SetLayerOnAll(GameObject obj, int layer)
+    {
+        foreach (Transform trans in obj.GetComponentsInChildren<Transform>(true))
+        {
+            if (trans.gameObject.layer != 10)
+                trans.gameObject.layer = layer;
         }
     }
 }

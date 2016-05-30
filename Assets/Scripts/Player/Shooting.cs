@@ -5,10 +5,10 @@ using UnityEngine.Networking;
 
 public class Shooting : NetworkBehaviour {
 
-	[SerializeField] float shootDelay = 0.2f;
-
+	[SerializeField] public float shootDelay = 0.2f;
 	[SerializeField] int upgradeAmount = 10;
 	[SerializeField] [SyncVar] int damage = 10;
+
     public static int damageStatic;
     private static int upgradeAmountStatic;
     
@@ -16,8 +16,7 @@ public class Shooting : NetworkBehaviour {
     private Ray ray; // the ray that will be shot
     private RaycastHit hit; // variable to hold the object that is hit
 
-    private float elapsedTime;
-	private GameObject enemySpawner;
+    public float elapsedTime;
 
     private Animator myAnimator;
 
@@ -28,7 +27,6 @@ public class Shooting : NetworkBehaviour {
 
         myAnimator = GetComponent<Animator>();
         elapsedTime = shootDelay;
-		enemySpawner = GameObject.Find ("EnemySpawner");
     }
 
 

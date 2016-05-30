@@ -61,10 +61,14 @@ public class Combat : NetworkBehaviour
     [Command]
     public void CmdTakeDamage(int amount)
     {
-        if (!isServer)
+        if (!isServer || isDead)
             return;
 
         health -= amount;
+
+        HitHandler hitHandler = GetComponent<HitHandler>();
+        if (hitHandler)
+            hitHandler.TakeHit();
 
         if (health <= 0)
         {

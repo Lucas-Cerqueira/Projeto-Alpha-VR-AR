@@ -38,6 +38,7 @@ public class Navigation_Enemy : NetworkBehaviour {
     {
         if (target.CompareTag("Shooter"))
         {
+            print (Vector3.Distance(transform.position, target.position));
             if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange)
             {
                 elapsedTimeAttacking += Time.deltaTime;

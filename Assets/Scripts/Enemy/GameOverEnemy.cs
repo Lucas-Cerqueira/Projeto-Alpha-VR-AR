@@ -35,6 +35,8 @@ public class GameOverEnemy : GameOver{
         transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
         GetComponent<NavMeshAgent>().Stop();
 
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         myAnimator.SetBool("isAttacking", false);
 		if (money) money.GetComponent<MoneyHandler>().AddMoney(100);
         //NetworkServer.Destroy(this.gameObject);

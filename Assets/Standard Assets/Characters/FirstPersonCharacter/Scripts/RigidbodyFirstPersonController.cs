@@ -140,7 +140,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 RotateView();
 
-                if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+                if (Input.GetButtonDown("Jump") && !m_Jump)
                 {
                     m_Jump = true;
                 }
@@ -230,8 +230,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             Vector2 input = new Vector2
                 {
-                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
-                    y = CrossPlatformInputManager.GetAxis("Vertical")
+                    x = Input.GetAxisRaw("Horizontal"),
+                    y = Input.GetAxisRaw("Vertical")
                 };
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
