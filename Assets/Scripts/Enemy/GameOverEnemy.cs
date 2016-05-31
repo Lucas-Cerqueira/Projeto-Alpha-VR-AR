@@ -20,6 +20,7 @@ public class GameOverEnemy : GameOver{
     void OnEnable()
     {
         transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+		GetComponent<Navigation_Enemy> ().enabled = true;
     }
 
 	// Update is called once per frame
@@ -51,6 +52,7 @@ public class GameOverEnemy : GameOver{
     void RpcDeactivateStuff()
     {
         GetComponent<HealthBar>().enabled = false;
+		GetComponent<Navigation_Enemy> ().enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
         GetComponent<NavMeshAgent>().Stop();
