@@ -14,6 +14,7 @@ public class TargetDetection : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
+            print("entrou");
             shootLaser.enemiesInRange.Add(other.transform.GetComponentInParent<Combat>());
         }
     }

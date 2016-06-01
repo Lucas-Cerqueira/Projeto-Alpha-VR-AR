@@ -10,6 +10,7 @@ public class Navigation_Enemy : NetworkBehaviour {
     [SerializeField] private float maxDistanceToTargetPlayer = 15f;
     [SerializeField] private float meleeAttackRange = 0.5f;
 
+    private Vector3 towerTargetPosition;
     private bool targetFound = false;
     private Transform target;
     private Combat combatEnemy;
@@ -24,7 +25,7 @@ public class Navigation_Enemy : NetworkBehaviour {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, maxDistanceToTargetPlayer);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i].CompareTag("Shooter") || hitColliders[i].CompareTag("Turret"))
+            if (hitColliders[i].CompareTag("Shooter") || hitColliders[i].CompareTag("Turret") || hitColliders[i].CompareTag("Tower"))
             {
                 print("Target found!");
                 targetFound = true;
@@ -57,13 +58,18 @@ public class Navigation_Enemy : NetworkBehaviour {
                 myAnimator.SetBool("isAttacking", false);
             }
         }
-        else if (target.CompareTag("Turret"))
+        else if (target.CompareTag("Turret") || target.CompareTag("Tower"))
         {
-            //if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange && agent.velocity.magnitude <= 0.5f)
-            if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange)
+            float distanceToTarget;
+            if (target.CompareTag("Tower"))
+                distanceToTarget = Vector3.Distance(transform.position, towerTargetPosition);
+            else
+                distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+            if (distanceToTarget <= meleeAttackRange)
             {
-                if (agent.velocity.magnitude <= 0.5f)
-                {
+               // if (agent.velocity.magnitude <= 0.5f)
+                //{
                     elapsedTimeAttacking += Time.deltaTime;
                     agent.Stop();
                     myAnimator.SetBool("isWalking", false);
@@ -75,7 +81,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                         if (isServer)
                             combatTarget.CmdTakeDamage(attackDamage);
                     }
-                }
+                //}
             }
             else
             {
@@ -92,7 +98,8 @@ public class Navigation_Enemy : NetworkBehaviour {
 
 		agent = gameObject.GetComponent<NavMeshAgent>();
         target = GameObject.Find("Tower").transform;
-		agent.SetDestination(target.position);
+        towerTargetPosition = target.position + new Vector3(0, 0, -20);
+		agent.SetDestination(towerTargetPosition);
 
         combatEnemy = GetComponent<Combat>();
         targetFound = false;
@@ -115,7 +122,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                 if (combatTarget.isDead)
                 {
                     agent.ResetPath();
-                    agent.SetDestination(GameObject.Find("Tower").transform.position);
+                    agent.SetDestination(towerTargetPosition);
                     myAnimator.SetBool("isAttacking", false);
                     myAnimator.SetBool("isWalking", true);
                     targetFound = false;
@@ -130,20 +137,20 @@ public class Navigation_Enemy : NetworkBehaviour {
         }
 	}
 
-	void OnCollisionStay(Collision collision) 
-    {
-		if (collision.gameObject.tag == "Tower" && Time.realtimeSinceStartup - actualTime > timeBetweenAttacks) 
-		{
-            agent.Stop();
-			actualTime = Time.realtimeSinceStartup;
-            myAnimator.SetBool("isWalking", false);
-            myAnimator.SetBool("isAttacking", true);
-            //collision.gameObject.GetComponent <Life_Bar> ().doDamage (damage);
-            if (isServer)
-                collision.gameObject.GetComponent<Combat>().CmdTakeDamage(attackDamage);
+    //void OnCollisionStay(Collision collision) 
+    //{
+    //    if (collision.gameObject.tag == "Tower" && Time.realtimeSinceStartup - actualTime > timeBetweenAttacks) 
+    //    {
+    //        agent.Stop();
+    //        actualTime = Time.realtimeSinceStartup;
+    //        myAnimator.SetBool("isWalking", false);
+    //        myAnimator.SetBool("isAttacking", true);
+    //        //collision.gameObject.GetComponent <Life_Bar> ().doDamage (damage);
+    //        if (isServer)
+    //            collision.gameObject.GetComponent<Combat>().CmdTakeDamage(attackDamage);
 			
-		}
-        //else
-        //    myAnimator.SetBool("isAttacking", false);
-	}
+    //    }
+    //    //else
+    //    //    myAnimator.SetBool("isAttacking", false);
+    //}
 }

@@ -46,7 +46,7 @@ public class Shoot_Laser : NetworkBehaviour {
             //enemiesInRange[0].GetComponent<Combat>().CmdSendDamage(initialDamage);
             correctHits++;
         }
-        if (correctHits == Mathf.Ceil(enemiesInRange[0].maxHealth / (float)initialDamage))
+        if (enemiesInRange[0].isDead)
         {
             enemiesInRange.RemoveAt(0);
             correctHits = 0;

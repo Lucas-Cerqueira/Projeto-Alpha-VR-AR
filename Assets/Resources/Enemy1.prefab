@@ -804,8 +804,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.4419, y: 1840.8052, z: 63.649456}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: -132.23105, y: 114.21957, z: -100.46144}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 22417180}
   - {fileID: 431516}
@@ -1508,8 +1508,8 @@ MonoBehaviour:
   lookForTarget: 1
   attackDamage: 25
   timeBetweenAttacks: 1
-  maxDistanceToTargetPlayer: 80
-  meleeAttackRange: 52
+  maxDistanceToTargetPlayer: 40
+  meleeAttackRange: 20
 --- !u!114 &11416766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2314,8 +2314,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 174672}
   m_Enabled: 1
   m_Radius: 4
-  m_Speed: 50
-  m_Acceleration: 20
+  m_Speed: 30
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 1080
   m_StoppingDistance: 0
@@ -2534,7 +2534,7 @@ ParticleSystem:
         rgba: 4278214679
       minMaxState: 2
     startSize:
-      scalar: 20
+      scalar: 6
       maxCurve:
         serializedVersion: 2
         m_Curve:
