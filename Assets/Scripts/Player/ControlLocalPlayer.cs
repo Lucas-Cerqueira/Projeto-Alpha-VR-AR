@@ -128,8 +128,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
             SetLayerOnAll(this.gameObject, 10);
 
             transform.GetChild(0).gameObject.SetActive(false);
-            if (gameObject.CompareTag("General"))
-                transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
