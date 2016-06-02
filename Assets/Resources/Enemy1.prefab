@@ -564,7 +564,6 @@ GameObject:
   - 4: {fileID: 402214}
   - 95: {fileID: 9549436}
   - 114: {fileID: 11416766}
-  - 54: {fileID: 5429708}
   - 195: {fileID: 19511716}
   - 114: {fileID: 11481960}
   - 114: {fileID: 11442154}
@@ -573,6 +572,7 @@ GameObject:
   - 114: {fileID: 11402374}
   - 114: {fileID: 11443270}
   - 114: {fileID: 11452064}
+  - 54: {fileID: 5467148}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -804,7 +804,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -132.23105, y: 114.21957, z: -100.46144}
+  m_LocalPosition: {x: -44.07389, y: 26.93523, z: 2.869587}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 22417180}
@@ -1410,7 +1410,7 @@ Transform:
   - {fileID: 441502}
   m_Father: {fileID: 445044}
   m_RootOrder: 0
---- !u!54 &5429708
+--- !u!54 &5467148
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1421,7 +1421,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -1433,7 +1433,7 @@ MeshCollider:
   m_GameObject: {fileID: 112722}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300014, guid: ceb8f02f6ebb07b4a8058c0ac969b178, type: 3}
@@ -1445,7 +1445,7 @@ BoxCollider:
   m_GameObject: {fileID: 112722}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 11.324247, y: 56.49588, z: 26.64934}
   m_Center: {x: 0.3654133, y: 19.946514, z: -7.336217}

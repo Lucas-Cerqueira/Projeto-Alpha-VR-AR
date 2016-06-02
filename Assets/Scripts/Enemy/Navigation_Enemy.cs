@@ -27,7 +27,6 @@ public class Navigation_Enemy : NetworkBehaviour {
         {
             if (hitColliders[i].CompareTag("Shooter") || hitColliders[i].CompareTag("Turret") || hitColliders[i].CompareTag("Tower"))
             {
-                print("Target found!");
                 targetFound = true;
                 target = hitColliders[i].transform;
                 combatTarget = hitColliders[i].GetComponent<Combat>();
@@ -39,7 +38,6 @@ public class Navigation_Enemy : NetworkBehaviour {
     {
         if (target.CompareTag("Shooter"))
         {
-            print (Vector3.Distance(transform.position, target.position));
             if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange)
             {
                 elapsedTimeAttacking += Time.deltaTime;
