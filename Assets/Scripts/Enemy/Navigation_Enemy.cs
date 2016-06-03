@@ -110,7 +110,6 @@ public class Navigation_Enemy : NetworkBehaviour {
         myAnimator.SetBool("isWalking", true);
 		prevRotation = transform.rotation;
 		prevPosition = transform.position;
-        //myAnimator
 	}
 	
 	// Update is called once per frame
@@ -118,12 +117,12 @@ public class Navigation_Enemy : NetworkBehaviour {
     {
         if (lookForTarget)
         {
-            if (!combatEnemy.isDead && !targetFound)
+            if (combatEnemy.health > 0 && !targetFound)
                 LookForTarget();
 
             if (targetFound)
             {
-                if (combatTarget.isDead)
+                if (combatTarget.health <= 0)
                 {
                     agent.ResetPath();
                     agent.SetDestination(towerTargetPosition);
@@ -139,20 +138,20 @@ public class Navigation_Enemy : NetworkBehaviour {
                 }
             }
         }
-		if (isServer) {
-			if (transform.position != prevPosition) {
-				prevPosition = transform.position;
-				realPosition = transform.position;
-			}
-			if (transform.rotation != prevRotation) {
-				prevRotation = transform.rotation;
-				realRotation = transform.rotation;
-			}
-		}
-		if (isLocalPlayer) {
-			transform.position = realPosition;
-			transform.rotation = realRotation;
-		}
+        //if (isServer) {
+        //    if (transform.position != prevPosition) {
+        //        prevPosition = transform.position;
+        //        realPosition = transform.position;
+        //    }
+        //    if (transform.rotation != prevRotation) {
+        //        prevRotation = transform.rotation;
+        //        realRotation = transform.rotation;
+        //    }
+        //}
+        //if (isLocalPlayer) {
+        //    transform.position = realPosition;
+        //    transform.rotation = realRotation;
+        //}
 	}
 
     //void OnCollisionStay(Collision collision) 

@@ -67,6 +67,7 @@ public class Shooting : NetworkBehaviour {
                 Debug.DrawLine(transform.position, hit.point, Color.green);
 				//int id = hit.transform.GetComponent<Combat> ().id;
 				CmdSendDamage(damage, hit.transform.parent.gameObject); // parent because the collider is in a child
+                //CmdSendDamage(damage, hit.transform.gameObject);
             }
         }
     }

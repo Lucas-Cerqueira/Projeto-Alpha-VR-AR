@@ -581,12 +581,12 @@ GameObject:
   - 114: {fileID: 11481960}
   - 114: {fileID: 11416766}
   - 195: {fileID: 19511716}
-  - 114: {fileID: 11442154}
   - 114: {fileID: 11415176}
   - 114: {fileID: 11412630}
   - 114: {fileID: 11402374}
   - 114: {fileID: 11443270}
   - 114: {fileID: 11452064}
+  - 114: {fileID: 11431184}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &11442154
+--- !u!114 &11431184
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1545,13 +1545,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 4
+  m_SendInterval: 0.083333336
+  m_SyncRotationAxis: 0
   m_RotationSyncCompression: 2
   m_SyncSpin: 1
   m_MovementTheshold: 0.001
   m_SnapThreshold: 5
-  m_InterpolateRotation: 1
+  m_InterpolateRotation: 0.1
   m_InterpolateMovement: 1
 --- !u!114 &11443270
 MonoBehaviour:
