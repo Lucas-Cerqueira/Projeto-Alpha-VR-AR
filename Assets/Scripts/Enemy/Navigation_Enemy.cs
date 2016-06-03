@@ -19,6 +19,10 @@ public class Navigation_Enemy : NetworkBehaviour {
     private Animator myAnimator;
 	private float actualTime = 0.0f;
     private float elapsedTimeAttacking;
+	[SyncVar] Vector3 realPosition;
+	[SyncVar] Quaternion realRotation;
+	private Vector3 prevPosition;
+	private Quaternion prevRotation;
 
     void LookForTarget()
     {
@@ -104,6 +108,8 @@ public class Navigation_Enemy : NetworkBehaviour {
 
         myAnimator = GetComponent<Animator>();
         myAnimator.SetBool("isWalking", true);
+		prevRotation = transform.rotation;
+		prevPosition = transform.position;
         //myAnimator
 	}
 	
@@ -133,6 +139,20 @@ public class Navigation_Enemy : NetworkBehaviour {
                 }
             }
         }
+		if (isServer) {
+			if (transform.position != prevPosition) {
+				prevPosition = transform.position;
+				realPosition = transform.position;
+			}
+			if (transform.rotation != prevRotation) {
+				prevRotation = transform.rotation;
+				realRotation = transform.rotation;
+			}
+		}
+		if (isLocalPlayer) {
+			transform.position = realPosition;
+			transform.rotation = realRotation;
+		}
 	}
 
     //void OnCollisionStay(Collision collision) 
