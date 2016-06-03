@@ -44,11 +44,11 @@ public class CreateTurret : NetworkBehaviour {
 				ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				if (Physics.Raycast (ray, out hit, 500, layermask))
                 {
-					if (hit.collider.gameObject.tag == "Scenario") 
+					if (hit.collider.tag == "Scenario") 
                     {
 						if (plotTurret) 
                         {
-							Debug.DrawLine (ray.origin, hit.point, Color.cyan);
+							
 							//plotTurret.GetComponent<Renderer> ().enabled = true;
                             plotTurret.SetActive(true);
                             plotTurret.transform.position = hit.point;

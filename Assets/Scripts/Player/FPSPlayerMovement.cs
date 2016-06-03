@@ -104,7 +104,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 float speed;
                 GetInput(out speed);
                 myAnimator.SetFloat("Speed", m_MoveDir.magnitude);
-                print(m_MoveDir.magnitude);
 
                 // always move along the camera forward as it is the direction that it being aimed at
                 Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;

@@ -40,7 +40,9 @@ public class Shooting : NetworkBehaviour {
     [Command]
     void CmdSendDamage(int damage, GameObject go)
     {
-        go.GetComponent<Combat>().CmdTakeDamage(damage);
+        Combat combat = go.GetComponent<Combat>();
+        if (combat)
+            combat.CmdTakeDamage(damage);
 
         //Combat[] combatComponentList = enemySpawner.transform.GetComponentsInChildren<Combat>();
         //foreach (Combat component in combatComponentList)
@@ -64,7 +66,7 @@ public class Shooting : NetworkBehaviour {
             {
                 Debug.DrawLine(transform.position, hit.point, Color.green);
 				//int id = hit.transform.GetComponent<Combat> ().id;
-				CmdSendDamage(damage, hit.transform.gameObject);
+				CmdSendDamage(damage, hit.transform.parent.gameObject); // parent because the collider is in a child
             }
         }
     }

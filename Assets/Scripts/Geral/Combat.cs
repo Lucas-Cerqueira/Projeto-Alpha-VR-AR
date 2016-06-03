@@ -72,8 +72,6 @@ public class Combat : NetworkBehaviour
 
         if (health <= 0)
         {
-            isDead = true;
-
             if (destroyOnDeath)
             {
                 this.gameObject.GetComponent<GameOver>().EndGame();
@@ -103,7 +101,6 @@ public class Combat : NetworkBehaviour
             int point = Random.Range(0, shooterSpawnPoints.childCount);
             transform.position = shooterSpawnPoints.GetChild(point).position;
             transform.rotation = shooterSpawnPoints.GetChild(point).rotation;
-            isDead = false;
         }
     }
 }

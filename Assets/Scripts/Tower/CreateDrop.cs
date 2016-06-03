@@ -51,7 +51,7 @@ public class CreateDrop : NetworkBehaviour {
 						} 
                         else 
                         {
-							plotDrop = (GameObject)Instantiate (Resources.Load ("Drop"), hit.point, Quaternion.identity);
+							plotDrop = (GameObject)Instantiate (Resources.Load ("HealthDrop"), hit.point, Quaternion.identity);
                             plotDrop.transform.position = new Vector3(plotDrop.transform.position.x, plotDrop.transform.position.y + heightDrop, plotDrop.transform.position.z);
 							plotDrop.GetComponent<Collider> ().enabled = false;
 						}

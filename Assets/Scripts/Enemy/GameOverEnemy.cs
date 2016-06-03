@@ -19,7 +19,7 @@ public class GameOverEnemy : GameOver{
 	
     void OnEnable()
     {
-        transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+        transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = true;
 		GetComponent<Navigation_Enemy> ().enabled = true;
     }
 
@@ -33,10 +33,8 @@ public class GameOverEnemy : GameOver{
         RpcDeactivateStuff();
         GetComponent<HealthBar>().enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<NavMeshAgent>().Stop();
-
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         
 		if (money) money.GetComponent<MoneyHandler>().AddMoney(100);
@@ -54,7 +52,7 @@ public class GameOverEnemy : GameOver{
         GetComponent<HealthBar>().enabled = false;
 		GetComponent<Navigation_Enemy> ().enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<NavMeshAgent>().Stop();
     }
 }
