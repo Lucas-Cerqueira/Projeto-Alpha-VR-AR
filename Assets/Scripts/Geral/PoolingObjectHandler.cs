@@ -94,37 +94,39 @@ public class PoolingObjectHandler : MonoBehaviour
 
 	GameObject CreateFromPool(Vector3 pos, Quaternion rot)
 	{
+//		if (freeObjects.Count == 0)
+//		{
+//			if (currentPoolSize < maxPoolSize)
+//			{
+//				int newPoolSize = (int) (currentPoolSize*growthRate);
+//				if (newPoolSize > maxPoolSize)
+//				{
+//					newPoolSize = maxPoolSize;
+//				}
+//				Debug.LogWarning("Growing pool " + gameObject + " to " + newPoolSize);
+//
+//				for (int n = currentPoolSize; n < newPoolSize; n++)
+//				{
+//					var newGo = InstantiatePrefab(Vector3.zero, Quaternion.identity);
+//					newGo.SetActive(false);
+//					freeObjects.Push(newGo);
+//
+//					if (autoParent)
+//					{
+//						newGo.transform.parent = transform;
+//					}
+//				}
+//				currentPoolSize = newPoolSize;
+//			}
+//			else
+//			{
+//				Debug.LogError("Pool empty for " + prefab);
+//				return null;
+//			}
+//		}
 		if (freeObjects.Count == 0)
-		{
-			if (currentPoolSize < maxPoolSize)
-			{
-				int newPoolSize = (int) (currentPoolSize*growthRate);
-				if (newPoolSize > maxPoolSize)
-				{
-					newPoolSize = maxPoolSize;
-				}
-				Debug.LogWarning("Growing pool " + gameObject + " to " + newPoolSize);
-
-				for (int n = currentPoolSize; n < newPoolSize; n++)
-				{
-					var newGo = InstantiatePrefab(Vector3.zero, Quaternion.identity);
-					newGo.SetActive(false);
-					freeObjects.Push(newGo);
-
-					if (autoParent)
-					{
-						newGo.transform.parent = transform;
-					}
-				}
-				currentPoolSize = newPoolSize;
-			}
-			else
-			{
-				Debug.LogError("Pool empty for " + prefab);
-				return null;
-			}
-		}
-
+			return null;
+		
 		var go = freeObjects.Pop();
 
 		go.transform.position = pos;

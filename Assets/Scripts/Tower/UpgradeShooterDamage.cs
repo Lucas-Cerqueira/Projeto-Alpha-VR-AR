@@ -31,8 +31,7 @@ public class UpgradeShooterDamage : NetworkBehaviour {
 	{
 		Shooting.ShootingUpgradeDamage ();
 	}
-
-	[Client]
+		
 	public void RequestUpgradeDamage ()
 	{
 		if (moneyHandler.GetComponent<MoneyHandler>().GetMoney() >= upgradePrice) 

@@ -9,7 +9,7 @@ public class Shooting : NetworkBehaviour {
 	[SerializeField] public float shootDelay = 0.2f;
 	[SerializeField] public float soundDelay = 4f;
 	[SerializeField] int upgradeAmount = 10;
-	[SerializeField] [SyncVar] int damage = 10;
+	[SerializeField] [SyncVar (hook = "OnChangeDamage")] public int damage = 10;
 	[SerializeField] private AudioClip m_ShootingSound;
 	private AudioSource m_AudioSource;
 
@@ -103,11 +103,19 @@ public class Shooting : NetworkBehaviour {
 			m_AudioSource.Stop ();
 		}
 		damage = damageStatic;
+		print ("damage = damageStatic;");
 	}
-
+		
 	public static void ShootingUpgradeDamage ()
 	{
+		print ("ShootingUpgradeDamage");
 		damageStatic += upgradeAmountStatic;
+	}
+
+	void OnChangeDamage (int clientDamage)
+	{
+		print ("OnChangeDamage");
+		damageStatic = clientDamage;
 	}
 
 }
