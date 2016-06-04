@@ -33,7 +33,7 @@ public class EnemySpawner : NetworkBehaviour
 			elapsedTime += Time.deltaTime;
 			if (elapsedTime >= enemySpawnDelay)
 			{
-				GetComponent<PoolingObjectHandler> ().ServerCreateFromPool(transform.position, transform.rotation);
+				transform.parent.GetComponent<PoolingObjectHandler> ().ServerCreateFromPool(transform.position, transform.rotation);
 				elapsedTime = 0;
 			}
 		}

@@ -68,7 +68,7 @@ public class Combat : NetworkBehaviour
 
         HitHandler hitHandler = GetComponent<HitHandler>();
         if (hitHandler)
-            hitHandler.TakeHit();
+            hitHandler.RpcTakeHit();
 
         if (health <= 0)
         {
