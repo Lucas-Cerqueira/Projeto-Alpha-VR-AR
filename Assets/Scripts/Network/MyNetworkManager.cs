@@ -35,7 +35,8 @@ public class MyNetworkManager : NetworkManager {
         {
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
-                roleSelectionDropdown = GameObject.Find("RoleSelectionDropdown").GetComponent<Dropdown>();
+                if (roleSelectionDropdown = GameObject.Find("RoleSelectionDropdown").GetComponent<Dropdown>())
+                { }
                 roleSelectionDropdown.onValueChanged.RemoveAllListeners();
                 roleSelectionDropdown.onValueChanged.AddListener(UpdatePlayerRole);
                 updatedDropdownListener = true;

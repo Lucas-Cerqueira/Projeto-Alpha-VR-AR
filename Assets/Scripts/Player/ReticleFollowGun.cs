@@ -19,9 +19,8 @@ public class ReticleFollowGun : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        print((weapon.forward));
         transform.position = new Vector3(transform.position.x, 
-                                initialPos.y + (weapon.position.y - weaponInitialTransform.position.y) + (weaponInitialTransform.forward - weapon.forward).y,
+                                initialPos.y + (weapon.position.y - weaponInitialTransform.position.y),
                                 transform.position.z);
 	}
 }

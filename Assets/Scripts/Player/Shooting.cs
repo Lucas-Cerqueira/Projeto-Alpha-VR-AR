@@ -87,7 +87,7 @@ public class Shooting : NetworkBehaviour {
 		if (Input.GetButton ("Fire1") && isLocalPlayer) {
 			myAnimator.SetBool ("isShooting", true);
 			if (!m_AudioSource.isPlaying){
-				print ("Dei play!");
+				//print ("Dei play!");
 				if (m_AudioSource.clip != m_ShootingSound)
 					m_AudioSource.clip = m_ShootingSound;
 				m_AudioSource.Play ();
@@ -99,22 +99,22 @@ public class Shooting : NetworkBehaviour {
 			}
 		} else if (isLocalPlayer) {
 			myAnimator.SetBool ("isShooting", false);
-			print ("Parei de tocar!");
+			//print ("Parei de tocar!");
 			m_AudioSource.Stop ();
 		}
 		damage = damageStatic;
-		print ("damage = damageStatic;");
+		//print ("damage = damageStatic;");
 	}
 		
 	public static void ShootingUpgradeDamage ()
 	{
-		print ("ShootingUpgradeDamage");
+		//print ("ShootingUpgradeDamage");
 		damageStatic += upgradeAmountStatic;
 	}
 
 	void OnChangeDamage (int clientDamage)
 	{
-		print ("OnChangeDamage");
+		//print ("OnChangeDamage");
 		damageStatic = clientDamage;
 	}
 

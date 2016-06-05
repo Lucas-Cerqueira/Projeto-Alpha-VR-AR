@@ -101,7 +101,7 @@ GameObject:
   - 137: {fileID: 13726304}
   m_Layer: 0
   m_Name: TEeth_Down_003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - 137: {fileID: 13748452}
   m_Layer: 0
   m_Name: TEeth_Down
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ GameObject:
   - 4: {fileID: 459980}
   m_Layer: 0
   m_Name: Armature
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   - 137: {fileID: 13773246}
   m_Layer: 0
   m_Name: Teeth_Up
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ GameObject:
   - 137: {fileID: 13741106}
   m_Layer: 0
   m_Name: HeadArmor_001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,7 +291,7 @@ GameObject:
   - 137: {fileID: 13778576}
   m_Layer: 0
   m_Name: Tongue
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - 137: {fileID: 13770428}
   m_Layer: 0
   m_Name: BodyArmor
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,7 +413,7 @@ GameObject:
   - 137: {fileID: 13780286}
   m_Layer: 0
   m_Name: TailSpikes
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,7 @@ GameObject:
   - 137: {fileID: 13714558}
   m_Layer: 0
   m_Name: HeadArmor
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,7 @@ GameObject:
   - 199: {fileID: 19955600}
   m_Layer: 0
   m_Name: GreenBlood
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,7 +818,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.751034, y: 70.93174, z: 152.8045}
+  m_LocalPosition: {x: -32.204056, y: 18.149996, z: -17.802876}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 22417180}
@@ -1498,6 +1498,7 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   maxDistanceToTargetPlayer: 40
   meleeAttackRange: 20
+  minDistanceToTower: 40
 --- !u!114 &11416766
 MonoBehaviour:
   m_ObjectHideFlags: 1
