@@ -9,6 +9,7 @@ public class Navigation_Enemy : NetworkBehaviour {
     [SerializeField] private float timeBetweenAttacks = 0.5f;
     [SerializeField] private float maxDistanceToTargetPlayer = 15f;
     [SerializeField] private float meleeAttackRange = 0.5f;
+    [SerializeField] private float minDistanceToTower = 2f;
 
     private Vector3 towerTargetPosition;
     private bool targetFound = false;
@@ -60,15 +61,9 @@ public class Navigation_Enemy : NetworkBehaviour {
                 myAnimator.SetBool("isAttacking", false);
             }
         }
-        else if (target.CompareTag("Turret") || target.CompareTag("Tower"))
+        else if (target.CompareTag("Turret"))
         {
-            float distanceToTarget;
-            if (target.CompareTag("Tower"))
-                distanceToTarget = Vector3.Distance(transform.position, towerTargetPosition);
-            else
-                distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-            if (distanceToTarget <= meleeAttackRange)
+            if (Vector3.Distance(transform.position, target.position) <= meleeAttackRange)
             {
                // if (agent.velocity.magnitude <= 0.5f)
                 //{
@@ -91,6 +86,31 @@ public class Navigation_Enemy : NetworkBehaviour {
                 myAnimator.SetBool("isAttacking", false);
             }
         }
+        else if (target.CompareTag("Tower"))
+        {
+            if (Vector3.Distance(transform.position, target.position) <= minDistanceToTower)
+            {
+                // if (agent.velocity.magnitude <= 0.5f)
+                //{
+                elapsedTimeAttacking += Time.deltaTime;
+                agent.Stop();
+                myAnimator.SetBool("isWalking", false);
+                myAnimator.SetBool("isAttacking", true);
+                if (elapsedTimeAttacking >= timeBetweenAttacks)
+                {
+                    //actualTime = Time.realtimeSinceStartup;
+                    elapsedTimeAttacking = 0f;
+                    if (isServer)
+                        combatTarget.CmdTakeDamage(attackDamage);
+                }
+                //}
+            }
+            else
+            {
+                elapsedTimeAttacking = 0f;
+                myAnimator.SetBool("isAttacking", false);
+            }
+        }
     }
 
 	// Use this for initialization
@@ -100,9 +120,10 @@ public class Navigation_Enemy : NetworkBehaviour {
 
 		agent = gameObject.GetComponent<NavMeshAgent>();
         target = GameObject.Find("Tower").transform;
-        towerTargetPosition = target.position + new Vector3(0, 0, -20);
+        towerTargetPosition = target.position;
 		agent.SetDestination(towerTargetPosition);
 
+        combatTarget = target.GetComponent<Combat>();
         combatEnemy = GetComponent<Combat>();
         targetFound = false;
 
@@ -115,6 +136,7 @@ public class Navigation_Enemy : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        print(Vector3.Distance(transform.position, target.position));
         if (lookForTarget)
         {
             if (combatEnemy.health > 0 && !targetFound)
@@ -133,9 +155,15 @@ public class Navigation_Enemy : NetworkBehaviour {
                 }
                 else
                 {
-                    agent.SetDestination(target.position);
+                    if (!target.CompareTag("Tower"))
+                        agent.SetDestination(target.position);
                     AttackTarget();
                 }
+            }
+            else
+            {
+                if (Vector3.Distance(transform.position, target.position) <= minDistanceToTower)
+                    targetFound = true;
             }
         }
         //if (isServer) {

@@ -88,6 +88,9 @@ public class ControlLocalPlayer : NetworkBehaviour {
 					    }
 
    //                     GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
+                        FPSPlayerMovement fpsMovement = GetComponent<FPSPlayerMovement>();
+                        fpsMovement.m_Camera = Camera.main;
+                        fpsMovement.m_MouseLook.Init(transform, Camera.main.transform);
 
                         break;
                     }
