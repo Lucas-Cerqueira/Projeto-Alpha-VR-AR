@@ -11,7 +11,8 @@ public class HealthHandler : NetworkBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		if (isLocalPlayer) 
 		{
 			healthText = GameObject.Find ("LifePercentage").GetComponent<Text> ();
@@ -20,7 +21,14 @@ public class HealthHandler : NetworkBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (isLocalPlayer) healthText.text = myShooter.health + "%";
+	void Update () 
+    {
+        if (isLocalPlayer)
+        {
+            if (healthText)
+                healthText.text = myShooter.health + "%";
+            else
+                if (healthText = GameObject.Find("LifePercentage").GetComponent<Text>()) { }
+        }
 	}
 }
