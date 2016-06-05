@@ -12,10 +12,9 @@ public class HitHandlerEnemy : HitHandler {
             blood.Stop();
 	}
 	
-	public override void TakeHit()
+	public override void RpcTakeHit()
     {
         blood.Play();
     }
-
 
 }

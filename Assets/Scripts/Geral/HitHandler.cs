@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class HitHandler : MonoBehaviour {
+public class HitHandler : NetworkBehaviour {
 
-	public virtual void TakeHit()
+	[ClientRpc]
+	public virtual void RpcTakeHit()
     {
 
     }
