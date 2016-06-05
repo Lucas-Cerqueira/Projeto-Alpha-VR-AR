@@ -136,7 +136,7 @@ public class Navigation_Enemy : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        print(Vector3.Distance(transform.position, target.position));
+        //print(Vector3.Distance(transform.position, target.position));
         if (lookForTarget)
         {
             if (combatEnemy.health > 0 && !targetFound)
