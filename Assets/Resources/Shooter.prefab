@@ -3106,7 +3106,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161192}
-  m_LocalRotation: {x: -0.012049931, y: 0.69302326, z: 0.71437263, w: 0.09615248}
+  m_LocalRotation: {x: -0.012049932, y: 0.6930233, z: 0.7143727, w: 0.096152484}
   m_LocalPosition: {x: -0.51114327, y: -0.60767746, z: -0.20223224}
   m_LocalScale: {x: 0.9999999, y: 0.99999654, z: 0.9999947}
   m_Children:
@@ -3314,7 +3314,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132702}
-  m_LocalRotation: {x: -0.44604596, y: -0.5486739, z: 0.44604588, w: 0.548674}
+  m_LocalRotation: {x: -0.4460459, y: -0.54867387, z: 0.44604582, w: 0.5486739}
   m_LocalPosition: {x: -1.2357221, y: 0.015269612, z: -0.009115219}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1}
   m_Children:
@@ -3515,7 +3515,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106758}
-  m_LocalRotation: {x: 0.0076392856, y: 0.004262241, z: 0.067926064, w: 0.997652}
+  m_LocalRotation: {x: 0.007639286, y: 0.0042622415, z: 0.06792607, w: 0.99765205}
   m_LocalPosition: {x: -0.5970293, y: -0.17651287, z: 0.13716361}
   m_LocalScale: {x: 0.9999998, y: 1, z: 1.0000001}
   m_Children:
@@ -4314,7 +4314,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198054}
-  m_LocalRotation: {x: -0.16475703, y: -0.14682296, z: -0.06484251, w: 0.9731873}
+  m_LocalRotation: {x: -0.16475704, y: -0.14682297, z: -0.064842515, w: 0.9731874}
   m_LocalPosition: {x: -2.0371113, y: -0.29422405, z: -0.6416111}
   m_LocalScale: {x: 0.066534296, y: 0.048902333, z: 0.053624555}
   m_Children: []
@@ -5498,7 +5498,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -5520,7 +5520,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!92 &9204006
 Behaviour:
   m_ObjectHideFlags: 1

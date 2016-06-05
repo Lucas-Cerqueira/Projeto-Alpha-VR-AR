@@ -34,7 +34,10 @@ public class Shooting : NetworkBehaviour {
 		myAnimator = GetComponent<Animator>();
 		soundElapsedTime = soundDelay;
 		elapsedTime = shootDelay;
-		m_AudioSource = GetComponent<AudioSource>();
+		m_AudioSource = gameObject.AddComponent<AudioSource>();
+		m_AudioSource.loop = true;
+		m_AudioSource.playOnAwake = true;
+		m_AudioSource.clip = m_ShootingSound;
 	}
 
 
@@ -87,9 +90,6 @@ public class Shooting : NetworkBehaviour {
 		if (Input.GetButton ("Fire1") && isLocalPlayer) {
 			myAnimator.SetBool ("isShooting", true);
 			if (!m_AudioSource.isPlaying){
-				//print ("Dei play!");
-				if (m_AudioSource.clip != m_ShootingSound)
-					m_AudioSource.clip = m_ShootingSound;
 				m_AudioSource.Play ();
 			}
 			if (elapsedTime >= shootDelay && isLocalPlayer) {

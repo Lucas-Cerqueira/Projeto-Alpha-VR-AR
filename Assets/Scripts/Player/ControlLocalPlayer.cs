@@ -121,6 +121,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
                     }
             }
 
+			GameObject.Find ("MoneyHandlerUI").transform.GetChild (0).gameObject.SetActive (true);
+
             transform.position = spawnPoint.position;
             transform.rotation = spawnPoint.rotation;
 

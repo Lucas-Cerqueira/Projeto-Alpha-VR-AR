@@ -37,13 +37,15 @@ public class GameOverEnemy : GameOver{
         GetComponent<NavMeshAgent>().Stop();
 
         
-		if (money) money.GetComponent<MoneyHandler>().AddMoney(100);
         //NetworkServer.Destroy(this.gameObject);
         int i = Random.Range(1, 3);
         myAnimator.Rebind();
         myAnimator.SetBool("isDead" + i.ToString(), true);
-        if (isServer)
-            transform.parent.GetComponent<PoolingObjectHandler>().ServerReturnToPool(this.gameObject, myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+		if (isServer) 
+		{
+			if (money && GetComponent<Combat>().health >= 0) money.GetComponent<MoneyHandler>().AddMoney(100);
+			transform.parent.GetComponent<PoolingObjectHandler> ().ServerReturnToPool (this.gameObject, myAnimator.GetCurrentAnimatorClipInfo (0) [0].clip.length);
+		}
 	}
 
     [ClientRpc]

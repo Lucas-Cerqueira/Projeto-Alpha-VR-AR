@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class MoneyHandler : NetworkBehaviour {
 
-	[SyncVar] private int money;
+	[SyncVar (hook = "OnMoneyChanged")] private int money;
 	private Text text;
 
 	// Use this for initialization
@@ -35,5 +35,10 @@ public class MoneyHandler : NetworkBehaviour {
 	public int GetMoney ()
 	{
 		return money;
+	}
+
+	public void OnMoneyChanged (int newMoney)
+	{
+		money = newMoney;
 	}
 }
