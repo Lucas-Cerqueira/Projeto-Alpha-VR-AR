@@ -5,9 +5,9 @@ using UnityEngine.Networking;
 
 public class PoolingObjectHandler : MonoBehaviour
 {
-	static Dictionary<string, PoolingObjectHandler> s_pools = new Dictionary<string, PoolingObjectHandler>();
+	static Dictionary<string, PoolingObjectHandler> s_pools;// = new Dictionary<string, PoolingObjectHandler>();
 
-	bool isInitialized;
+	[HideInInspector] public bool isInitialized;
 
 	public GameObject prefab;
 	public int initialPoolSize = 4;
@@ -32,6 +32,7 @@ public class PoolingObjectHandler : MonoBehaviour
 
 	public virtual void Awake()
 	{
+		s_pools = new Dictionary<string, PoolingObjectHandler> ();
 		InitializePool();
 	}
 
@@ -55,7 +56,7 @@ public class PoolingObjectHandler : MonoBehaviour
 		{
 			return;
 		}
-
+			
 		if (prefab != null)
 		{
 			if (prefab.GetComponent<NetworkIdentity>() == null)

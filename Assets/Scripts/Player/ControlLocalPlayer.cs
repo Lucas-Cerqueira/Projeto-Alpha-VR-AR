@@ -139,6 +139,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
             //if (isServer)
             //    manager.DisconnectHost();
             //else
+			GameObject.Find("EnemiesSpawners").GetComponent<PoolingObjectHandler> ().isInitialized = false;
                 manager.DisconnectClient();
         }
     }
