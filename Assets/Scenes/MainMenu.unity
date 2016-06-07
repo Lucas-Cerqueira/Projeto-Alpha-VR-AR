@@ -429,7 +429,7 @@ Prefab:
     - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_SpawnPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 101698, guid: a6587f4bc6d4ff748820d3c26c7a3e0f, type: 2}
+      objectReference: {fileID: 174012, guid: a6587f4bc6d4ff748820d3c26c7a3e0f, type: 2}
     - target: {fileID: 11491538, guid: 68682f28ad625da43bfc0027c999192c, type: 2}
       propertyPath: m_SpawnPrefabs.Array.data[3]
       value: 

@@ -46,7 +46,7 @@ public class Shoot_Laser : NetworkBehaviour {
             //enemiesInRange[0].GetComponent<Combat>().CmdSendDamage(initialDamage);
             correctHits++;
         }
-        if (enemiesInRange[0].isDead)
+		if (enemiesInRange[0].health - initialDamage <= 0)
         {
             enemiesInRange.RemoveAt(0);
             correctHits = 0;
@@ -87,6 +87,11 @@ public class Shoot_Laser : NetworkBehaviour {
             actualTime = Time.realtimeSinceStartup;
             ShootNextEnemy();
         }
+
+
+		foreach (Combat enemy in enemiesInRange) //Needs a better solution!!!
+			if (enemy.health <= 0)
+				enemiesInRange.Remove (enemy);
     }
 		
 }

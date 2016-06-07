@@ -139,6 +139,7 @@ GameObject:
   - 4: {fileID: 457910}
   - 135: {fileID: 13502954}
   - 114: {fileID: 11421648}
+  - 114: {fileID: 11442718}
   m_Layer: 2
   m_Name: Laser
   m_TagString: Laser
@@ -162,6 +163,7 @@ GameObject:
   - 114: {fileID: 11493186}
   - 114: {fileID: 11445832}
   - 114: {fileID: 11461538}
+  - 54: {fileID: 5423542}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Turret
@@ -715,6 +717,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163830}
   m_Mesh: {fileID: 4300018, guid: 750c835f82075c545a4353f07d6e8f7e, type: 3}
+--- !u!54 &5423542
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144084}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6557030
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -775,6 +792,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd2f32e7d7ecaf47835b74391d6cc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11442718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 83
+    i1: 120
+    i2: 78
+    i3: 143
+    i4: 93
+    i5: 174
+    i6: 195
+    i7: 132
+    i8: 248
+    i9: 216
+    i10: 152
+    i11: 103
+    i12: 241
+    i13: 194
+    i14: 178
+    i15: 113
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &11445832
 MonoBehaviour:
   m_ObjectHideFlags: 1
