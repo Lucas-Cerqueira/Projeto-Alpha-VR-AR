@@ -88,7 +88,7 @@ GameObject:
   - 4: {fileID: 417864}
   - 20: {fileID: 2092524}
   - 114: {fileID: 11423398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PreRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 114: {fileID: 11458284}
   - 114: {fileID: 11416322}
   - 114: {fileID: 11434954}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: CameraWithEffects
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - 4: {fileID: 438658}
   - 33: {fileID: 3322216}
   - 23: {fileID: 2321384}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - 4: {fileID: 464030}
   - 33: {fileID: 3322322}
   - 23: {fileID: 2388846}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - 4: {fileID: 484106}
   - 33: {fileID: 3352662}
   - 23: {fileID: 2375242}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stereo Render
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,6 +661,21 @@ GameObject:
   - 4: {fileID: 496856}
   m_Layer: 9
   m_Name: Leg_R_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &123922
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454492}
+  m_Layer: 9
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +724,7 @@ GameObject:
   - 4: {fileID: 480620}
   - 198: {fileID: 19863232}
   - 199: {fileID: 19900648}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +853,7 @@ GameObject:
   - 4: {fileID: 403714}
   - 33: {fileID: 3322546}
   - 23: {fileID: 2301388}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +902,7 @@ GameObject:
   - 4: {fileID: 480058}
   - 33: {fileID: 3370794}
   - 23: {fileID: 2353340}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +920,7 @@ GameObject:
   - 20: {fileID: 2093904}
   - 124: {fileID: 12454136}
   - 114: {fileID: 11405648}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1276,7 +1291,7 @@ GameObject:
   - 4: {fileID: 490390}
   - 33: {fileID: 3328846}
   - 23: {fileID: 2313120}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1403,7 @@ GameObject:
   - 20: {fileID: 2071020}
   - 92: {fileID: 9219440}
   - 114: {fileID: 11405164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PostRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1437,7 +1452,7 @@ GameObject:
   - 4: {fileID: 430138}
   - 33: {fileID: 3327246}
   - 23: {fileID: 2345410}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1568,7 @@ GameObject:
   - 20: {fileID: 2006030}
   - 124: {fileID: 12489224}
   - 114: {fileID: 11441268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1607,7 +1622,7 @@ GameObject:
   - 95: {fileID: 9508956}
   - 114: {fileID: 11472064}
   - 114: {fileID: 11452410}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1700,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 492152}
   - 114: {fileID: 11435346}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1702,7 +1717,7 @@ GameObject:
   - 4: {fileID: 426004}
   - 33: {fileID: 3396006}
   - 23: {fileID: 2390280}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1751,7 @@ GameObject:
   - 4: {fileID: 476078}
   - 33: {fileID: 3377860}
   - 23: {fileID: 2304924}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1844,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469504}
   - 114: {fileID: 11405476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CardboardMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,7 +1991,7 @@ GameObject:
   - 4: {fileID: 480230}
   - 33: {fileID: 3358114}
   - 23: {fileID: 2346906}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,7 +2051,7 @@ GameObject:
   - 4: {fileID: 427656}
   - 33: {fileID: 3337774}
   - 23: {fileID: 2339386}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2177,7 +2192,7 @@ GameObject:
   - 4: {fileID: 413328}
   - 198: {fileID: 19848638}
   - 199: {fileID: 19968432}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2274,7 @@ GameObject:
   - 4: {fileID: 475752}
   - 33: {fileID: 3314910}
   - 23: {fileID: 2300452}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2296,7 +2311,7 @@ GameObject:
   - 81: {fileID: 8150216}
   - 114: {fileID: 11471990}
   - 114: {fileID: 11475174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2347,7 +2362,7 @@ GameObject:
   - 33: {fileID: 3321564}
   - 23: {fileID: 2374748}
   - 114: {fileID: 11406826}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3175,9 +3190,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157076}
-  m_LocalRotation: {x: 0.04173285, y: 0.67702645, z: 0.034624547, w: -0.7339583}
-  m_LocalPosition: {x: -1.6811689, y: 0.8935736, z: -0.056111686}
-  m_LocalScale: {x: 0.9000001, y: 0.9000001, z: 0.9000001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9742877, y: 0.9007415, z: 0.8701578}
   m_Children:
   - {fileID: 409592}
   - {fileID: 431878}
@@ -3192,8 +3207,8 @@ Transform:
   - {fileID: 477876}
   - {fileID: 409264}
   - {fileID: 488698}
-  m_Father: {fileID: 460024}
-  m_RootOrder: 5
+  m_Father: {fileID: 454492}
+  m_RootOrder: 0
 --- !u!4 &410864
 Transform:
   m_ObjectHideFlags: 1
@@ -4196,6 +4211,19 @@ Transform:
   - {fileID: 447070}
   m_Father: {fileID: 484542}
   m_RootOrder: 3
+--- !u!4 &454492
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123922}
+  m_LocalRotation: {x: 0, y: 0.72872496, z: 0, w: -0.6848066}
+  m_LocalPosition: {x: 0.86, y: 1.96, z: -1.11}
+  m_LocalScale: {x: 1.00014, y: 1.000174, z: 1.000107}
+  m_Children:
+  - {fileID: 410508}
+  m_Father: {fileID: 460024}
+  m_RootOrder: 5
 --- !u!4 &454836
 Transform:
   m_ObjectHideFlags: 1
@@ -4320,7 +4348,7 @@ Transform:
   - {fileID: 466000}
   - {fileID: 479622}
   - {fileID: 480126}
-  - {fileID: 410508}
+  - {fileID: 454492}
   m_Father: {fileID: 483582}
   m_RootOrder: 0
 --- !u!4 &460654
@@ -4330,7 +4358,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.022625, y: 8.3, z: -23.891144}
+  m_LocalPosition: {x: -34.79937, y: 14.054453, z: -2.539535}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 478442}
