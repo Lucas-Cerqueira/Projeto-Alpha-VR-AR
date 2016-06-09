@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TCF_Demo_ZMaterial
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: IceFloor
+  m_Shader: {fileID: 4800000, guid: 81ae609a37b59f043ac4256abae11b2e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -19,29 +19,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: dfc6ee92e0e44194e909d4e5967d4d16, type: 3}
+          m_Texture: {fileID: 2800000, guid: bf41612ebcd51ff4f920464f764e13a0, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _Ramp
         second:
-          m_Texture: {fileID: 2800000, guid: 4a056241e2722dc46a7262a8e7073fd9, type: 3}
+          m_Texture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
-          name: _Shininess
-        second: 0.13197397
-      data:
-        first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _RimMin
-        second: 0.51785713
+        second: 0.5
       data:
         first:
           name: _RimMax
@@ -50,24 +42,16 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 0.39705884, g: 0.39705884, b: 0.39705884, a: 1}
+        second: {r: 0.36310557, g: 0.37867495, b: 0.53676474, a: 1}
       data:
         first:
           name: _HColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0.7205882, g: 0.5616349, b: 0.5616349, a: 1}
       data:
         first:
           name: _SColor
-        second: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+        second: {r: 0.27401865, g: 0.24870244, b: 0.33823532, a: 1}
       data:
         first:
           name: _RimColor
-        second: {r: 0.08088237, g: 0.7337728, b: 1, a: 0.24313726}
-      data:
-        first:
-          name: _TintColor
-        second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+        second: {r: 0.8, g: 0.8, b: 0.8, a: 0.6}
