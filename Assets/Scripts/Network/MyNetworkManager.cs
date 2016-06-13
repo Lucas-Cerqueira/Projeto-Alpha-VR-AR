@@ -31,6 +31,8 @@ public class MyNetworkManager : NetworkManager {
 
     void Update()
     {
+        print(useCardBoard);
+
         if (updatedDropdownListener == false)
         {
             if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -49,12 +51,14 @@ public class MyNetworkManager : NetworkManager {
     public void UpdatePlayerRole(int value)
     {
         playerRoleSelected = roleSelectionDropdown.options[value].text;
-		if (playerRoleSelected.Equals ("Shooter")) {
+		if (playerRoleSelected.Equals ("Shooter")) 
+        {
 			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (false);
 			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (true);
 			useVuforia = false;
 		}
-		else {
+		else 
+        {
 			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (true);
 			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (false);
 			useCardBoard = false;

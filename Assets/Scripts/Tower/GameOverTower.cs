@@ -16,8 +16,9 @@ public class GameOverTower : GameOver {
 	}
 
     
-    public virtual void endGame()
+    public override void EndGame()
 	{
+        GameObject.Find ("NetworkManager").GetComponent<NetworkManager>().ServerChangeScene("Game");
 		print ("GAMEOVER");
 	}
 }

@@ -11,7 +11,7 @@ public class Navigation_Enemy : NetworkBehaviour {
     [SerializeField] private float meleeAttackRange = 0.5f;
     [SerializeField] private float minDistanceToTower = 2f;
 
-    private Vector3 towerTargetPosition;
+    private Transform towerTransform;
     private bool targetFound = false;
     private Transform target;
     private Combat combatEnemy;
@@ -120,8 +120,8 @@ public class Navigation_Enemy : NetworkBehaviour {
 
 		agent = gameObject.GetComponent<NavMeshAgent>();
         target = GameObject.Find("Tower").transform;
-        towerTargetPosition = target.position;
-		agent.SetDestination(towerTargetPosition);
+        towerTransform = target;
+        agent.SetDestination(towerTransform.position);
 
         combatTarget = target.GetComponent<Combat>();
         combatEnemy = GetComponent<Combat>();
@@ -147,10 +147,11 @@ public class Navigation_Enemy : NetworkBehaviour {
                 if (combatTarget.health <= 0)
                 {
                     agent.ResetPath();
-                    agent.SetDestination(towerTargetPosition);
+                    agent.SetDestination(towerTransform.position);
                     myAnimator.SetBool("isAttacking", false);
                     myAnimator.SetBool("isWalking", true);
                     targetFound = false;
+                    target = towerTransform;
                     elapsedTimeAttacking = 0f;
                 }
                 else

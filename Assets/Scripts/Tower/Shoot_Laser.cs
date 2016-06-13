@@ -40,16 +40,18 @@ public class Shoot_Laser : NetworkBehaviour {
     void ShootNextEnemy()
     {
         //If the tower hit an enemy...
-        if (Random.Range(1, 101) <= hitChance)
+        if (Random.Range(1, 101) <= hitChance && enemiesInRange[0].health > 0)
         {
             CmdSendDamage(initialDamage, enemiesInRange[0].gameObject);
             //enemiesInRange[0].GetComponent<Combat>().CmdSendDamage(initialDamage);
-            correctHits++;
+            //correctHits++;
         }
-		if (enemiesInRange[0].health - initialDamage <= 0)
+
+		//if (enemiesInRange[0].health - initialDamage <= 0)
+        if (enemiesInRange[0].health <= 0)
         {
             enemiesInRange.RemoveAt(0);
-            correctHits = 0;
+            //correctHits = 0;
         }
     }
 
@@ -89,9 +91,9 @@ public class Shoot_Laser : NetworkBehaviour {
         }
 
 
-		foreach (Combat enemy in enemiesInRange) //Needs a better solution!!!
-			if (enemy.health <= 0)
-				enemiesInRange.Remove (enemy);
+        //foreach (Combat enemy in enemiesInRange) //Needs a better solution!!!
+        //    if (enemy.health <= 0)
+        //        enemiesInRange.Remove (enemy);
     }
 		
 }
