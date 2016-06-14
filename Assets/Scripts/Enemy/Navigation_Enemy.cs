@@ -20,10 +20,13 @@ public class Navigation_Enemy : NetworkBehaviour {
     private Animator myAnimator;
 	private float actualTime = 0.0f;
     private float elapsedTimeAttacking;
-	[SyncVar] Vector3 realPosition;
-	[SyncVar] Quaternion realRotation;
-	private Vector3 prevPosition;
-	private Quaternion prevRotation;
+    private int amountHitsToKill = 0;
+    private int correctHits = 0;
+
+    //[SyncVar] Vector3 realPosition;
+    //[SyncVar] Quaternion realRotation;
+    //private Vector3 prevPosition;
+    //private Quaternion prevRotation;
 
     void LookForTarget()
     {
@@ -35,6 +38,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                 targetFound = true;
                 target = hitColliders[i].transform;
                 combatTarget = hitColliders[i].GetComponent<Combat>();
+                amountHitsToKill = (int)Mathf.Ceil (combatTarget.health / (float)attackDamage);
             }
         }
     }
@@ -51,6 +55,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                 {
                     //actualTime = Time.realtimeSinceStartup;
                     elapsedTimeAttacking = 0f;
+                    correctHits++;
                     if (isServer)
                         combatTarget.CmdTakeDamage(attackDamage);
                 }
@@ -75,6 +80,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                     {
                         //actualTime = Time.realtimeSinceStartup;
                         elapsedTimeAttacking = 0f;
+                        correctHits++;
                         if (isServer)
                             combatTarget.CmdTakeDamage(attackDamage);
                     }
@@ -100,6 +106,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                 {
                     //actualTime = Time.realtimeSinceStartup;
                     elapsedTimeAttacking = 0f;
+                    correctHits++;
                     if (isServer)
                         combatTarget.CmdTakeDamage(attackDamage);
                 }
@@ -129,8 +136,10 @@ public class Navigation_Enemy : NetworkBehaviour {
 
         myAnimator = GetComponent<Animator>();
         myAnimator.SetBool("isWalking", true);
-		prevRotation = transform.rotation;
-		prevPosition = transform.position;
+
+        correctHits = 0;
+        //prevRotation = transform.rotation;
+        //prevPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -144,8 +153,10 @@ public class Navigation_Enemy : NetworkBehaviour {
 
             if (targetFound)
             {
-                if (combatTarget.health <= 0)
+                //if (combatTarget.health <= 0)
+                if (correctHits == amountHitsToKill)
                 {
+                    print("Alvo morreu");
                     agent.ResetPath();
                     agent.SetDestination(towerTransform.position);
                     myAnimator.SetBool("isAttacking", false);
@@ -153,6 +164,7 @@ public class Navigation_Enemy : NetworkBehaviour {
                     targetFound = false;
                     target = towerTransform;
                     elapsedTimeAttacking = 0f;
+                    correctHits = 0;
                 }
                 else
                 {

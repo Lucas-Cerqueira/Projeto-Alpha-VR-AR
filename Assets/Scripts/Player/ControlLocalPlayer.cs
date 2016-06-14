@@ -36,7 +36,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
         if (isLocalPlayer)
         {
-            print(useCardBoard);
+            gameObject.name = "ShooterLocal";
 
             int numberOfPlayers = 10;
 
