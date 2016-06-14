@@ -158,11 +158,13 @@ public class Matchmaking : MonoBehaviour {
 
     public void SetActiveToggleUseVuforia (bool active)
     {
-        toggleUseVuforia.gameObject.SetActive(active);
+        if (toggleUseVuforia)
+            toggleUseVuforia.gameObject.SetActive(active);
     }
 
 	public void SetActiveToggleUseCardBoard (bool active)
 	{
-		toggleUseCardBoard.gameObject.SetActive(active);
+        if (toggleUseVuforia)
+		    toggleUseCardBoard.gameObject.SetActive(active);
 	}
 }
