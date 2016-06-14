@@ -976,7 +976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &135302
 GameObject:
   m_ObjectHideFlags: 1
@@ -2534,7 +2534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &186804
 GameObject:
   m_ObjectHideFlags: 1
@@ -4358,7 +4358,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.79937, y: 14.054453, z: -2.539535}
+  m_LocalPosition: {x: -38.052296, y: 129.00522, z: 9.692064}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 478442}
@@ -5851,7 +5851,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b09c81edb83003144a9b7b6b49248e73, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -6430,7 +6430,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b09c81edb83003144a9b7b6b49248e73, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7465,11 +7465,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138851c066f346247bcc74f2af8d54ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 0.1
+  shootDelay: 1
   soundDelay: 4
   upgradeAmount: 5
   damage: 25
-  m_ShootingSound: {fileID: 8300000, guid: db7147bd9f2d94f45ba75bd611389020, type: 3}
+  m_ShootingSound: {fileID: 8300000, guid: fee9529cdb5b80d47bf986bc8e3f1c82, type: 3}
+  isShooting: 0
   elapsedTime: 0
   soundElapsedTime: 0
 --- !u!114 &11421174
@@ -12894,12 +12895,12 @@ ParticleSystem:
         rgba: 4280098077
       minMaxState: 0
     startSize:
-      scalar: 3.434952
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.51754385
+          value: 0.9774595
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -12910,7 +12911,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.32894737
+          value: 0.788863
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -14338,12 +14339,12 @@ ParticleSystem:
         rgba: 4280098077
       minMaxState: 0
     startSize:
-      scalar: 3.434952
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.51754385
+          value: 0.9774595
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -14354,7 +14355,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.32894737
+          value: 0.788863
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -18700,7 +18701,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 2
     startSize:
-      scalar: 0.3
+      scalar: 1.6499999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -18716,7 +18717,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.3333333
+          value: 0.83030313
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -18882,11 +18883,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 200
+    cnt0: 60
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 200
+    cntmax0: 60
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30
@@ -20159,7 +20160,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 2
     startSize:
-      scalar: 0.3
+      scalar: 1.6499999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20175,7 +20176,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.3333333
+          value: 0.83030313
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -20341,11 +20342,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 200
+    cnt0: 60
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 200
+    cntmax0: 60
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30
