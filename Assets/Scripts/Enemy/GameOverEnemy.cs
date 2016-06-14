@@ -43,7 +43,11 @@ public class GameOverEnemy : GameOver{
         myAnimator.SetBool("isDead" + i.ToString(), true);
 		if (isServer) 
 		{
-			if (money && GetComponent<Combat>().health >= 0) money.GetComponent<MoneyHandler>().AddMoney(100);
+			if (money && GetComponent<Combat>().health >= 0) 
+                money.GetComponent<MoneyHandler>().AddMoney(100);
+
+            //transform.parent.GetComponent<PoolingObjectHandler>().UnSpawnObject(this.gameObject);
+            //NetworkServer.UnSpawn(this.gameObject);
 			transform.parent.GetComponent<PoolingObjectHandler> ().ServerReturnToPool (this.gameObject, myAnimator.GetCurrentAnimatorClipInfo (0) [0].clip.length);
 		}
 	}

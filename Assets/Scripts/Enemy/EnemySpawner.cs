@@ -9,10 +9,11 @@ public class EnemySpawner : NetworkBehaviour
 
     private float elapsedTime;
     private bool gameStarted = false;
+    private PoolingObjectHandler poolHandler;
 
     void Awake()
     {
-        
+        poolHandler = GetComponent<PoolingObjectHandler>();
     }
 
     void Start ()
@@ -31,9 +32,9 @@ public class EnemySpawner : NetworkBehaviour
 		{
 			//RpcSyncClientServerPooledObjects();
 			elapsedTime += Time.deltaTime;
-			if (elapsedTime >= enemySpawnDelay)
+			if (elapsedTime >= enemySpawnDelay && isServer)
 			{
-				transform.parent.GetComponent<PoolingObjectHandler> ().ServerCreateFromPool(transform.position, transform.rotation);
+				poolHandler.ServerCreateFromPool(transform.position, transform.rotation);
 				elapsedTime = 0;
 			}
 		}

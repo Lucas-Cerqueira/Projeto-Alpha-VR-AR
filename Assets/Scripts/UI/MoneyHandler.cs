@@ -19,7 +19,7 @@ public class MoneyHandler : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-		text.text = "Money: " + money;
+		text.text = money.ToString();
 	}
 		
 	public void AddMoney (int amount)

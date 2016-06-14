@@ -27,12 +27,16 @@ public class MyNetworkManager : NetworkManager {
         roleSelectionDropdown = GameObject.Find("RoleSelectionDropdown").GetComponent<Dropdown>();
         roleSelectionDropdown.onValueChanged.RemoveAllListeners();
         UpdatePlayerRole(roleSelectionDropdown.value);
+
+        
     }
 
     void Update()
     {
         if (updatedDropdownListener == false)
         {
+            useCardBoard = false;
+            useVuforia = false;
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
                 if (roleSelectionDropdown = GameObject.Find("RoleSelectionDropdown").GetComponent<Dropdown>())
@@ -49,12 +53,14 @@ public class MyNetworkManager : NetworkManager {
     public void UpdatePlayerRole(int value)
     {
         playerRoleSelected = roleSelectionDropdown.options[value].text;
-		if (playerRoleSelected.Equals ("Shooter")) {
+		if (playerRoleSelected.Equals ("Shooter")) 
+        {
 			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (false);
 			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (true);
 			useVuforia = false;
 		}
-		else {
+		else 
+        {
 			GetComponent<Matchmaking> ().SetActiveToggleUseVuforia (true);
 			GetComponent<Matchmaking> ().SetActiveToggleUseCardBoard (false);
 			useCardBoard = false;

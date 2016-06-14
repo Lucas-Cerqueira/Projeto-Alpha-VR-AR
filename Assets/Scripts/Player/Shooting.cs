@@ -13,10 +13,10 @@ public class Shooting : NetworkBehaviour {
 	[SerializeField] private AudioClip m_ShootingSound;
 	private AudioSource m_AudioSource;
 
+    public bool isShooting = false;
 
 	public static int damageStatic;
 	private static int upgradeAmountStatic;
-
 
 	private Ray ray; // the ray that will be shot
 	private RaycastHit hit; // variable to hold the object that is hit
@@ -24,18 +24,19 @@ public class Shooting : NetworkBehaviour {
 	public float elapsedTime;
 	public float soundElapsedTime;
 
-	private Animator myAnimator;
+	//private Animator myAnimator;
 
 	void Start()
 	{
+        isShooting = false;
 		damageStatic = damage;
 		upgradeAmountStatic = upgradeAmount;
 
-		myAnimator = GetComponent<Animator>();
+		//myAnimator = GetComponent<Animator>();
 		soundElapsedTime = soundDelay;
 		elapsedTime = shootDelay;
 		m_AudioSource = gameObject.AddComponent<AudioSource>();
-		m_AudioSource.loop = true;
+		m_AudioSource.loop = false;
 		m_AudioSource.playOnAwake = true;
 		m_AudioSource.clip = m_ShootingSound;
 	}
@@ -87,20 +88,23 @@ public class Shooting : NetworkBehaviour {
 		elapsedTime += Time.deltaTime;
 		soundElapsedTime = elapsedTime;
 
-		if (Input.GetButton ("Fire1") && isLocalPlayer) {
-			myAnimator.SetBool ("isShooting", true);
-			if (!m_AudioSource.isPlaying){
-				m_AudioSource.Play ();
-			}
-			if (elapsedTime >= shootDelay && isLocalPlayer) {
+		if (Input.GetButton ("Fire1") && isLocalPlayer && !m_AudioSource.isPlaying)
+        {
+            isShooting = false;
+			if (elapsedTime >= shootDelay) 
+            {
+                isShooting = true;
+                m_AudioSource.Play();
 				Shoot ();
 				elapsedTime = 0f;
 				soundElapsedTime = 0f;
 			}
-		} else if (isLocalPlayer) {
-			myAnimator.SetBool ("isShooting", false);
-			//print ("Parei de tocar!");
-			m_AudioSource.Stop ();
+        }
+        else if (isLocalPlayer && !m_AudioSource.isPlaying)
+        {
+            isShooting = false;
+			print ("Parei de tocar!");
+			//m_AudioSource.Stop ();
 		}
 		damage = damageStatic;
 		//print ("damage = damageStatic;");

@@ -166,7 +166,7 @@ GameObject:
   - 54: {fileID: 5423542}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.13422, y: 1.036257, z: -138.85901}
+  m_LocalPosition: {x: 107.59373, y: 129.52887, z: -216.95018}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 457910}

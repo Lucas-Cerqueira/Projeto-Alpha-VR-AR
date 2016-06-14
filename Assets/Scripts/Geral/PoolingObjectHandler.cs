@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class PoolingObjectHandler : MonoBehaviour
 {
-	static Dictionary<string, PoolingObjectHandler> s_pools;// = new Dictionary<string, PoolingObjectHandler>();
+	//static Dictionary<string, PoolingObjectHandler> s_pools;// = new Dictionary<string, PoolingObjectHandler>();
 
 	[HideInInspector] public bool isInitialized;
 
@@ -25,14 +25,14 @@ public class PoolingObjectHandler : MonoBehaviour
 
 	Dictionary<GameObject,IEnumerator> killRequests = new Dictionary<GameObject, IEnumerator>();
 
-	static public PoolingObjectHandler GetPoolByName(string name)
-	{
-		return s_pools[name];
-	}
+    //static public PoolingObjectHandler GetPoolByName(string name)
+    //{
+    //    return s_pools[name];
+    //}
 
-	public virtual void Awake()
+	public virtual void Start()
 	{
-		s_pools = new Dictionary<string, PoolingObjectHandler> ();
+		//s_pools = new Dictionary<string, PoolingObjectHandler> ();
 		InitializePool();
 	}
 
@@ -66,7 +66,7 @@ public class PoolingObjectHandler : MonoBehaviour
 			}
 		}
 		isInitialized = true;
-		s_pools.Add(gameObject.name, this);
+		//s_pools.Add(gameObject.name, this);
 
 		for (int i = 0; i < initialPoolSize; i++)
 		{

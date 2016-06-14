@@ -43,6 +43,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         private Animator myAnimator;
 
+        private ControlLocalPlayer controlLocalPlayer;
+
         // Use this for initialization
         private void Start()
         {
@@ -57,15 +59,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
             myAnimator = GetComponent<Animator>();
+
+            controlLocalPlayer = GetComponent<ControlLocalPlayer>();
         }
 
-
+        
         // Update is called once per frame
         private void Update()
         {
             if (isLocalPlayer)
             {
-                RotateView();
+                if (controlLocalPlayer.useCardBoard)
+                { }
+                else
+                    RotateView();
+
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
                 {
@@ -101,12 +109,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (isLocalPlayer)
             {
+                Vector3 desiredMove;
+
                 float speed;
                 GetInput(out speed);
                 myAnimator.SetFloat("Speed", m_MoveDir.magnitude);
 
                 // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
+                if (controlLocalPlayer.useCardBoard)
+                    desiredMove = controlLocalPlayer.cardboardHead.forward * m_Input.y + controlLocalPlayer.cardboardHead.right * m_Input.x;
+                else
+                    desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
                 // get a normal for the surface that is being touched to move along it
                 RaycastHit hitInfo;
@@ -139,7 +152,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //ProgressStepCycle(speed);
                 UpdateCameraPosition(speed);
 
-                m_MouseLook.UpdateCursorLock();
+                //m_MouseLook.UpdateCursorLock();
             }
         }
 

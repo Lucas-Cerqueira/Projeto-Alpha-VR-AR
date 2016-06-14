@@ -12,6 +12,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
     private MyNetworkManager manager;
     private Transform spawnPoint;
+    public Transform cardboardHead;
 
     void Awake()
     {
@@ -36,6 +37,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
         if (isLocalPlayer)
         {
+            gameObject.name = "ShooterLocal";
+
             int numberOfPlayers = 10;
 
             Camera.main.gameObject.SetActive(false);
@@ -72,19 +75,24 @@ public class ControlLocalPlayer : NetworkBehaviour {
 					    if (useCardBoard == false) 
                         {
 						    GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
-						    transform.GetChild (0).tag = "MainCamera";
+						    //transform.GetChild (0).tag = "MainCamera";
 						    transform.GetChild (0).gameObject.SetActive (true);
 						    transform.GetChild (1).gameObject.SetActive (false);
 
-                            //GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(0).GetComponent<Camera>();
+                            //GetComponent<FPSPlayerMovement>().m_Camera = transform.GetChild(0).GetComponent<Camera>();
 					    } 
 					    else 
                         {
+                            //GetComponent<FPSPlayerMovement>().enabled = false;
+                            Transform cardboardCam = transform.GetChild(1);
 						    GameObject.Find("ShooterUI").transform.GetChild(1).gameObject.SetActive (true);
 						    //transform.GetChild(1).tag = "MainCamera";
 						    transform.GetChild(0).gameObject.SetActive(false);
-						    transform.GetChild(1).gameObject.SetActive(true);
-                            //GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
+						    cardboardCam.gameObject.SetActive(true);
+                            cardboardHead = cardboardCam.FindChild("Head");
+                            //cardboardCam.parent = null;
+                            //transform.parent = cardboardHead;
+                            //GetComponent<FPSPlayerMovement>().m_Camera = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
 					    }
 
    //                     GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
@@ -144,8 +152,8 @@ public class ControlLocalPlayer : NetworkBehaviour {
             //if (isServer)
             //    manager.DisconnectHost();
             //else
-			GameObject.Find("EnemiesSpawners").GetComponent<PoolingObjectHandler> ().isInitialized = false;
-                manager.DisconnectClient();
+			//GameObject.Find("EnemiesSpawners").GetComponent<PoolingObjectHandler> ().isInitialized = false;
+            manager.DisconnectClient();
         }
     }
 

@@ -108,9 +108,13 @@ public class CardboardHead : MonoBehaviour {
 
     if (trackRotation) {
       var rot = Cardboard.SDK.HeadPose.Orientation;
-      if (target == null) {
-        transform.localRotation = rot;
-      } else {
+      if (target == null) 
+      {
+        //transform.localRotation = rot;
+        transform.parent.parent.localRotation = rot;
+      } 
+      else
+      {
         transform.rotation = target.rotation * rot;
       }
     }
