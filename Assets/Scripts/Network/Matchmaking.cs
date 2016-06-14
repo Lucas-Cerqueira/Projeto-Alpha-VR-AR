@@ -66,6 +66,9 @@ public class Matchmaking : MonoBehaviour {
 		toggleUseCardBoard.onValueChanged.AddListener((value) => { GetComponent<MyNetworkManager>().ToggleUseCardBoardChanged(value); });
         GameObject.Find("Button-CreateMatch").GetComponent<Button>().onClick.AddListener(() => { this.CreateMatch(); });
         GameObject.Find("Button-ListMatches").GetComponent<Button>().onClick.AddListener(() => { this.ListMatches(); });
+
+        SetActiveToggleUseCardBoard(true);
+        SetActiveToggleUseVuforia(false);
     }
 
 	// Update is called once per frame

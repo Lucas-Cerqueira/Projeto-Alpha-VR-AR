@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474604}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger_Mid_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 439768}
   - 137: {fileID: 13730692}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426396}
   - 137: {fileID: 13792260}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473684}
   - 137: {fileID: 13788258}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467324}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Top_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495992}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLeg_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 114: {fileID: 11458284}
   - 114: {fileID: 11416322}
   - 114: {fileID: 11434954}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CameraWithEffects
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - 4: {fileID: 438658}
   - 33: {fileID: 3322216}
   - 23: {fileID: 2321384}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400030}
   - 137: {fileID: 13784094}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 411306}
   - 137: {fileID: 13729006}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - 4: {fileID: 464030}
   - 33: {fileID: 3322322}
   - 23: {fileID: 2388846}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453936}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Top_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401890}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger2_Bot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486408}
   - 137: {fileID: 13780640}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - 224: {fileID: 22470328}
   - 222: {fileID: 22230388}
   - 114: {fileID: 11466828}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: RedBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 454836}
   - 137: {fileID: 13768770}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404340}
   - 137: {fileID: 13716126}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410934}
   - 137: {fileID: 13778898}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder_021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459532}
   - 137: {fileID: 13769222}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - 4: {fileID: 417746}
   - 33: {fileID: 3370706}
   - 23: {fileID: 2323838}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - 4: {fileID: 450400}
   - 33: {fileID: 3357142}
   - 23: {fileID: 2360546}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489240}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger2_Bot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484542}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425102}
   - 137: {fileID: 13778270}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - 4: {fileID: 484106}
   - 33: {fileID: 3352662}
   - 23: {fileID: 2375242}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 443948}
   - 137: {fileID: 13729432}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429608}
   - 137: {fileID: 13725206}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415998}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Bot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - 4: {fileID: 446250}
   - 33: {fileID: 3372566}
   - 23: {fileID: 2373168}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466000}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Top_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - 4: {fileID: 477876}
   - 33: {fileID: 3320504}
   - 23: {fileID: 2352412}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476584}
   - 137: {fileID: 13759948}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497702}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Bot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - 4: {fileID: 431878}
   - 33: {fileID: 3399720}
   - 23: {fileID: 2357344}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496856}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454492}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 453840}
   - 137: {fileID: 13705352}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   - 4: {fileID: 480620}
   - 198: {fileID: 19863232}
   - 199: {fileID: 19900648}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429452}
   - 137: {fileID: 13759526}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - 4: {fileID: 437694}
   - 33: {fileID: 3379980}
   - 23: {fileID: 2393914}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ GameObject:
   - 4: {fileID: 488698}
   - 33: {fileID: 3376892}
   - 23: {fileID: 2347930}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414960}
   - 137: {fileID: 13756788}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +825,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 485532}
   - 137: {fileID: 13763574}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder_023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412132}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +855,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496088}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Abdomen_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - 4: {fileID: 403714}
   - 33: {fileID: 3322546}
   - 23: {fileID: 2301388}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +887,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444742}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shoulder_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   - 4: {fileID: 480058}
   - 33: {fileID: 3370794}
   - 23: {fileID: 2353340}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 493588}
   - 137: {fileID: 13722368}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 464156}
   - 137: {fileID: 13720068}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Feet_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416516}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,7 +1002,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452204}
   - 137: {fileID: 13726456}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486478}
   - 137: {fileID: 13798674}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410978}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger_Mid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401492}
   - 137: {fileID: 13782768}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447940}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger2_Top_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496162}
   - 137: {fileID: 13702436}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450554}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Mid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418402}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Bot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480264}
   - 137: {fileID: 13706156}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1227,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479622}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Top_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460682}
   - 137: {fileID: 13709246}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1275,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 471772}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArm_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,7 +1292,7 @@ GameObject:
   - 4: {fileID: 490390}
   - 33: {fileID: 3328846}
   - 23: {fileID: 2313120}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469914}
   - 137: {fileID: 13701306}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1324,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403694}
   - 137: {fileID: 13756938}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,7 +1339,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463276}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Bot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404000}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Bot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407754}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   - 4: {fileID: 409592}
   - 198: {fileID: 19838016}
   - 199: {fileID: 19908334}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1436,7 +1436,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460024}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ GameObject:
   - 4: {fileID: 430138}
   - 33: {fileID: 3327246}
   - 23: {fileID: 2345410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1485,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451500}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Top_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,7 +1500,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 445662}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1517,7 +1517,7 @@ GameObject:
   - 4: {fileID: 469258}
   - 33: {fileID: 3385372}
   - 23: {fileID: 2337010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   - 95: {fileID: 9506378}
   - 114: {fileID: 11493812}
   - 114: {fileID: 11482234}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: WeaponMat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1623,7 +1623,7 @@ GameObject:
   - 95: {fileID: 9508956}
   - 114: {fileID: 11472064}
   - 114: {fileID: 11452410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,7 +1639,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488360}
   - 137: {fileID: 13717348}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,7 +1654,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462234}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Thumb_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410864}
   - 137: {fileID: 13750786}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1685,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438124}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Mid_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1718,7 +1718,7 @@ GameObject:
   - 4: {fileID: 426004}
   - 33: {fileID: 3396006}
   - 23: {fileID: 2390280}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1752,7 @@ GameObject:
   - 4: {fileID: 476078}
   - 33: {fileID: 3377860}
   - 23: {fileID: 2304924}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1767,7 +1767,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429920}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLeg_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,7 +1782,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 480126}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Thumb_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1799,7 +1799,7 @@ GameObject:
   - 4: {fileID: 409264}
   - 33: {fileID: 3318050}
   - 23: {fileID: 2327720}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495026}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Top_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1829,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443826}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Mid_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1861,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 402376}
   - 137: {fileID: 13706634}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1877,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 412800}
   - 137: {fileID: 13748990}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Abdomen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1895,7 @@ GameObject:
   - 223: {fileID: 22341466}
   - 114: {fileID: 11489104}
   - 114: {fileID: 11421174}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1911,7 +1911,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 444450}
   - 137: {fileID: 13721320}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,7 +1927,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 423130}
   - 137: {fileID: 13787738}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +1942,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447070}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger4_Mid_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1958,7 +1958,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486482}
   - 137: {fileID: 13701922}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,7 +1992,7 @@ GameObject:
   - 4: {fileID: 480230}
   - 33: {fileID: 3358114}
   - 23: {fileID: 2346906}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2019,7 @@ GameObject:
   - 114: {fileID: 11478536}
   - 143: {fileID: 14358836}
   - 114: {fileID: 11484144}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shooter
   m_TagString: Shooter
   m_Icon: {fileID: 0}
@@ -2035,7 +2035,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457724}
   - 137: {fileID: 13733036}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2052,7 +2052,7 @@ GameObject:
   - 4: {fileID: 427656}
   - 33: {fileID: 3337774}
   - 23: {fileID: 2339386}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2067,7 +2067,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467350}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger2_Top_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2082,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,7 +2097,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472748}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Thumb2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,7 +2114,7 @@ GameObject:
   - 4: {fileID: 431768}
   - 33: {fileID: 3399350}
   - 23: {fileID: 2378544}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2129,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439260}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Mid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 483582}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2176,7 +2176,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420808}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shoulder_R_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2193,7 +2193,7 @@ GameObject:
   - 4: {fileID: 413328}
   - 198: {fileID: 19848638}
   - 199: {fileID: 19968432}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,7 +2208,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419812}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Thumb2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,7 +2241,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 424328}
   - 137: {fileID: 13780692}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,7 +2275,7 @@ GameObject:
   - 4: {fileID: 475752}
   - 33: {fileID: 3314910}
   - 23: {fileID: 2300452}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2291,7 +2291,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413260}
   - 137: {fileID: 13708490}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2328,7 +2328,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446350}
   - 137: {fileID: 13745830}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2363,7 +2363,7 @@ GameObject:
   - 33: {fileID: 3321564}
   - 23: {fileID: 2374748}
   - 114: {fileID: 11406826}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2397,7 +2397,7 @@ GameObject:
   - 224: {fileID: 22442676}
   - 222: {fileID: 22264754}
   - 114: {fileID: 11425926}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2414,7 @@ GameObject:
   - 4: {fileID: 447450}
   - 198: {fileID: 19884544}
   - 199: {fileID: 19974914}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,7 +2447,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 427632}
   - 137: {fileID: 13789680}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2464,7 +2464,7 @@ GameObject:
   - 224: {fileID: 22464706}
   - 222: {fileID: 22297744}
   - 114: {fileID: 11484010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GreenBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,7 +2480,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428240}
   - 137: {fileID: 13753776}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2495,7 +2495,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494668}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger1_Mid_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2579,7 +2579,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425754}
   - 137: {fileID: 13778328}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2595,7 +2595,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 441884}
   - 137: {fileID: 13715794}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,7 +2611,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 433544}
   - 137: {fileID: 13753294}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2626,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411632}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArm_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2643,7 @@ GameObject:
   - 4: {fileID: 433388}
   - 33: {fileID: 3311426}
   - 23: {fileID: 2346480}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2658,7 +2658,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461184}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426360}
   - 137: {fileID: 13737448}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,7 +2690,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416160}
   - 137: {fileID: 13793880}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 408774}
   - 137: {fileID: 13791964}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,7 +2722,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404886}
   - 137: {fileID: 13715444}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Feet_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 466234}
   - 137: {fileID: 13729402}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2754,7 +2754,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403654}
   - 137: {fileID: 13763068}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2769,7 +2769,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402042}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm_L_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,7 +2785,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429026}
   - 137: {fileID: 13741656}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2801,7 +2801,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410016}
   - 137: {fileID: 13766872}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2816,7 +2816,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485412}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Finger3_Bot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,7 +2850,7 @@ GameObject:
   - 4: {fileID: 426236}
   - 33: {fileID: 3340634}
   - 23: {fileID: 2393468}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2866,7 +2866,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 454870}
   - 137: {fileID: 13706158}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2882,7 +2882,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 498570}
   - 137: {fileID: 13740286}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube_019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2897,7 +2897,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421330}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cheast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,7 +4360,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 196.48395, y: 165.60497, z: 61.616096}
+  m_LocalPosition: {x: 21.448122, y: 117.05827, z: 27.638489}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 478442}
@@ -5291,7 +5291,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5461,7 +5461,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5495,7 +5495,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7885,7 +7885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: 
   useVuforia: 0
-  useCardBoard: 0
+  useCardBoard: 1
 --- !u!114 &11481020
 MonoBehaviour:
   m_ObjectHideFlags: 1

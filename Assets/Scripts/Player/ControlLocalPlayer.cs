@@ -74,11 +74,11 @@ public class ControlLocalPlayer : NetworkBehaviour {
 					    if (useCardBoard == false) 
                         {
 						    GameObject.Find("ShooterUI").transform.GetChild(0).gameObject.SetActive (true);
-						    transform.GetChild (0).tag = "MainCamera";
+						    //transform.GetChild (0).tag = "MainCamera";
 						    transform.GetChild (0).gameObject.SetActive (true);
 						    transform.GetChild (1).gameObject.SetActive (false);
 
-                            //GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(0).GetComponent<Camera>();
+                            GetComponent<FPSPlayerMovement>().m_Camera = transform.GetChild(0).GetComponent<Camera>();
 					    } 
 					    else 
                         {
@@ -86,7 +86,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
 						    //transform.GetChild(1).tag = "MainCamera";
 						    transform.GetChild(0).gameObject.SetActive(false);
 						    transform.GetChild(1).gameObject.SetActive(true);
-                            //GetComponent<RigidbodyFirstPersonController>().cam = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
+                            GetComponent<FPSPlayerMovement>().m_Camera = transform.GetChild(1).GetChild(0).GetComponentInChildren<Camera>();
 					    }
 
    //                     GetComponent<RigidbodyFirstPersonController>().useCardboard = useCardBoard;
