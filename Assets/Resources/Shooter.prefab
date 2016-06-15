@@ -6427,11 +6427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138851c066f346247bcc74f2af8d54ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 1
-  soundDelay: 4
+  shootDelay: 0.1
   upgradeAmount: 5
-  damage: 50
-  m_ShootingSound: {fileID: 8300000, guid: fee9529cdb5b80d47bf986bc8e3f1c82, type: 3}
+  damage: 34
+  isMachineGun: 1
+  m_machineGunSound: {fileID: 8300000, guid: db7147bd9f2d94f45ba75bd611389020, type: 3}
+  m_shotgunSound: {fileID: 8300000, guid: fee9529cdb5b80d47bf986bc8e3f1c82, type: 3}
   isShooting: 0
   elapsedTime: 0
   soundElapsedTime: 0
@@ -6733,7 +6734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: 
   useVuforia: 0
-  useCardBoard: 1
+  useCardBoard: 0
   cardboardHead: {fileID: 492152}
 --- !u!114 &11481020
 MonoBehaviour:

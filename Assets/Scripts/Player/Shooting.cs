@@ -7,10 +7,12 @@ using UnityEngine.Networking;
 public class Shooting : NetworkBehaviour {
 
 	[SerializeField] public float shootDelay = 0.2f;
-	[SerializeField] public float soundDelay = 4f;
+	//[SerializeField] public float soundDelay = 4f;
 	[SerializeField] int upgradeAmount = 10;
 	[SerializeField] [SyncVar (hook = "OnChangeDamage")] public int damage = 10;
-	[SerializeField] private AudioClip m_ShootingSound;
+    [SerializeField] public bool isMachineGun;
+	[SerializeField] private AudioClip m_machineGunSound;
+    [SerializeField] private AudioClip m_shotgunSound;
 	private AudioSource m_AudioSource;
 
     public bool isShooting = false;
@@ -33,12 +35,25 @@ public class Shooting : NetworkBehaviour {
 		upgradeAmountStatic = upgradeAmount;
 
 		//myAnimator = GetComponent<Animator>();
-		soundElapsedTime = soundDelay;
+		//soundElapsedTime = soundDelay;
 		elapsedTime = shootDelay;
 		m_AudioSource = gameObject.AddComponent<AudioSource>();
 		m_AudioSource.loop = false;
 		m_AudioSource.playOnAwake = true;
-		m_AudioSource.clip = m_ShootingSound;
+        if (isMachineGun)
+        {
+            if (m_machineGunSound)
+                m_AudioSource.clip = m_machineGunSound;
+            else
+                Debug.LogError("Missing MachineGun sound on Shooter");
+        }
+        else
+        {
+            if (m_shotgunSound)
+                m_AudioSource.clip = m_shotgunSound;
+            else
+                Debug.LogError("Missing Shotgun sound on Shooter");
+        }
 	}
 
 
@@ -88,24 +103,51 @@ public class Shooting : NetworkBehaviour {
 		elapsedTime += Time.deltaTime;
 		soundElapsedTime = elapsedTime;
 
-		if (Input.GetButton ("Fire1") && isLocalPlayer && !m_AudioSource.isPlaying)
+        if (isMachineGun)
         {
-            isShooting = false;
-			if (elapsedTime >= shootDelay) 
+            if (Input.GetButton("Fire1") && isLocalPlayer)
             {
                 isShooting = true;
-                m_AudioSource.Play();
-				Shoot ();
-				elapsedTime = 0f;
-				soundElapsedTime = 0f;
-			}
+                if (!m_AudioSource.isPlaying)
+                {
+                    m_AudioSource.Play();
+                }
+                if (elapsedTime >= shootDelay && isLocalPlayer)
+                {
+                    Shoot();
+                    elapsedTime = 0f;
+                    soundElapsedTime = 0f;
+                }
+            }
+            else if (isLocalPlayer)
+            {
+                //myAnimator.SetBool("isShooting", false);
+                isShooting = false;
+                //print ("Parei de tocar!");
+                m_AudioSource.Stop();
+            }
         }
-        else if (isLocalPlayer && !m_AudioSource.isPlaying)
+        else
         {
-            isShooting = false;
-			print ("Parei de tocar!");
-			//m_AudioSource.Stop ();
-		}
+            if (Input.GetButton("Fire1") && isLocalPlayer && !m_AudioSource.isPlaying)
+            {
+                isShooting = false;
+                if (elapsedTime >= shootDelay)
+                {
+                    isShooting = true;
+                    m_AudioSource.Play();
+                    Shoot();
+                    elapsedTime = 0f;
+                    soundElapsedTime = 0f;
+                }
+            }
+            else if (isLocalPlayer && !m_AudioSource.isPlaying)
+            {
+                isShooting = false;
+                print("Parei de tocar!");
+                //m_AudioSource.Stop ();
+            }
+        }
 		damage = damageStatic;
 		//print ("damage = damageStatic;");
 	}

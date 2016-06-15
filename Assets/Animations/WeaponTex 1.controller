@@ -20,6 +20,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: shootingSpeed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -146,9 +152,9 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.17644525
-  m_TransitionOffset: 0.77759475
-  m_ExitTime: 0.8764397
-  m_HasExitTime: 1
+  m_TransitionOffset: 0.054895602
+  m_ExitTime: 0.15374047
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -266,12 +272,12 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400000, guid: b7dabdfc7c365dd468a91d6d2c8359f8, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: shootingSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
 --- !u!1102 &110234998
@@ -362,12 +368,12 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 527d718a24ee1aa4892fc49b1b5c546d, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: shootingSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
 --- !u!1102 &110272600

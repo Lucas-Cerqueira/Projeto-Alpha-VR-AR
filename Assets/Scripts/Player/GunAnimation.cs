@@ -21,6 +21,8 @@ public class GunAnimation : NetworkBehaviour {
         playedShooting = false;
         defaultFOV = Camera.main.fieldOfView;
         shootingScript = GameObject.Find("ShooterLocal").GetComponent<Shooting>();
+
+        myAnimator.SetFloat("shootingSpeed", 1 / shootingScript.shootDelay);
 	}
 	
 	// Update is called once per frame
@@ -58,20 +60,24 @@ public class GunAnimation : NetworkBehaviour {
         }
 
         //myAnimator.SetBool("isShooting", shootingScript.isShooting);
-        if (shootingScript.isShooting && !playedShooting)
+        if (shootingScript.isMachineGun)
         {
-            StartCoroutine(PlayOneShot("isShooting"));
-            playedShooting = true;
+            if (Input.GetButton("Fire1"))
+                myAnimator.SetBool("isShooting", true);
+            else
+                myAnimator.SetBool("isShooting", false);
         }
+        else
+        {
+            if (shootingScript.isShooting && !playedShooting)
+            {
+                StartCoroutine(PlayOneShot("isShooting"));
+                playedShooting = true;
+            }
 
-        if (!shootingScript.isShooting && playedShooting)
-            playedShooting = false;
-
-
-        //if (Input.GetButton("Fire1"))
-        //    myAnimator.SetBool("isShooting", true);
-        //else
-        //    myAnimator.SetBool("isShooting", false);
+            if (!shootingScript.isShooting && playedShooting)
+                playedShooting = false;
+        }   
     }
 
     public IEnumerator PlayOneShot(string paramName)
