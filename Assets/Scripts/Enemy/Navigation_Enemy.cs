@@ -145,7 +145,7 @@ public class Navigation_Enemy : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        //print(Vector3.Distance(transform.position, target.position));
+        print (combatTarget.health);
         if (lookForTarget)
         {
             if (combatEnemy.health > 0 && !targetFound)
@@ -154,7 +154,7 @@ public class Navigation_Enemy : NetworkBehaviour {
             if (targetFound)
             {
                 //if (combatTarget.health <= 0)
-                if (correctHits == amountHitsToKill)
+                if (correctHits >= amountHitsToKill || combatTarget.health <= 0)
                 {
                     print("Alvo morreu");
                     agent.ResetPath();

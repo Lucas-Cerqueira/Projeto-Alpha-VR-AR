@@ -80,7 +80,7 @@ public class Combat : NetworkBehaviour
             }
             else
             {
-                health = maxHealth;
+                
                 RpcRespawn();
             }
         }      
@@ -101,6 +101,7 @@ public class Combat : NetworkBehaviour
             int point = Random.Range(0, shooterSpawnPoints.childCount);
             transform.position = shooterSpawnPoints.GetChild(point).position;
             transform.rotation = shooterSpawnPoints.GetChild(point).rotation;
+            health = maxHealth;
         }
     }
 }

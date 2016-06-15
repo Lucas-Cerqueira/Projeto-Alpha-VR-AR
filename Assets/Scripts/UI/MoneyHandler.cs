@@ -12,7 +12,7 @@ public class MoneyHandler : NetworkBehaviour {
 	void Start () 
     {
 		text = GameObject.Find("Money").GetComponent<Text> ();
-		money = 0;
+		money = 1000;
 
 	}
 	
