@@ -22,7 +22,8 @@ public class CameraRTS : MonoBehaviour {
 	private void KeyboardInput ()
 	{
 		if (Input.GetKey (KeyCode.UpArrow) ||(Input.mousePosition.y > Screen.height - pixelEdge && Input.GetMouseButton(0)))
-			this.transform.Translate (Vector3.up*speed*Time.deltaTime, Space.Self);
+			//this.transform.Translate (Vector3.up*speed*Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
 		
 		if (Input.GetKey (KeyCode.LeftArrow) || (Input.mousePosition.x < 0 + pixelEdge && Input.GetMouseButton(0)))
 			this.transform.Translate (Vector3.left*speed*Time.deltaTime, Space.Self);
@@ -31,7 +32,8 @@ public class CameraRTS : MonoBehaviour {
 			this.transform.Translate (Vector3.right*speed*Time.deltaTime, Space.Self);
 		
 		if (Input.GetKey (KeyCode.DownArrow) || (Input.mousePosition.y < 0 + pixelEdge && Input.GetMouseButton(0)))
-			this.transform.Translate (Vector3.down*speed*Time.deltaTime, Space.Self);
+			//this.transform.Translate (Vector3.down*speed*Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
 	}
 
     private void TouchInput ()
@@ -40,7 +42,8 @@ public class CameraRTS : MonoBehaviour {
         {
             Touch touch = Input.GetTouch(0);
             if (touch.position.y > Screen.height - pixelEdge && Input.GetMouseButton(0))
-                this.transform.Translate(Vector3.up * speed * Time.deltaTime, Space.Self);
+                //this.transform.Translate(Vector3.up * speed * Time.deltaTime, Space.Self);
+                this.transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
 
             if (touch.position.x < 0 + pixelEdge && Input.GetMouseButton(0))
                 this.transform.Translate(Vector3.left * speed * Time.deltaTime, Space.Self);
@@ -49,7 +52,8 @@ public class CameraRTS : MonoBehaviour {
                 this.transform.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
 
             if (touch.position.y < 0 + pixelEdge && Input.GetMouseButton(0))
-                this.transform.Translate(Vector3.down * speed * Time.deltaTime, Space.Self);
+                //this.transform.Translate(Vector3.down * speed * Time.deltaTime, Space.Self);
+                this.transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
 
             if (touch.phase == TouchPhase.Moved)
                 this.transform.Translate(new Vector3 (touch.deltaPosition.x, 0, touch.deltaPosition.y)*speed * Time.deltaTime, Space.Self);

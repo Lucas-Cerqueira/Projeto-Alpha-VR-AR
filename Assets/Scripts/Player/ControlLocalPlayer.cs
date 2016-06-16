@@ -37,8 +37,6 @@ public class ControlLocalPlayer : NetworkBehaviour {
 
         if (isLocalPlayer)
         {
-            gameObject.name = "ShooterLocal";
-
             int numberOfPlayers = 10;
 
             Camera.main.gameObject.SetActive(false);
@@ -62,6 +60,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
             {
                 case "Shooter":
                     {
+                        gameObject.name = "ShooterLocal";
                         role = "Shooter";
 
                         Transform shooterSpawnPoints = GameObject.Find("ShooterSpawnPoints").transform;
@@ -104,6 +103,7 @@ public class ControlLocalPlayer : NetworkBehaviour {
                     }
                 case "General":
                     {
+                        gameObject.name = "GeneralLocal";
                         role = "General";
 
                         spawnPoint = GameObject.Find("GeneralSpawnPoint").transform;

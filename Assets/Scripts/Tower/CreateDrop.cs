@@ -45,7 +45,8 @@ public class CreateDrop : NetworkBehaviour {
 						if (plotDrop) 
                         {
 							Debug.DrawLine (ray.origin, hit.point, Color.cyan);
-							plotDrop.GetComponent<Renderer> ().enabled = true;
+							//plotDrop.GetComponent<Renderer> ().enabled = true;
+                            plotDrop.SetActive(true);
                             plotDrop.transform.position = new Vector3(hit.point.x, hit.point.y + heightDrop, hit.point.z);
 							plotDrop.transform.rotation = hit.collider.transform.rotation;
 						} 
@@ -66,7 +67,7 @@ public class CreateDrop : NetworkBehaviour {
                 else 
                 {
 					if (plotDrop)
-						plotDrop.GetComponent<Renderer> ().enabled = false;
+						plotDrop.SetActive(false);
 				}
 			}
 		}
@@ -86,14 +87,13 @@ public class CreateDrop : NetworkBehaviour {
 	void Generatedrop (Vector3 pos, Quaternion rotation, GameObject prefabObject)
 	{
 		int prefabIndex = NetworkManager.singleton.spawnPrefabs.IndexOf (prefabObject);
-		CmdCreatedrop (pos, rotation, prefabIndex);
+		CmdCreatedrop (pos, rotation);
 	}
 
 	[Command]
-	void CmdCreatedrop (Vector3 pos, Quaternion rotation, int prefabIndex)
+	void CmdCreatedrop (Vector3 pos, Quaternion rotation)
 	{
-		GameObject prefabToSpawn = NetworkManager.singleton.spawnPrefabs [prefabIndex];
-		GameObject spawner = (GameObject)Instantiate (prefabToSpawn, pos, rotation);
+        GameObject spawner = (GameObject)Instantiate(Resources.Load("HealthDrop"), pos, rotation);
 		//NetworkServer.SpawnWithClientAuthority (spawner, connectionToClient);
 		NetworkServer.Spawn (spawner);
 	}
