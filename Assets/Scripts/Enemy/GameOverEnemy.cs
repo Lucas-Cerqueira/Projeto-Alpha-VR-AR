@@ -21,7 +21,7 @@ public class GameOverEnemy : GameOver{
 	{
 		transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = true;
 		GetComponent<Navigation_Enemy> ().enabled = true;
-		GetComponent<NavMeshAgent> ().enabled = true;
+
 	}
 
 	// Update is called once per frame
@@ -35,7 +35,7 @@ public class GameOverEnemy : GameOver{
 		GetComponent<HealthBar>().enabled = false;
 		transform.GetChild(0).gameObject.SetActive(false);
 		transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = false;
-		GetComponent<NavMeshAgent>().Stop();
+		//GetComponent<NavMeshAgent>().Stop();
 		GetComponent<NavMeshAgent> ().enabled = false;
 
 		//NetworkServer.Destroy(this.gameObject);
@@ -60,6 +60,7 @@ public class GameOverEnemy : GameOver{
 		GetComponent<Navigation_Enemy> ().enabled = false;
 		transform.GetChild(0).gameObject.SetActive(false);
 		transform.GetChild(1).GetComponent<CapsuleCollider>().enabled = false;
-		GetComponent<NavMeshAgent>().Stop();
+        GetComponent<NavMeshAgent>().enabled = false;
+		//GetComponent<NavMeshAgent>().Stop();
 	}
 }

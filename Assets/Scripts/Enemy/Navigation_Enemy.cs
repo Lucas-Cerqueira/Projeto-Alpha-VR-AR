@@ -126,6 +126,7 @@ public class Navigation_Enemy : NetworkBehaviour {
         elapsedTimeAttacking = 0f;
 
 		agent = gameObject.GetComponent<NavMeshAgent>();
+        agent.enabled = true;
         target = GameObject.Find("Tower").transform;
         towerTransform = target;
         agent.SetDestination(towerTransform.position);
@@ -173,8 +174,11 @@ public class Navigation_Enemy : NetworkBehaviour {
             }
             else
             {
-                if (Vector3.Distance(transform.position, target.position) <= minDistanceToTower)
-                    targetFound = true;
+                if (target)
+                {
+                    if (Vector3.Distance(transform.position, target.position) <= minDistanceToTower)
+                        targetFound = true;
+                }
             }
         }
         //if (isServer) {
